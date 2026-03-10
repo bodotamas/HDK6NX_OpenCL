@@ -1,0 +1,796 @@
+\documentclass[a4paper]{article}
+
+% Set margins
+\usepackage[hmargin=2.5cm, vmargin=3cm]{geometry}
+
+\frenchspacing
+
+% Language packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[magyar]{babel}
+
+% AMS
+\usepackage{amssymb,amsmath}
+
+% Graphic packages
+\usepackage{graphicx}
+
+% Colors
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Listings
+\usepackage{listings}
+
+% Question
+\newenvironment{question}[1]
+{\noindent\textcolor{OliveGreen}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Task
+\newenvironment{task}[1]
+{\noindent\textcolor{RoyalBlue}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Notification
+\newenvironment{notification}[1]
+{\noindent\textcolor{Peach}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Problem
+\newenvironment{problem}[1]
+{\noindent\textcolor{OrangeRed}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+%===============
+\begin{document}
+%===============
+
+\definecolor{codebg}{rgb}{0.9,0.9,0.9}
+\lstset{backgroundcolor=\color{codebg}}
+
+\begin{center}
+    \Huge \textbf{Programtervezési ismeretek}
+    
+	\bigskip
+	
+	\Large Feladatok gyakorláshoz
+\end{center}
+
+\bigskip
+
+%=====================
+\section*{1. Halmazok, műveletek}
+%---------------------
+
+\begin{enumerate}
+
+\item
+
+Tekintsük az $A = \{\alpha, \beta, \gamma, \zeta\}$ és $B = \{igaz, hamis\}$ halmazokat!
+\begin{itemize}
+	\item Írjuk fel az $A \times A, A \times B, B \times A, B \times B$ Déscartes szorzatokat!
+	\item Írjuk fel a $2^A$, $2^B$ halmazokat!
+	\item Írjuk fel az $A^2 \times B$ halmazt!
+	\item Mennyi eleme lesz az $A^2 \cup (B \times A)$ halmaznak?
+	\item Teljesül-e a következő egyenlőtlenség?
+	$$
+	|(A \times B) \cup (B^2 \times A^2)| < |A^3 \cup B^3|
+	$$
+\end{itemize}
+
+\item
+
+Számítsuk ki a következő halmazok elempárjainak szorzatát $a \cdot b$ formában orosz-paraszt módszerrel!
+$$
+S = \{(48, 13), (59, 108), (1024, 127), (50, 128), (123, 456)\}
+$$
+\begin{itemize}
+	\item Ellenőrízzük kézzel kiszámítva a szorzatot!
+	\item Számítsuk ki $b \cdot a$ formában is!
+\end{itemize}
+
+\item
+
+Számítsuk ki az
+$$
+\lfloor a \rfloor, \lceil a \rceil,
+\lfloor b \rfloor, \lceil b \rceil,
+\left\lfloor \dfrac{a}{b} \right\rfloor, \left\lfloor \dfrac{b}{a} \right\rfloor, 
+\left\lceil \dfrac{a}{b} \right\rceil, \left\lceil \dfrac{b}{a} \right\rceil, 
+$$
+$$
+\text{Round}\left( \dfrac{a}{b} \right),
+\text{Round}\left( \dfrac{b}{a} \right),
+\left\{ \dfrac{a}{b} \right\},
+\left\{ \dfrac{b}{a} \right\}
+$$
+kifejezések értékét, az összes lehetséges $a$-ra és $b$-re!
+$$
+A = \{3, -2, 8, 1, 0.2, \pi\}, \quad
+B = \{5, 7, -4, 0.9, -e\}
+$$
+
+\item
+
+Írjuk fel a következő halmazok elemeit!
+$$
+P = \{a \text{ mod } b | a \in \{5, 0, -2, 9\}, b \in \{-1, 4, 21, 0, 98\}\}
+$$
+$$
+Q = \{a \text{ div } b | a \in \{50, 41, -28, 11\}, b \in \{-4, 72, 18\}\}
+$$
+
+\end{enumerate}
+
+%=====================
+\section*{Számrendszeri átváltás}
+%---------------------
+
+\begin{enumerate}
+
+\item
+
+Egész szám adatstruktúra
+
+$$
+c_n, c_{n-1}, \ldots, c_1, c_0 \quad 0 \leq c_k < b, b \geq 2
+$$
+
+$$
+x = c_n \cdot b^n + c_{n-1} \cdot b^{n-1} + \cdots + c_1 \cdot b^1 + c_0 \cdot b^0 = \sum_{i=1}^n c_n \cdot b^n
+$$
+
+\begin{itemize}
+	\item Írjuk fel a 5291-et 2, 3, 7, 8, 10, 11, 16-os számrendszerben!
+	\item Ellenőrízzük helyiértékesen és Horner sémával!
+\end{itemize}
+
+\item
+
+Mennyi számjegyből fog állni a 12345678 szám 2, 3, 6, 10, 15, 16-os számrendszerben?
+
+$$
+n + 1 = \left\lfloor \log_b x \right\rfloor + 1
+$$
+
+\item
+
+Negatív egészek ábrázolása, kettes komplemens
+
+Mennyi byte szükséges a -11, -923, -30000, -300000 számok ábrázolásához?
+
+\item
+
+Törtek átírása
+\begin{itemize}
+	\item Írjuk át a 0.527, -0.32 és -0.64 értékeket kettes és tizenhatos számrendszerbe!
+	\item Írjuk át a $0.110110110_2$, $0.21022_3$ és $0.AFFE_{16}$ értékeket tizes számrendszerbe!
+\end{itemize}
+
+Váltsuk át a 32412 és -1111 számokat kettes számrendszerbe!
+\begin{itemize}
+	\item Mennyi bitből fog állni?
+	\item Adjuk össze őket kettes számrendszerben!
+	\item Az összeget számoljuk vissza 10-es számrendszerbe, és ellenőrízzük!
+\end{itemize}
+
+\item
+
+Írjuk fel kettes számrendszerbe a következő értékeket!
+$$
+0.42578125_{10}, \quad
+0.70312_{10}, \quad
+0.74_{10}, \quad
+0.14062_{10}, \quad
+0.15_{10}, \quad
+0.ABCD_{16}
+$$
+Ellenőrízzük helyiértékesen és Horner sémával is!
+
+\item
+
+Ha egy szám 83 jegyű kettes számrendszerben, akkor hány jegyű lesz 16, 12 és 10-es számrendszerben?
+
+\medskip
+
+Ha egy szám 20 jegyű 16-os számrendszerben, akkor hágy jegyű lesz 10-esben, 8-asban és kettesben?
+
+\item
+
+Mennyi byte-on lehet ábrázolni a TAJ számot?
+
+\end{enumerate}
+
+%=====================
+\section*{Lebegőpontos számábrázolás}
+%---------------------
+
+\begin{enumerate}
+
+\item
+
+Ábrázoljuk egyszeres lebegőpontos számábrázolással a következő értékeket!
+$$
+4152.6374, \quad
+-0.49, \quad
+5592.134, \quad
+0.83, \quad
+99.77
+$$
+
+\item
+
+Számítsuk ki, hogy milyen értékeket ábrázolnak a következő byte-ok egyszeres lebegőpontos ábrázolást feltételezve!
+$$
+9FC40000, \quad FF88C000, \quad 14130000, \quad C5C50000, \quad 87654321
+$$
+
+\end{enumerate}
+
+%=====================
+\section*{Logikai műveletek, kapuáramkörök}
+%---------------------
+
+\begin{enumerate}
+
+\item
+
+Fejezzük ki a bináris logikai műveleteket az $\wedge$, $\vee$ és negáció műveletekkel!
+
+\item
+
+Írjuk fel a 5 bemenetes többségi szavazás diszjunktív normál formáját, és rajzoljuk fel a kapuáramkört!
+
+\item
+
+Adjuk meg a végtelen értékeket egyszeres pontossággal!
+
+\item
+
+Milyen érték a 7F801110?
+
+\item
+
+Tervezzük meg egy 7 bemenetes automatának a logikai kapuáramkörét, amely a maximumot adja vissza!
+
+\item
+
+Tervezzünk kapuáramkört $\wedge$, $\vee$ és negáció kapukból az $u = f(x, y, z) = \overline{(x \oplus y)} \rightarrow \overline{z}$ logikai függvényhez!
+
+\item
+
+Vizsgáljuk meg, hogy teljesülnek-e a következő azonosságok!
+
+$x \wedge (y \rightarrow z) \equiv (x \rightarrow z) \wedge (x \rightarrow z)$
+
+$x \oplus (y \vee z) \equiv (x \oplus y) \vee (x \oplus z)$
+
+$(c \oplus d) \rightarrow (e \leftrightarrow d) \equiv c \vee (e \wedge d) \vee (\overline{e} \wedge \overline{d})$
+
+$a = (a \rightarrow b)|(b \rightarrow \overline{a})$
+
+$x \wedge (x \vee \overline{y}) \wedge (x \vee \overline{z}) \equiv ((\overline{x} 
+\downarrow y) \wedge \overline{z}) \vee x$
+
+\item
+
+Lássuk be, hogy a Sheffer vonás nem asszociatív!
+
+\item
+
+Tervezzünk kapuáramkört az $\wedge$, $\vee$ és negáció műveletekkel az $u = f(x, y, z) = (x \oplus (y \rightarrow z)) \wedge (x \rightarrow y)$ logikai függvényhez!
+
+\item
+
+Tervezzünk 8 bemenetes paritás ellenörző automatát!
+
+\item
+
+Igazoljuk a következő egyenlőségeket!
+
+$\overline{\overline{X \cap Y} \cup X} = \emptyset$
+
+$\overline{A \cap \overline{B \cup A} \cap B} = \overline{\emptyset}$
+
+$
+(E \cap F \cap \overline{G}) \cup (E \cap \overline{F} \cap G)
+=
+E \setminus (G \triangle \overline{F})
+$
+
+\item
+
+Mennyi olyan halmazpár van, amelyeknek a metszete $\{\mu, \sigma\}$ uniója pedig $\{\xi, \eta\}$?
+
+\item
+
+Mik lesznek a következő halmazok elemei?
+
+\begin{itemize}
+    \item $\{x \in \mathbb{R} : x^3 - 2x^2 + 8 = 0\}$
+    \item $\{x \in \mathbb{R} : 3\log x = \log x^3\}$
+    \item $\{x \in \mathbb{R} : 5 < |x| \leq 10\}$
+    \item $\{(x, y) \in \mathbb{R}^2 : x^2 + y^2 = 16 \text{ és } y \geq 0\}$
+    \item $\{(x, y) \in \mathbb{R}^2 : |x| < y \leq 4\}$
+\end{itemize}
+
+\item
+
+Tekintsük az $A = (-15; 23]$ és a $B = [15; 21)$ intervallumokat. Határozzuk meg a következő kifejezések értékét:
+$A \cup B, A \cap B, A \setminus B, B \setminus A, A \bigtriangleup B, A \times B, 2^A, 2^B$.
+
+\item
+
+Milyen elemek tartoznak a következő halmazokhoz?
+
+\begin{itemize}
+    \item $\{(a, b) \in \mathbb{N}^2 | a \mod b = 8, a + b = 50\}$
+    \item $\{(a, b) \in \mathbb{N}^2 | a \text{ div } b = 4, a \cdot b < 100\}$
+    \item $\{(x, y) \in \mathbb{R}^2 : \text{Round}(x) + \text{Round}(y) = 5\}$
+    \item $\{(x, y) \in \mathbb{R}^2 : \{3 \cdot x\} > 2 \cdot \{y\}\}$
+\end{itemize}
+
+\item
+
+Írjuk fel a $2^{2^{\{a, b, c\}} \setminus \{(x, y)|x \in\{a, b\},  y \in\{b, c\}\}}$ halmaz elemeit!
+
+\item
+
+Ha $|H| = 122, A \subset H, B \subset H, |A| = 79, |B| = 61$ akkor mennyi lesz $|A \cup B|$ és $|A \cap B|$?
+
+\end{enumerate}
+
+%=====================
+\section*{Karak adattípus, Unicode}
+%---------------------
+
+\begin{enumerate}
+
+\item
+
+Alakítsuk át a következő unicode szimbólumokat UTF-8 kódolásúra!
+
+U+0052, \quad U+09AE, \quad U+10EAC8, \quad U+88FF
+
+\end{enumerate}
+
+%=====================
+\section*{Sor- és oszlopfolytonos tárolási mód}
+%---------------------
+
+\begin{enumerate}
+
+\medskip
+
+\item
+
+Adott egy tömb a memóriában, amelynek elemei 24 bájtosak. A 92-edik elem a tömbelem 10. bájtjának 3. bitje hanyadik bitje lesz a tömbnek?
+\begin{itemize}
+	\item Vizsgáljuk külön a 0 és 1 kezdőindexek eseteit!
+	\item Hogyan tudnánk felírni általánosan, ha $m$ bájtos a tömb, $i$-edik tömbelem $j$-edik bájtjának $k$-adik bitjéről van szó?
+\end{itemize}
+
+\end{enumerate}
+
+%=====================
+\section*{Procedúrák, rekurzív algoritmusok}
+%---------------------
+
+\begin{enumerate}
+
+\item
+
+Konkatenáljuk össze egy karaktereket tartalmazó vektor első 10 elemét!
+\begin{itemize}
+	\item Írjuk fel a procedúra be- és kimeneteit!
+	\item Írjuk fel a procedúra és a főprogram működését lépésenként!
+	\item Vizsgáljuk a futás közben a verem állapotát!
+\end{itemize}
+
+\item
+
+Készítsünk rekurzív procedúrát az előző feladatra!
+\begin{itemize}
+	\item Hogyan változik a verem állapota futás közben?
+	\item Rajzoljuk fel a rekurzív hívási fát!
+	\item Mennyi rekurzív hívás történt, és mennyi volt a maximális veremmélység?
+	\item Milyen előnyei/hátrányai vannak a rekurzív megvalósításnak?
+\end{itemize}
+
+\item
+
+Számítsuk ki az $\binom{10}{9}$ értékét!
+
+$$
+\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}
+$$
+
+\item Számítsuk ki a $\sqrt{111}$ értékét az iteratív képletnek megfelelően $\varepsilon = 0.0001$ pontosságig!
+$$
+x_{k+1} = \dfrac{1}{2} \cdot \left( x_k + \dfrac{s}{x_k} \right)
+$$
+
+\item
+
+Számítsuk ki a Div\_Sum(2000, @$x$) hívás esetén az $x$ értékét!
+
+Div\_Sum(a, @r) \\
+// Input: $a \in \mathbb{Z}$ \\
+// Output: $r \in \mathbb{Z}$ \\
+IF a < 20 \\
+\indent \quad THEN $r \leftarrow 0$ \\
+\indent \quad ELSE CALL Div\_Sum($a$ DIV 5, @$r$) \\
+\indent \quad \quad \quad $r \leftarrow r$ + ($a$ DIV 3) + ($a$ DIV 4) \\
+RETURN(r)
+
+\item
+
+Írjunk egy procedúrát, amely egy tömbhöz egy olyan tömböt számol ki, melynek $i$-edik elemén az eredeti tömb $i$-edik előtti elemeinek összege szerepel!
+
+\item Írjunk fel egy rekurzív függvényt a faktoriális kiszámítására!
+\begin{itemize}
+	\item Számítsuk ki az $8!$ értékét!
+	\item Mennyi rekurzív hívás volt a számítás során?
+	\item Mekkora volt a maximális mélysége a hívási veremnek?
+	\item Rajzoljuk fel a rekurzív hívási fát!
+\end{itemize}
+
+\item A bináris keresés algoritmusával keressük meg a $200$ értéket a következő tömbben!
+
+$$
+A = [50, 100, 120, 140, 140, 200, 280, 432]
+$$
+
+\item
+
+Készítsünk egy procedúrát, amely megállapítja, hogy egy vektor mely elemei esnek egy adott intervallumba!
+
+\item
+
+Ellenőrízzük, hogy egy tömb elemei nemnövekvő sorrendben vannak-e!
+
+\item
+
+Készítsünk \textit{egy} procedúrát, amely kiszámítja két vektor különbségét és diadikus szorzatát!
+
+\item
+
+Írassuk ki egy vektor értékeinek mediántól való eltérését!
+
+\item
+
+Ellenőrízzük, hogy két vektorban elemei között nincsenek azonos értékűek!
+
+\item
+
+Hogyan tudnánk bekérni, tárolni és kiíratni egy felsőháromszögmátrix értékeit?
+
+\item
+
+Vizsgáljuk meg, hogy egy mátrix diagonális-e!
+
+\item
+
+Egy egész értékeket tároló vektorban keressünk olyan számhármasokat, amelyekre teljesül, hogy $2x - 3y = z^3$.
+
+\item
+
+Síkbeli pontok adatait tároljuk egy tömbben $(x, y)$ rendezett párok formájában folytonosan.
+
+$$ [
+\begin{array}{ccccccccc}
+x_0 & y_0 & x_1 & y_1 & \ldots & x_{n-1} & y_{n-1} & x_n & y_n
+\end{array}
+] $$
+
+\item
+
+Írassuk ki a koordináták mellé az origótól való távolságukat!
+
+\item
+
+Forgassuk el az összes pontot az origó körül egy adott szöggel!
+
+\item
+
+Írassuk ki azon pontok koordinátáit, amelyek nem esnek az origó $r$ sugarú környezetébe!
+
+\item
+
+Keressük meg azon pontpárokat, amelyek távolsága egy adott $\delta$ értéknél kisebb!
+
+\item
+
+Keressük meg azon pontnégyeseket, amelyek egy körre esnek!
+
+\item
+
+Általánosan hogy kereshetnénk legkisebb területű szabályos sokszögeket, amelyeknek csúcsai az adott pontok?
+
+\item
+
+Készítsünk egy procedúrát, amely egy szöveges értékről megállapítja, hogy az lehet-e telefonszám!
+
+\item
+
+Távolítsuk el egy szövegből az ékezetes karaktereket!
+
+\end{enumerate}
+
+%======================
+\section*{Struktúrált programozás}
+%----------------------
+
+\begin{enumerate}
+
+\item
+
+Rajzoljuk fel a következő élhalmazokhoz a programgráfokat!
+
+teljes
+\begin{gather*}
+P = \{
+(START, A),
+(A, B/i), (A, F/h),
+(B, E), (E, G), \\
+(F, C), (C, D/i), (C, G/h),
+(G, H), (H, STOP)
+\}
+\end{gather*}
+
+tömör
+\begin{gather*}
+P = \{
+START \rightarrow P,
+P \rightarrow (Q, R),
+Q \rightarrow (T, S),
+R \rightarrow (S, U),
+S \rightarrow (V, W), \\
+T \rightarrow X,
+V \rightarrow X,
+U \rightarrow Y,
+W \rightarrow Y,
+X \rightarrow STOP,
+Y \rightarrow STOP\}
+\end{gather*}
+
+Vizsgáljuk meg, hogy a program, és ha nem, akkor rajzoljuk fel az ekvivalens struktúrált program gráfját!
+
+\begin{itemize}
+	\item írjuk fel a struktúrált program formuláját!
+	\item Írjuk fel az eredeti és a struktúrált program pszeudó kódját!
+	\item Számítsuk ki a ciklikus bonyolultságot!
+	\item Rajzoljuk fel a struktogramot!
+\end{itemize}
+
+\item
+
+Rajzoljuk fel a programgráfot a pszeudókód alapján!
+
+\begin{verbatim}
+1 A
+2    IF B
+3        THEN GOTO 6
+4        ELSE GOTO 1
+5 D
+6 IF C
+7    THEN GOTO 2
+\end{verbatim}
+
+\end{enumerate}
+
+\end{document}
+
+\item
+
+A pszeudókódok alapján rajzoljuk fel a programgráfot, majd készítsük el az ekvivalens struktúrált programokat.
+
+\begin{verbatim}
+1 IF A
+2   THEN B
+3       IF C
+4           THEN F
+5           ELSE GOTO 8
+6   ELSE
+7       WHILE D DO
+8           E
+9 G
+\end{verbatim}
+
+\begin{verbatim}
+1 IF A
+2   THEN
+3       WHILE B DO
+4           C
+5       GOTO 10
+6   ELSE
+7       IF D
+8           THEN
+9               DO E
+10                  WHILE F
+11          ELSE G
+\end{verbatim}
+
+\begin{verbatim}
+1 IF A
+2   THEN
+3       B
+4       IF D
+5           THEN GOTO 7
+6   ELSE
+7       C
+8       IF E
+9           THEN GOTO 3
+\end{verbatim}
+
+\item
+
+Keressük meg egy valós értékeket tartalmazó tömbben egy procedúrával a paraméterként kapott $z$ értékhez a legközelebbi elemet!
+
+\item
+
+Válogassuk szét egy valós tömb elemeit negatív és nemnegatív értékekre!
+
+\item
+
+Töröltjük egy tömbből a 0 értékű elemeket! \textit{(a. segédtömbbel, b. segédtömb nélkül)}
+
+\item
+
+Írjunk egy procedúrát, amely 2, azonos méretű valós értékeket tároló tömbhöz visszaadja az adott indexeken lévő minimális értékeket.
+
+pl.: $x = [5, 8, -1], y = [2, 1, 3] \Rightarrow z = [2, 1, -2]$
+
+\item
+
+Számítsuk ki két vektor különbségének négyzetösszegét!
+
+\end{enumerate}
+
+%======================
+\section*{13. gyakorlat}
+%----------------------
+
+\textit{COCOMO modell}
+
+\begin{itemize}
+    \item PM: Person Month
+    \item $T_d$: Development Time
+    \item KDSI: Kilo Delivered Source Index
+\end{itemize}
+
+$$
+PM = 2.4 \cdot KDSI^{1.05},
+\quad
+T_d = 2.5 \cdot \sqrt[3]{PM},
+\quad
+\text{létszám} = \dfrac{PM}{T_d},
+\quad
+\text{Brook limit}: T_d \cdot 0.75
+$$
+
+\begin{enumerate}
+
+\item Egy 100000 soros alkalmazást szeretnénk kifejleszteni. Mennyi emberre és időre van szükség?
+
+\item 20 programozóval fél év alatt mekkora alkalmazást lehet kifejleszteni?
+
+\item Egy 300000 soros program esetében lehetőségünk van egy függvénykönyvtár megvásárlására, amely 120000 sor kiváltására képes.
+
+\medskip
+
+Maximum mennyit érdemes fizetnünk ezért, ha a programozók havi fizetése 240000 Ft?
+
+\item Egy 50000 soros alkalmazást szeretnénk minél gyorsabban elkészíteni. Mennyi plusz embert lehet még bevonni, hogy a határidő tartása ne legyen rizikós?
+
+\item Egy 1000000 soros alkalmazást 25 emberrel szeretnénk kifejleszteni. Az alkalmazást várhatóan 5 millió forintént fog elkelni.
+
+\medskip
+
+Legfeljebb mennyi lehet így a programozók havi fizetése?
+
+\item
+
+Írjuk át iteratív alakra a következő rekurzív algoritmust!
+
+Parity(x, @y) \\
+// Input: $x \in \mathbb{Z}$ \\
+// Output: $y \in \mathbb{Z}$ \\
+IF x = 0 \\
+\indent \quad THEN y $\leftarrow$ 1 \\
+\indent \quad ELSE IF x mod 2 = 0 \\
+\indent \quad \quad THEN CALL Parity(x-1, y) \\
+\indent \quad \quad \quad \quad \quad y $\leftarrow$ y + x \\
+\indent \quad \quad ELSE CALL Parity(x-1, y) \\
+\indent \quad \quad \quad \quad \quad y $\leftarrow$ y $\cdot$ x \\
+RETURN(y)
+
+\item
+
+Írjuk át iteratív alakra a következő rekurzív algoritmust!
+
+ADDER(@X, i, @a, @b) \\
+// Input: $X \in \mathbb{R}, i \in \mathbb{N}$ \\
+// Output: $a, b \in \mathbb{R}$ \\
+IF i > 0 \\
+\indent \quad THEN \\
+\indent \quad \quad ADDER(X, i - 1, a, b)
+\indent \quad \quad IF $x_i$ > 0 \\
+\indent \quad \quad \quad THEN a $\leftarrow$ a + xi \\
+\indent \quad \quad \quad ELSE b $\leftarrow$ b + xi \\
+\indent \quad ELSE \\
+\indent \quad \quad a $\leftarrow$ 0 \\
+\indent \quad \quad b $\leftarrow$ 0 \\
+RETURN(a, b)
+
+\item
+
+Írjuk át iteratív alakra a következő rekurzív algoritmust!
+
+TRNG(x, @y) \\
+// Input: $x \in \mathbb{R}$ \\
+// Output: $y \in \mathbb{R}$ \\
+IF x > 0 \\
+\indent \quad THEN FOR i $\leftarrow$ 1 TO X DO \\
+\indent \quad \quad \quad \quad \quad CALL TRNG(x-1, y) \\
+\indent \quad \quad \quad \quad \quad INC(y) \\
+\indent \quad ELSE y $\leftarrow$ 0 \\
+RETURN(y)
+
+\item
+
+Készítsünk egy algoritmust, amely úgy osztályozza a tömbben tárolt egészeket, hogy a párosakat a tömb elejére, a páratlanokat a tömb végére helyezi.
+
+\item
+
+Készítsünk algoritmust, amely $k$ szerinti maradékosztályok szerint rendezi egy tömb elemeit, vagyis az egyes szakaszok értékeit $k$-val osztva $0, 1, \ldots k-1$ maradékot adnak.
+
+\medskip
+
+Például 4 esetén:
+
+$$
+[1, 5, 9, 7, 4, 3, 1, 2, 8, 6, 5] \quad \rightarrow \quad [4, 8, 1, 5, 9, 1, 5, 2, 6, 7, 3]
+$$
+
+\item
+
+Írassuk ki egy vektor elemeinek összes lehetséges permutációját!
+\begin{itemize}
+    \item[a.] Rekurzív algoritmussal
+    \item[b.] Iteratív algoritmussal
+\end{itemize}
+
+\item
+
+Számítsuk ki, hogy egy vektorban melyik értékből mennyi van.
+\begin{itemize}
+    \item[a.] Természetes számokat tároló vektor előre rögzített maximális értékkel
+    \item[b.] Tetszőleges elemtípusra vektorok vektorával
+\end{itemize}
+
+\end{enumerate}
+
+\end{document}

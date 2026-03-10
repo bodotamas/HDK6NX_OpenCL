@@ -1,0 +1,42 @@
+exercises:
+  - question: |
+      A folyamatábrában mire szolgál a START csomópont?
+    answer:
+      ...
+  - question: |
+      A folyamatábrában mire szolgál a STOP csomópont?
+    answer:
+      ...
+  - question: |
+      A folyamatábra elágazás (döntési pont) rombusszal jelölt csomópontjában mire szolgál a benne szereplő kifejezés?
+    answer:
+      ...
+  - question: |
+      A folyamatábra esetében mennyi bemeneti éle van egy elágazás (döntési pont) csomópontnak?
+    answer:
+      ...
+  - question: |
+      A folyamatábra esetében mennyi kimeneti éle van egy elágazás (döntési pont) csomópontnak?
+    answer:
+      ...
+  - question: |
+      A folyamatábra esetében mennyi bemeneti éle van egy utasítás csomópontnak?
+    answer:
+      ...
+  - question: |
+      A folyamatábra esetében mennyi kimeneti éle van egy utasítás csomópontnak?
+    answer:
+      ...
+  - question: |
+      A folyamatábra esetében mennyi bemeneti éle van egy gyűjtőpontnak?
+    answer:
+      ...
+  - question: |
+      A folyamatábra esetében mennyi kimeneti éle van egy gyűjtőpontnak?
+    answer:
+      ...
+  - question: |
+      A folyamatábrán az elágazás esetében mit jelölnek az i és a h betűk?
+    answer:
+      ...
+

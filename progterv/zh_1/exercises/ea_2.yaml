@@ -1,0 +1,136 @@
+exercises:
+  - question: |
+      Legalább hány byte szükséges a 3481990 érték előjel nélküli egészként való ábrázolásához?
+    answer:
+      A számjegyek számáról szóló tétel alapján 3.
+  - question: |
+      Legalább hány byte szükséges a $15^{70}$ érték előjel nélküli egészként való ábrázolásához?
+    answer:
+      Legalább 35 byte szükséges.
+  - question: |
+      Mit jelent a Big Endian és Little Endian ábrázolási mód?
+    answer:
+      A byte-ok sorrendjére vonatkozik. A Big Endian-nál a nagyobb helyiértékek vannak elöl.
+  - question: |
+      Milyen értéket ábrázolnak az \texttt{AF 81 C8} előjel nélküli egészként (hexadecimális alakban) megadott byte-ok?
+    answer:
+      11502024
+  - question: |
+      Milyen értéket ábrázolnak az \texttt{AF 81 C8} előjeles egészként (hexadecimális alakban) megadott byte-ok?
+    answer:
+      -5275192
+  - question: |
+      14 biten szeretnénk előjeles egész értékeket ábrázolni.
+      Mekkora az ábrázolási tartomány?
+    answer:
+      $[-2^{13}, 2^{13}-1]$
+  - question: |
+      Egyszeres lebegőpontos számábrázolás esetén hogyan néz ki a $-\infty$ érték hexadecimális alakban?
+    answer:
+      FF800000
+  - question: |
+      Egyszeres lebegőpontos számábrázolás esetén hogyan néz ki a $+\infty$ érték hexadecimális alakban?
+    answer:
+      7F800000
+  - question: |
+      Egyszeres lebegőpontos számábrázolással \texttt{42 EF 60 00} alakban ábrázolunk egy értéket.
+      Hogyan néz ki ennek a negáltja (szintén ilyen ábrázolás mellett, hexadecimális alakban)?
+    answer:
+      C2 EF 60 00
+  - question: |
+      Egyszeres lebegőpontos számábrázolás esetén mennyi nem szám (NaN) szimbólum van?
+    answer:
+      $2^{24} - 2$
+  - question: |
+      Egyszeres lebegőpontos számábrázolás esetén, normalizált számoknál milyen intervallumon változhat a kitevő?
+    answer:
+      $[-126, 127]$
+  - question: |
+      Egy egész értékről tudjuk, hogy $[0, 10^{20}]$ intervallumon változhat.
+      Legalábbi mennyi bit szükséges az ábrázolásához?
+    answer:
+      Legalább 67 bit szükséges.
+  - question: |
+      3 byte-os előjeles egészek esetében hogy néz ki hexadecimális alakban a legkisebb és a legnagyobb ábrázolható érték?
+    answer:
+      A legkisebb \texttt{80 00 00}, a legnagyobb \texttt{7F FF FF}.
+  - question: |
+      Legalább hány byte szükséges a 87023121 érték előjel nélküli egészként való ábrázolásához?
+    answer:
+      Legalább 4 byte szükséges.
+  - question: |
+      Legalább hány byte szükséges a 77744433 érték előjel nélküli egészként való ábrázolásához?
+    answer:
+      Legalább 4 byte szükséges.
+  - question: |
+      Legalább hány bit szükséges az 1001101 érték előjel nélküli egészként való ábrázolásához?
+    answer:
+      Legalább 20 bit szükséges.
+  - question: |
+      Legalább hány bit szükséges az 111011011 érték előjel nélküli egészként való ábrázolásához?
+    answer:
+      Legalább 27 bit szükséges.
+  - question: |
+      Legalább hány byte szükséges a $22^{30}$ érték előjel nélküli egészként való ábrázolásához?
+    answer:
+      Legalább 17 byte szükséges.
+  - question: |
+      Legalább hány bit szükséges a $31^{44}$ érték előjel nélküli egészként való ábrázolásához?
+    answer:
+      Legalább 218 bit szükséges.
+  - question: |
+      Milyen értéket ábrázolnak az \texttt{CD 70 70} előjel nélküli egészként (hexadecimális alakban) megadott byte-ok?
+    answer:
+      13463664
+  - question: |
+      Milyen értéket ábrázolnak az \texttt{10 10 11} előjel nélküli egészként (hexadecimális alakban) megadott byte-ok?
+    answer:
+      1052689
+  - question: |
+      Milyen értéket ábrázolnak a \texttt{0A 0B 0C} előjel nélküli egészként (hexadecimális alakban) megadott byte-ok?
+    answer:
+      658188
+  - question: |
+      Milyen értéket ábrázolnak a \texttt{A0 B0 C0} előjel nélküli egészként (hexadecimális alakban) megadott byte-ok?
+    answer:
+      10531008
+  - question: |
+      Milyen értéket ábrázolnak a \texttt{0A 0B 0C} előjeles egészként (hexadecimális alakban) megadott byte-ok?
+    answer:
+      658188
+  - question: |
+      13 biten szeretnénk előjeles egész értékeket ábrázolni.
+      Mekkora az ábrázolási tartomány?
+    answer:
+      $[-2^{12}, 2^{12}-1]$
+  - question: |
+      17 biten szeretnénk előjeles egész értékeket ábrázolni.
+      Mekkora az ábrázolási tartomány?
+    answer:
+      $[-2^{16}, 2^{16}-1]$
+  - question: |
+      Egyszeres lebegőpontos számábrázolással \texttt{C6 65 40 81} alakban ábrázolunk egy értéket.
+      Hogyan néz ki ennek a negáltja (szintén ilyen ábrázolás mellett, hexadecimális alakban)?
+    answer:
+      \texttt{46 65 40 81}
+  - question: |
+      Egyszeres lebegőpontos számábrázolás esetén mennyi normalizált formában ábrázolható szám van?
+    answer:
+      $254 \cdot 2^{24}$
+  - question: |
+      Egyszeres lebegőpontos számábrázolás esetén, normalizált számoknál milyen intervallumon változhat az eltolt kitevő?
+    answer:
+      $[1, 254]$
+  - question: |
+      Egy egész értékről tudjuk, hogy $[0, 10^{14}]$ intervallumon változhat.
+      Legalábbi mennyi bit szükséges az ábrázolásához?
+    answer:
+      Legalább 47 bit szükséges hozzá.
+  - question: |
+      2 byte-os előjeles egészek esetében hogy néz ki hexadecimális alakban a legkisebb és a legnagyobb ábrázolható érték?
+    answer:
+      A legkisebb \texttt{80 00}, a legnagyobb \texttt{7F FF}.
+  - question: |
+      2 byte-os előjel nélküli egészek esetében hogy néz ki hexadecimális alakban a legkisebb és a legnagyobb ábrázolható érték?
+    answer:
+      A legkisebb \texttt{00 00}, a legnagyobb \texttt{FF FF}.

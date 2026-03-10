@@ -1,0 +1,17 @@
+exercises:
+  - question: |
+      Egy 150000 soros alkalmazást szeretnénk kifejleszteni. Mennyi emberre és időre van szükség (a COCOMO modell alapján)?
+    answer:
+      ANS
+  - question: |
+      Egy 300000 soros program esetében lehetőségünk van egy függvénykönyvtár megvásárlására, amely 120000 sor kiváltására képes. A COCOMO modell alapján maximum mennyit érdemes fizetnünk ezért, ha a programozók havi fizetése 260000 Ft?
+    answer:
+      ANS
+  - question: |
+      Egy 18000 soros alkalmazást szeretnénk kifejleszteni. Mennyi emberre és időre van szükség (a COCOMO modell alapján)?
+    answer:
+      ANS
+  - question: |
+      Egy 23000 soros program esetében lehetőségünk van egy függvénykönyvtár megvásárlására, amely 12000 sor kiváltására képes. A COCOMO modell alapján maximum mennyit érdemes fizetnünk ezért, ha a programozók havi fizetése 280000 Ft?
+    answer:
+      ANS

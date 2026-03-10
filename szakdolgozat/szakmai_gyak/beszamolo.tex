@@ -1,0 +1,106 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{styles/dolgozat}
+
+\usepackage{listings}
+% \usepackage{styles/cpp}
+\usepackage{styles/python}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\include{cover/cimlap}
+
+\newpage
+
+\pagestyle{empty}
+
+\cleardoublepage
+\pagenumbering{gobble}
+\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
+
+\newpage
+
+\pagestyle{fancy}
+
+\section{A feladat bemutatása}
+
+Le kellene írni röviden, hogy mi volt a cél a játékkal.
+
+\section{Technológia kiválasztása}
+
+Ebben érdemes részletezni a Godot Game Engine-t, és tenni hozzá hivatkozásokat is, mint például \cite{salmela2022game,holfeld2023relevance}.
+
+\section{A tervezés folyamata}
+
+A részfeladatokat úgy általában mindenkinek a saját szemszögéből kellene bemutatnia, kihangsúlyozva a saját részt.
+
+\subsection{Előkészületek}
+
+Ezt csak úgy példának írtam, hogy lehet szépen strukturálni a dokumentumot.
+
+\subsubsection{Telepítés}
+
+Szintén csak példa. Egyáltalán nem kell ragaszkodni a mintában szereplő címekhez, alcímekhez.
+
+\section{Implementáció}
+
+Jó, hogy ha lesz a dokumentumban ábra, ami a szövegből hivatkozásra is kerül, mint például \aref{fig:cimer}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.1]{images/me_logo.png}
+	\caption{A Miskolci Egyetem címere.}
+	\label{fig:cimer}
+\end{figure}
+
+Ahol indokolt, ott táblázatok is jó, hogy ha vannak (például \ref{tab:minta}. táblázat).
+
+\begin{table}[h]
+	\centering
+	\caption{Minta táblázat. A táblázat felirata a táblázat felett kell legyen!}
+	\label{tab:minta}
+	\begin{tabular}{l|c|c|}
+		a & b & c \\
+		\hline
+		1 & 2 & 3 \\
+		4 & 5 & 6 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+Mivel a Godot Script-nek Python-szerű a szintaxisa, ezért lehet Python kódkörnyezetet használni hozzá, például:
+
+\begin{python}
+func add_item(name: String, amount: int = 1):
+    if not items.has(name):
+        items[name] = 0
+        items[name] += amount
+
+func remove_item(name: String, amount: int = 1):
+    if items.has(name):
+        items[name] = max(0, items[name] - amount)
+        if items[name] == 0:
+            items.erase(name)
+\end{python}
+
+\section{Tesztelés}
+
+\section{Összegzés}
+
+Ide érdemes leírni a munkálatokkal kapcsolatos tapasztalatokat.
+
+\clearpage
+
+\addcontentsline{toc}{section}{Hivatkozások}
+\bibliographystyle{plain}
+\bibliography{beszamolo.bib}
+
+\newpage
+
+\include{cover/hasznalati}
+
+\end{document}

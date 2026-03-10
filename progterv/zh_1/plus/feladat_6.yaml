@@ -1,0 +1,73 @@
+exercises:
+  - question: |
+      Írja fel az $f(a, b, c) = c \wedge (\overline{b} \oplus a)$ logikai függvény diszjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az eredeti felírásban szereplő műveletek használatával!
+    answer:
+      ...
+  - question: |
+      Írja fel az $f(a, b, c) = b \rightarrow (a \downarrow (b \wedge c))$ logikai függvény konjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az eredeti felírásban szereplő műveletek használatával!
+    answer:
+      ...
+  - question: |
+      Írja fel az $f(a, b, c) = (c \wedge \overline{b}) \leftrightarrow (a \vee b)$ logikai függvény diszjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az $\wedge, \vee, \neg$ műveletek használatával!
+    answer:
+      ...
+  - question: |
+      Írja fel az $f(a, b, c) = (\overline{b} \wedge c) \oplus (a \vee b)$ logikai függvény konjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az $\wedge, \vee, \neg$ műveletek használatával!
+    answer:
+      ...
+  - question: |
+      Írja fel az $f(a, b, c) = \overline{c} \oplus (a \mid b)$ logikai függvény diszjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az eredeti felírásban szereplő műveletek használatával!
+    answer:
+      ...
+  - question: |
+      Írja fel az $f(a, b, c) = \overline{c} \oplus (a \mid b)$ logikai függvény konjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az eredeti felírásban szereplő műveletek használatával!
+    answer:
+      ...
+  - question: |
+      Írja fel az $f(a, b, c) = (a \vee b \vee c) \oplus (a \wedge b \wedge c)$ logikai függvény konjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az eredeti felírásban szereplő műveletek használatával!
+    answer:
+      ...
+  - question: |
+      Írja fel az $f(a, b, c) = (c \rightarrow a) \wedge (\overline{c} \rightarrow b)$ logikai függvény diszjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az eredeti felírásban szereplő műveletek használatával!
+    answer:
+      ...
+  - question: |
+      Írja fel az $f(a, b, c) = (c \rightarrow a) \wedge (\overline{c} \rightarrow b)$ logikai függvény diszjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az $\wedge, \vee, \neg$ műveletek használatával!
+    answer:
+      ...
+  - question: |
+      Írja fel az $f(a, b, c) = (c \rightarrow a) \wedge (\overline{c} \rightarrow b)$ logikai függvény konjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az eredeti felírásban szereplő műveletek használatával!
+    answer:
+      ...
+  - question: |
+      Írja fel az $f(a, b, c) = (c \rightarrow a) \wedge (\overline{c} \rightarrow b)$ logikai függvény konjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az $\wedge, \vee, \neg$ műveletek használatával!
+    answer:
+      ...
+  - question: |
+      Írja fel az $f(a, b, c) = (b \rightarrow c) \mid (a \rightarrow b)$ logikai függvény diszjunktív normál formáját, és
+      rajzolja fel a logikai kapuáramkört
+      az $\wedge, \vee, \neg$ műveletek használatával!
+    answer:
+      ...

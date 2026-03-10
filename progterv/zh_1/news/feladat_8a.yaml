@@ -1,0 +1,57 @@
+exercises:
+  - question: |
+      Pszeudókód esetében mit jelent az $a \leftarrow 7$ sor?
+    answer:
+      ...
+  - question: |
+      Pszeudókód esetében mit jelent az $x = y$ sor?
+    answer:
+      ...
+  - question: |
+      Pszeudókódban milyen operátorral ellenőrízhetjük, hogy ha két érték nem egyezik meg?
+    answer:
+      ...
+  - question: |
+      Hogyan tudjuk beállítani egy $q$ nevű változó értékét 8-ra pszeudó kódban?
+    answer:
+      ...
+  - question: |
+      Pszeudó kódban mire szolgál a $@$ operátor?
+    answer:
+      ...
+  - question: |
+      Pszeudó kódban mit jelent a $p \leftarrow @x$ kifejezés?
+    answer:
+      ...
+  - question: |
+      Pszeudó kódban mit jelölünk NIL-lel?
+    answer:
+      ...
+  - question: |
+      Pszeudó kódban mennyi lesz a $c$ változó értéke a $c \leftarrow 10$ majd az $INC(c)$ utasítások végrehajtását követően?
+    answer:
+      ...
+  - question: |
+      Pszeudó kódban mennyi lesz a $c$ változó értéke a $c \leftarrow 20$ majd a $DEC(c)$ utasítások végrehajtását követően?
+    answer:
+      ...
+  - question: |
+      Pszeudó kódban hogyan jelöljük a megjegyzéseket?
+    answer:
+      ...
+  - question: |
+      Pszeudó kódban mi szerepel az elöltesztelő ciklus WHILE és DO kulcsszavai között?
+    answer:
+      ...
+  - question: |
+      Írja le szövegesen, hogy pszeudó kódban mire szolgál a DO-WHILE ciklus!
+    answer:
+      ...
+  - question: |
+      Írja le szövegesen, hogy pszeudó kódban mire szolgál a REPEAT-UNTIL ciklus!
+    answer:
+      ...
+  - question: |
+      Pszeudó kódban a FOR ciklus használatakor milyen különbség adódik abból, hogy ha TO vagy ha DOWNTO kulcsszavak szerepelnek benne?
+    answer:
+      ...

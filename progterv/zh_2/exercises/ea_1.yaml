@@ -1,0 +1,45 @@
+exercises:
+  - question: |
+      Mikor nevezünk 2 programot ekvivalensnek?
+    answer:
+      ANS
+  - question: |
+      Definiálja a programgráf fogalmát!
+    answer:
+      ANS
+  - question: |
+      Definiálja a vezérlési gráf fogalmát!
+    answer:
+      ANS
+  - question: |
+      Definiálja a valódi program fogalmát!
+    answer:
+      ANS
+  - question: |
+      Sorolja fel a 3 strukturált alapelemet, és rajzolja fel a programgráfjukat!
+    answer:
+      ANS
+  - question: |
+      Sorolja fel a 3 strukturált alapelemet, és rajzolja fel a struktogramjukat!
+    answer:
+      ANS
+  - question: |
+      Sorolja fel a 3 strukturált alapelemet, és írja fel a formulájukat!
+    answer:
+      ANS
+  - question: |
+      Írja fel a hátul tesztelő ciklus formuláját a 3 strukturált alapelem segítségével!
+    answer:
+      ANS
+  - question: |
+      Definiálja a programgráf lebontásának folyamatát!
+    answer:
+      ANS
+  - question: |
+      Definiálja a strukturált program fogalmát!
+    answer:
+      ANS
+  - question: |
+      Mondja ki a Böhm-Jacopini tételt!
+    answer:
+      ANS

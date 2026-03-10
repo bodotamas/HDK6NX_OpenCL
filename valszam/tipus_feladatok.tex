@@ -1,0 +1,156 @@
+\documentclass[a4paper]{article}
+
+% Set margins
+\usepackage[hmargin=2.5cm, vmargin=3cm]{geometry}
+
+\frenchspacing
+
+% Language packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+
+% AMS
+\usepackage{amssymb,amsmath}
+
+% Graphic packages
+\usepackage{graphicx}
+
+% Colors
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Listings
+\usepackage{listings}
+
+% Question
+\newenvironment{question}[1]
+{\noindent\textcolor{OliveGreen}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Task
+\newenvironment{task}[1]
+{\noindent\textcolor{RoyalBlue}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Notification
+\newenvironment{notification}[1]
+{\noindent\textcolor{Peach}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Problem
+\newenvironment{problem}[1]
+{\noindent\textcolor{OrangeRed}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Solution
+\newenvironment{solution}
+{\color{RoyalBlue}}{\bigskip}
+
+% Comment
+\newenvironment{comment}
+{\color{Green}}{\bigskip}
+
+\lstset{% setup listings
+        framexleftmargin=16pt,
+        framextopmargin=6pt,
+        framexbottommargin=6pt, 
+        frame=single, rulecolor=\color{black}
+}
+
+\begin{document}
+
+\begin{center}
+   \large \textbf{Valószínűségszámítás - típusfeladatok}
+\end{center}
+
+\vskip 1cm
+
+\section{Típusfeladatok}
+
+\begin{itemize}
+\item A grafikus ábrázolás előnyös, de érdemes minél részletesebben, áttekinthető formában számításokkal ki is egészíteni.
+\item A szöveges feladatokban a jelölések nem kötöttek, ezért azokat mindig külön definiálni kell. (Például, hogy egy $A$ esemény mit jelent.)
+\item Az eloszlás- vagy sűrűségfüggvény felrajzolására is szükség lehet.
+\item Bizonyos feladatoknál vannak hiányzó adatok, amelyeket az ismert összefüggések alapján kell meghatározni.
+\item A függvények ábrázolásánál figyelni kell arra, hogy minden tengelyfelirat, lépték, intervallum (hol nyitott, hol zárt) egyértelműen látszódjon.
+Ha a grafikon nehezen áttekinthető, vagy javítani kellett benne, akkor érdemes lehet újrarajzolni.
+\item Figyelni kell arra, hogy a feladatban szórás vagy szórásnégyzet meghatározása szerepel-e!
+\item Mivel többségében szöveges feladatokról van szó, ezért a kapott eredményeket szöveges formában is össze kell foglalni. (Tehát ténylegesen úgy, ahogy a kérdésre válaszolnánk.)
+\end{itemize}
+
+\subsection{Klasszikus valószínűségi mező}
+
+A szöveges leírás alapján a kedvező és az összes eset arányát kell meghatározni.
+
+\subsection{Geometriai valószínűség}
+
+A feladat szöveges formában adott, amelyet valamilyen geometriai valószínűségre kell visszavezetni.
+
+\subsection{Visszatevéses, visszatevés nélküli mintavétel}
+
+A képletekkel számolható.
+
+\subsection{Feltételes valószínűség, átrendezés}
+
+Az eseményekhez meg van adva néhány valószínűség és feltételes valószínűség.
+Ezek alapján kell a hiányzó valószínűségeket meghatározni.
+
+\subsection{Feltételes valószínűség, Bayes tétel}
+
+A feladat felírható táblázat formájában, amelyben vagy a gyakoriságok vagy a valószínűségek szerepelnek.
+Az adott eseményekhez tartozó valószínűségeket, feltételes valószínűségeket kell meghatározni.
+
+\subsection{Diszkrét eloszlás}
+
+Meg van adva az eloszlás felvett értékekkel és valószínűségekkel.
+Meg kell határozni a várható értéket és a szórást.
+Fel kell tudni rajzolni az eloszlásfüggvényt.
+
+\subsection{Folytonos eloszlás}
+
+Az eloszlás adott a sűrűség- vagy az eloszlásfüggvényével.
+Tipikusan hiányozhatnak belőle paraméterek (például konstans vagy intervallum vége).
+\begin{itemize}
+\item Meg kell határozni a hiányzó értékeket.
+\item Ki kell számítani a várható értéket és a szórást.
+\item Meg kell határozni adott intervallumba esésnek a valószínűségét.
+\item A függvényeket szükséges lehet ábrázolni.
+\end{itemize}
+
+\subsection{Eseménysor}
+
+Egy kísérlet ismétlődik valamilyen feltétel teljesüléséig.
+Meg van adva közvetve, vagy közvetlenül, hogy mennyi az adott esemény bekövetkezésének a valószínűsége.
+Meg kell határozni az eseménysor várható hosszát, a hossz eloszlásának szórását, a bekövetkezés valószínűségét bizonyos intervallumon.
+
+\subsection{Egyenletes eloszlás}
+
+$U[a, b]$, várható értéket, szórást, intervallumba esést kell számolni, a sűrűségfüggvényt és az eloszlásfüggvényt kell tudni ábrázolni.
+
+\subsection{Binomiális eloszlás}
+
+Adott a $p$ valószínűség, és az $n$, amely a végrehajtott próbálkozások/mintavételek számát írja le.
+Meg kell határozni a várható értéket, a szórást, és adott intervallumon belül, hogy mennyi a valószínűség.
+
+\end{document}

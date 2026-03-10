@@ -1,0 +1,58 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h2>Információelmélet - appletek</h2>
+
+<div class="author">készítette: Piller Imre</div>
+
+<ul>
+	<li><a href="shannonFano.html">Shannon-Fano</a></li>
+	<li><a href="shannonFanoAdd.html">Snanon-Fano (additív költséggel)</a></li>
+	<li><a href="gilbertMoore.html">Gilbert-Moore</a></li>
+	<li><a href="gilbertMooreAdd.html">Gilbert-Moore (additív költséggel)</a></li>
+	<li><a href="huffman.html">Huffman</a></li>
+	<li><a href="capacity.html">Csatornakapacitás számítása</a></li>
+</ul>
+
+<h3>Appletek használata</h3>
+
+<div>
+Az adatokat a számításhoz az appletek felső részén lévő szövegmezőkben kell megadni, ahol
+<ul>
+	<li><b>s</b>: a kódoláshoz használt szimbólumok száma (s > 1),</li>
+	<li><b>F</b>: a halmaz elemeinek az eloszlása,</li>
+	<li><b>AC</b>: additív költség (<b>A</b>dditive <b>C</b>ost).</li>
+</li>
+Az értékeket meg lehet adni tizedestört, és tört alakban is.
+</div>
+
+<div>
+Az "Ok" gombra kattintva a program kiszámítja és kirajzolja kódfát. Ez Shannon-Fano és Gilbert-Moore esetén lehet
+<ul>
+<li>összekapcsolt részintervallumokkal; újabb felosztás csak ott van, ahol több elem kerül egy intervallumba,</li>
+<li>csomópontokkal, ahol szerepel, hogy mely szimbólumok tartoznak hozzá.</li>
+</ul>
+A két nézet között az alsó sorban lévő legördülőmenüvel lehet választani, mellette pedig a jelölőmezővel ki lehet iratni a kódtáblázatot, illetve az átlagos kódhosszt is (<b>L</b>). A kirajzolt ábrát az egérrel lehet mozgatni.
+</div>
+
+<h3>Forráskód</h3>
+<ul>
+	<li><a href="InfoElmSrc.zip">InfoElmSrc.zip</a></li>
+	<li><a href="InfoElmPage.zip">InfoElmPage.zip</a></li>
+</ul>
+
+</div>
+
+</body>
+
+</html>

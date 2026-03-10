@@ -1,0 +1,20 @@
+site_name: Bevezetés a Unity keretrendszer használatába
+
+markdown_extensions:
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+    - Kezdőlap: index.md
+    - 1. Bevezetés: chapters/01_Introduction.md
+    - 2. Szkriptek írása: chapters/02_Scripting.md
+    - 3. Eseménykezelés: chapters/03_Events.md
+    - 4. Kitekintés: chapters/04_Advanced.md
+
+theme: readthedocs

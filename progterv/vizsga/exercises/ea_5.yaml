@@ -1,0 +1,268 @@
+exercises:
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (p \vee r) \wedge (\overline{q} \vee r) =
+      \overline{(p \rightarrow q) \wedge \overline{r}}
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      \overline{a} \wedge \overline{b} \wedge \overline{c} =
+      a \downarrow (\overline{c} \rightarrow b)
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (\overline{a} \vee c) \wedge (b \vee \overline{c}) =
+      (c \rightarrow b) \leftrightarrow (a \rightarrow c)
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      1 = ((x \mid \overline{y}) \downarrow x) \mid \overline{z}
+      \]
+    answer:
+      ...
+  - question: |
+      Mennyi lehetséges 4 változós logikai művelet van?
+    answer:
+      $2^{16}$
+  - question: |
+      Írja fel az ekvivalencia műveletet $\wedge, \vee, \neg$ műveletek segítségével!
+    answer:
+      ...
+  - question: |
+      Írja fel az antivalencia műveletet $\wedge, \vee, \neg$ műveletek segítségével!
+    answer:
+      ...
+  - question: |
+      Lássa be, hogy az implikáció művelete nem asszociatív!
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      \overline{a} \vee b \vee c =
+      a \rightarrow ((\overline{c} \rightarrow b) \wedge (a \vee \overline{b}))
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      \overline{a} \wedge (\overline{b} \vee \overline{c}) \wedge (b \vee c) =
+      a \downarrow (c \leftrightarrow b)
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (a \vee c) \wedge (a \vee \overline{b} \vee c) =
+      ((a \rightarrow b) \wedge \overline{c}) \rightarrow a
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (\overline{a} \wedge b \wedge \overline{c}) \vee (a \wedge c) \vee (\overline{b} \wedge c) =
+      \overline{c} \leftrightarrow (\overline{a} \wedge b)
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      \overline{X} \setminus (Y \cap \overline{Z}) =
+      \overline{X \cup Y} \cup (\overline{X} \cap Z)
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (P \triangle (\overline{R} \setminus Q)) =
+      (P \cap Q) \cup (P \cap R) \cup (\overline{P} \cap \overline{Q} \cap \overline{R})
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (F \cap \overline{G}) \triangle \overline{H} =
+      (F \cap \overline{G} \cap H) \cup (\overline{F} \cap \overline{H}) \cup (G \cap \overline{H})
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      \overline{(A \cup \overline{B}) \setminus \overline{C}} =
+      (\overline{A} \cup \overline{C}) \cap (B \cup \overline{C})
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (A \cap B) \cup (B \cap \overline{C}) =
+      B \setminus (C \cap \overline{A})
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+        (P \cap Q \cap R) \cup (P \cap \overline{Q} \cap \overline{R}) =
+        P \cap (Q \triangle \overline{R})
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+        (X \cap \overline{Y}) \cup (X \cap Z) =
+        (X \setminus (Y \cap \overline{Z})) \cap \overline{Y \setminus X}
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+        \overline{A \cap B} \cap (\overline{A} \cup C) =
+        \overline{A \cap (B \cup \overline{C})}
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+        Q \triangle \overline{P \cup R} =
+        (P \cap Q) \cup (R \cap Q) \cup (\overline{P} \cap \overline{Q} \cap \overline{R})
+      \]
+    answer:
+      ...
+  - question: |
+      Hogyan ábrázolható az \texttt{U+0045} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a \texttt{45} byte-on.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+0245} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+03AC} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+02FE} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+0388} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+0876} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+14FE} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+2AAE} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+10A4FE} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+103C4D} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+101A10} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{F3 AA 89 B7} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{F2 BB 81 AC} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak a \texttt{CC 8F} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak a \texttt{D1 9B} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{ED A3 B4} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{EE AA BB} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Hogyan ábrázolható az \texttt{U+04F9} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+04AC} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+10D00A} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+1023AF} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+102030} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+100110} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{F3 B3 81 A5} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{F1 A0 A9 88} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{F5 A2 80 8D} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{EE AB BA} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{E0 81 B2} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{ED AC 99} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...

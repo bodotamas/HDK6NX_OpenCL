@@ -1,0 +1,80 @@
+exercises:
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely megvizsgálja, hogy
+      a bemenetként kapott $X$ sorozatban van-e $T$ tulajdonságú elem!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely megvizsgálja, hogy
+      a bemenetként kapott $X$ sorozatban minden elem $T$ tulajdonságú-e!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely egy $X$ bemeneti sorozatból
+      kiválasztja az első előforduló $T$ tulajdonságú elemet (visszaadva annak az értékét)!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely egy $X$ bemeneti sorozatból
+      kiválasztja az első előforduló $T$ tulajdonságú elemet (visszaadva annak az indexét)!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely lineáris kereséssel meghatározza
+      az $X$ sorozat első $T$ tulajdonságú elemének az indexét, vagy jelzi, ha nem lenne ilyen!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely meghatározza, hogy egy $X$
+      bemeneti sorozatban mennyi a $T$ tulajdonságú elemek száma!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely meghatározza egy $X$
+      bemeneti sorozatban a maximális értékű elem indexét!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely meghatározza egy $X$
+      bemeneti sorozatban a minimális értékű elem indexét!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely meghatározza egy $X$
+      bemeneti sorozatban a maximális értékű elemet!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely meghatározza egy $X$
+      bemeneti sorozatban a minimális értékű elemet!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely egy $X$ bemeneti sorozat
+      értékein végrehajt egy $f$ függvényt, majd az eredményt bemásolja egy $Y$ kimeneti sorozatba!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely egy $X$ bemeneti sorozatból
+      kiválogatja a $T$ tulajdonságú elemeket egy $Y$ kimeneti sorozatba!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely egy $X$ bemeneti sorozatot
+      szétválogat a $T$ tulajdonság alapján egy $Y$ és egy $Z$ kimeneti sorozatra!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely két sorozatként ábrázolt halmaz
+      metszetét számítja ki!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely két sorozatként ábrázolt halmaz
+      egyesítését (unióját) számítja ki!
+    answer:
+      ANS
+  - question: |
+      Írja fel annak az elemi algoritmusnak a pszeudó kódját, amely két rendezett sorozatot összefuttat (összefésül)!
+    answer:
+      ANS

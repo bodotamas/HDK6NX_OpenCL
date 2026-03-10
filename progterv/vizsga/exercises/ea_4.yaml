@@ -1,0 +1,132 @@
+exercises:
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow (B, C), B \rightarrow (D, E), C \rightarrow F, D \rightarrow F,
+      E \rightarrow (G, H), F \rightarrow E, G \rightarrow STOP, H \rightarrow STOP\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow (B, C), B \rightarrow (E, STOP), C \rightarrow D,
+      D \rightarrow G, E \rightarrow (F, G), F \rightarrow E, G \rightarrow B\}
+      \]
+    answer:
+      ANS2
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow (B, E), B \rightarrow C, C \rightarrow (D, G),
+      D \rightarrow STOP, E \rightarrow F, F \rightarrow (E, G), G \rightarrow STOP\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow B, B \rightarrow (C, D), C \rightarrow A,
+      D \rightarrow E, E \rightarrow (STOP, F), F \rightarrow D\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow (B, C), B \rightarrow D, C \rightarrow D,
+      D \rightarrow (E, STOP), E \rightarrow F, F \rightarrow A\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow B, B \rightarrow C, C \rightarrow (B, D),
+      D \rightarrow (E, F), E \rightarrow B, F \rightarrow STOP\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow B, B \rightarrow C, C \rightarrow (D, E),
+      D \rightarrow (F, B), E \rightarrow STOP, F \rightarrow D\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow (C, B), B \rightarrow (E, F), C \rightarrow D,
+      D \rightarrow A, E \rightarrow A, F \rightarrow STOP\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow (B, C), B \rightarrow D, C \rightarrow D,
+      D \rightarrow (E, STOP), E \rightarrow (F, G), F \rightarrow A, G \rightarrow A\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow B, B \rightarrow C, C \rightarrow (D, E),
+      D \rightarrow F, E \rightarrow STOP, F \rightarrow (D, G), G \rightarrow B\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow (B, C), B \rightarrow (D, E), C \rightarrow E, D \rightarrow A, E \rightarrow STOP\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow B, B \rightarrow (C, D), C \rightarrow A, D \rightarrow E, E \rightarrow (A, STOP)\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow B, B \rightarrow (C, D), C \rightarrow B, D \rightarrow (C, E), E \rightarrow (A, STOP)\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow (B, C), B \rightarrow D, C \rightarrow E, D \rightarrow (A, F), E \rightarrow (A, F), F \rightarrow STOP\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow (B, C), B \rightarrow (D, E), C \rightarrow A, D \rightarrow A, E \rightarrow (D, STOP)\}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{START \rightarrow A, A \rightarrow (B, C), B \rightarrow (D, E), C \rightarrow E, D \rightarrow A, E \rightarrow STOP
+      \}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{
+      START \rightarrow A, A \rightarrow B, B \rightarrow (C, D), C \rightarrow (B, STOP), D \rightarrow (C, A)
+      \}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{
+      START \rightarrow A, A \rightarrow (B, E), B \rightarrow C, C \rightarrow (D, G), D \rightarrow A, E \rightarrow (F, STOP), F \rightarrow G, G \rightarrow STOP
+      \}
+      \]
+    answer:
+      ANS
+  - question: |
+      \[
+      P = \{
+      START \rightarrow A, A \rightarrow (D, B), B \rightarrow C, C \rightarrow (E, STOP), D \rightarrow F, E \rightarrow A, F \rightarrow (B, C)
+      \}
+      \]
+    answer:
+      ANS

@@ -1,0 +1,25 @@
+exercises:
+  - question: |
+      Írja fel a ciklikus bonyolultság definícióját!
+    answer:
+      ANS
+  - question: |
+      Írja fel a lényeges bonyolultság definícióját!
+    answer:
+      ANS
+  - question: |
+      Mondja ki a programgráf ciklikus bonyolultságára vonatkozó tételt!
+    answer:
+      ANS
+  - question: |
+      Mondja ki a nem strukturált programgráf ciklikus bonyolultságára vonatkozó tételt!
+    answer:
+      ANS
+  - question: |
+      Írja fel a programgráf lényeges bonyolultságának definícióját!
+    answer:
+      ANS
+  - question: |
+      Mondja ki a strukturált programgráfjának lényeges bonyolultságára vonatkozó tételt!
+    answer:
+      ANS

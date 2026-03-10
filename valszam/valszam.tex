@@ -1,0 +1,1482 @@
+\documentclass[a4paper]{article}
+
+% Set margins
+\usepackage[hmargin=2.5cm, vmargin=3cm]{geometry}
+
+\frenchspacing
+
+% Language packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+
+% AMS
+\usepackage{amssymb,amsmath}
+
+% Graphic packages
+\usepackage{graphicx}
+
+% Colors
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Listings
+\usepackage{listings}
+
+% Question
+\newenvironment{question}[1]
+{\noindent\textcolor{OliveGreen}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Task
+\newenvironment{task}[1]
+{\noindent\textcolor{RoyalBlue}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Notification
+\newenvironment{notification}[1]
+{\noindent\textcolor{Peach}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Problem
+\newenvironment{problem}[1]
+{\noindent\textcolor{OrangeRed}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Solution
+\newenvironment{solution}
+{\color{RoyalBlue}}{\bigskip}
+
+% Comment
+\newenvironment{comment}
+{\color{Green}}{\bigskip}
+
+\lstset{% setup listings
+        framexleftmargin=16pt,
+        framextopmargin=6pt,
+        framexbottommargin=6pt, 
+        frame=single, rulecolor=\color{black}
+}
+
+\begin{document}
+
+\begin{center}
+   \large \textbf{Valószínűségszámítás gyakorlatok}
+\end{center}
+
+\vskip 1cm
+
+%----------------------
+\section{Kombinatorika}
+%----------------------
+
+\subsection{Eseményalgebra}
+
+\begin{task}{Jelölje $A$ azt az eseményt, hogy 4 kockadobásból egyszer sem kapunk 6-ost. Mit jelent az $\overline{A}$?}
+\end{task}
+
+\begin{task}{Legyen $A$ az az esemény, hogy egy kockával dobva páros számot kapunk, $B$ hogy 4-nél kevesebbet dobunk, $C$ hogy legalább 3-mat dobunk. Mit jelent az alábbi esemény?}
+\end{task}
+\[
+[A \setminus (B \cap C)] \cup [(A \setminus B) \setminus C]
+\]
+
+Legyen 2 lámpa. Jelölje $A$ azt az eseményt, hogy az első lámpa világít, $B$ pedig, hogy a második világít.
+Mit jelentenek az alábbi halmazok?
+
+\[
+\overline{B}, A \cup B, A \cap B, \overline{A} \cap B, \overline{A} \cup \overline{B}, A \setminus B, \overline{A \cup B}, (A \setminus B) \cup (B \setminus A).
+\]
+
+\subsection{$\sigma$ algebra}
+
+Melyek alkotnak $\sigma$-algebrát az alábbiak közül, és miért?
+
+\begin{itemize}
+\item $\Omega = \{1, 2\}, \mathcal{F} = \{\{1\}, \{2\}\}$
+% Nincs benne az Omega és az üres halmaz!
+\item $\Omega = \{1, 2, 3, 4\}, \mathcal{F} = \{\emptyset, \{1, 2\}, \{3, 4\}, \{1, 2, 3, 4\}\}$
+% Igen, az.
+\item $\Omega = \{1, 2, 3, 4\}, \mathcal{F} = \{\emptyset, \{1\}, \{2, 3\}, \Omega\}$
+% A komplementer az Omega-ra vonatkozik!
+\item $\Omega = \{1, 2, 3\}, \mathcal{F} = \{\emptyset, \{1\}, \{2\}, \{3\}, \Omega\}$
+% Nincsenek benne az uniók!
+\end{itemize}
+
+\begin{comment}
+\noindent Az $\mathcal{F} = \{A \subset \Omega \}$ egy $\sigma$-algebra, hogy ha
+\begin{enumerate}
+\item $\Omega \in \mathcal{F}$,
+\item $A \in \mathcal{F}$ akkor $\overline{A} \in F$,
+\item ha $A, B \in \mathcal{F}$, akkor $A \cup B \in \mathcal{F}$,
+\item ha $A_1, A_2, \ldots \in \mathcal{F}$, akkor $A_1, A_2, \ldots \in \mathcal{F}$.
+\end{enumerate}
+Az $A \in \mathcal{F}$ egy esemény.
+
+\end{comment}
+
+\subsection{Binomiális tétel}
+
+\[
+\displaystyle
+(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^k b^{n - k}
+\]
+
+\begin{task}{
+Fel kell rajzolni a Pascal háromszöget számértékekkel és binomiális együtthatókkal.
+}
+\end{task}
+
+\noindent Tulajdonságok:
+\begin{enumerate}
+\item $\displaystyle \binom{n}{k} = \binom{n}{n - k}$
+\item $\displaystyle \binom{n+1}{k+1} = \binom{n}{k+1} + \binom{n}{k}$
+\item $\displaystyle \sum_{k=0}^{n} \binom{n}{k} = 2^n$
+\end{enumerate}
+
+\begin{itemize}
+\item $(a + 2)^3 = ?$
+\item Fejtsük ki az $(x^3 + y)^4$ kifejezést a binomiális tétel segítségével!
+\end{itemize}
+
+\subsection{Permutációk}
+
+Elemek lehetséges sorrendjeit vizsgáljuk.
+Amennyiben az elemek mind különbözőek \textit{ismétlés nélküli permutáció}ról beszélünk.
+\begin{align*}
+n! &= n \cdot (n - 1) \cdot \ldots \cdot 2 \cdot 1 \\
+0! &= 1 \\
+P_n &= n! \\
+\end{align*}
+
+\begin{task}{Hányféleképpen állíthatunk sorba 5 embert?}
+\end{task}
+
+\begin{task}{Hányféleképpen ültethetünk fel 7 embert egy körhintára (ha feltételezzük, hogy minden hely egyenértékű)?}
+\end{task}
+
+Amennyiben az elemek között előfordulnak azonosak, úgy \textit{ismétléses permutáció}ról beszélünk.
+\[
+P_{n}^{k_1, \ldots, k_r} = \dfrac{n!}{k_1! \cdots k_r!}
+\]
+
+\begin{task}{4 Arany, 8 ezüst és 3 ólom gyöngyöt szeretnénk felfűzni egy láncra. Mennyiféleképpen tehetjük ezt meg? Karika/körbe kötött lánc esetében mennyi lesz a változatok száma?}
+\end{task}
+
+\begin{task}{Egy 10 fős asztalhoz 5 nőt és 5 férfit szeretnénk leültetni, úgy hogy a nők és a férfiak felváltva következzenek. Mennyiféleképpen tehetjük ezt meg, hogy ha csak a szomszédsági viszonyokra vagyunk tekintettel?}
+\end{task}
+
+\subsection{Variációk}
+
+$n$ darab elemből szeretnénk kiválasztani $k$ darabot úgy, hogy számít a sorrend.
+Ismétlés/visszatevés nélküli eset.
+
+\[
+V_{n}^{k} = \dfrac{n!}{(n - k)!} = n \cdot (n - 1) \cdot \ldots \cdot (n - k + 1)
+\]
+
+\begin{task}{Az angol ábécéből hányféleképpen tudunk kivenni 5 betűt, úgy hogy számít azok sorrendje, és nem rakhatjuk vissza őket?}
+\end{task}
+
+Ismétléses/visszatevéses eset.
+
+\[
+V_{n}^{k, i} = n^k
+\]
+
+\begin{task}{Hányféleképpen színezhető ki 6 négyzet, ha 4 féle színünk van, és egy négyzet csak egy színű lehet?}
+\end{task}
+
+\subsection{Kombinációk}
+
+$n$ darab elemből szeretnénk $k$ darab elemet kiválasztani.
+
+Visszatevés/ismétlés nélküli eset.
+
+\[
+\displaystyle C_{n}^{k} = \binom{n}{k} = \dfrac{n!}{k! \cdot (n - k)!}
+\]
+
+\begin{task}{Van 4 különböző ajándékunk, amelyet 10 embernek szeretnénk szétosztani. (Mindenkinek maximum 1 jut, és 6 sajnos nem fog így kapni.) Hányféleképpen tehetjük ezt meg?}
+Kombinációval és variáció osztva sorrenddel is megoldható.
+\end{task}
+
+Visszatevéses/ismétléses eset.
+
+\[
+\displaystyle C_{n}^{k, i} = \binom{n + k - 1}{k}
+\]
+
+\begin{task}{3 elemből húzunk visszatevéssel 8-szor. Mennyiféleképpen tehetjük ezt meg, hogy ha nem számít a húzások sorrendje?}
+\end{task}
+
+\subsection*{Összegzés}
+
+\begin{tabular}{l|c|c|l}
+& ismétlés nélküli & ismétléses & \\
+\hline
+permutáció & $n!$ & $\dfrac{n!}{k_1! \cdots k_r!}$ & csak sorrendet nézünk \\
+\hline
+variáció & $\dfrac{n!}{(n - k)!}$ & $\displaystyle\binom{n}{k}$ & kiválasztás ahol számít a sorrend \\
+\hline
+kombináció & $\displaystyle\binom{n}{k}$ & $\displaystyle\binom{n + k - 1}{k}$ & kiválasztás ahol nem számít a sorrend \\
+\hline
+\end{tabular}
+
+\subsection{Vegyes feladatok}
+
+\subsubsection{Betűk}
+
+\begin{itemize}
+\item Az $a, a, a, b, c, c$ betűknek hányféle sorrendje van?
+\item Ezekből mennyi olyan van, amelynél a $b$ az első helyen szerepel?
+\item Mennyi olyan van, amelynél az utolsó előtti helyen $a$ van?
+% \item Hányféleképpen tudunk ebből kiválasztani 3 betűt, ha azok sorrendjét megkülönböztetjük, és nem tesszük vissza őket?
+% \item Mennyi eset alakul, ha vissza is tehetjük őket?
+\end{itemize}
+
+\subsubsection{Konvex $n$-szög}
+
+Hány átlója van egy konvex $n$-szögnek?
+
+\subsubsection{Munkások}
+
+10 munkást 10 gépre szeretnénk elosztani úgy, hogy az első 2 gépre csak 2 munkás jöhet szóba.
+Mennyiféleképpen tehetjük ezt meg?
+
+\subsubsection{Különböző fős csoportok}
+
+9 embert hányféleképpen tudunk úgy csoportokra osztani, hogy a csoportok 2, 3 és 4 fősek legyenek?
+% Az embereket tekintjük fixnek
+% A csoportok azonosítóinak a lehetséges sorrendjeit keressük ismétléses permutációval
+
+\subsubsection{Totó}
+
+Hányféleképpen lehet kitölteni egy 13+1-es totószelvényt a $0, 1, X$ jelekkel?
+
+\subsubsection{Három kocka}
+
+Három dobókockával dobva hányféle dobáshármas adódhat?
+Tekintsük azt az esetet, amikor figyelembe vesszük a sorrendet, és azt is, amikor nem!
+
+\subsubsection{Selejtes gépek}
+
+Egy dobozban 16 alkatrész van, amelyből 4 selejtes. Hányféleképpen vehetjük ki ezeket egyesével, hogy ha a selejteseket a végére szeretnénk hagyni?
+
+\subsubsection{Számok}
+
+Mennyi olyan 5 jegyű egész számot tudunk felírni, amelyek számjegyei 3-nál nagyobbak, de 6-nál nem nagyobbak?
+
+\subsubsection{Autóverseny}
+
+Ha 20-an indulnak egy autóversenyen, akkor hányféleképpen alakulhat az első 5 helyezett?
+
+\subsubsection{Zsákbamacska}
+
+Zsákokba rakunk fehér, vörös és fekete színű macskákat. Minden zsákba 4 macska kerül.
+Hányféle zsák keletkezhet?
+% Visszatevéses kombináció a színekkel 4 helyre.
+
+\subsubsection{Golyók és rekeszek}
+
+20 rekeszbe szeretnénk beletenni 10 golyót.
+Egy rekeszbe több golyó is kerülhet.
+A golyókat nem különböztetjük meg.
+Hányféleképpen lehetséges ez?
+% Visszatevés nélküli kombináció a rekeszekkel való cimkézésre nézve.
+
+\subsubsection{Számsor}
+
+Adottak 1-től 10-ig az egész számok.
+\begin{itemize}
+\item Mennyiféleképpen rendezhetjük sorba őket úgy, hogy ha szeretnénk, hogy az 5 és a 6 ilyen sorrendben kövesse egymást?
+% 10! / 2
+\item Mennyi az esetek száma, ha az 5 és a 6 közvetlenül, ilyen sorrendben egymás mellett kell legyen?
+% 9 * 8!
+\end{itemize}
+
+\subsubsection{Úszóverseny}
+
+Krisztina és Katinka elindul egy úszóversenyen, amelyen rajtuk kívül még 6-an neveztek.
+\begin{itemize}
+\item Mennyi féle lehet a verseny kimenetele, ha tudjuk, hogy ők biztosan az első 3 hely valamelyikén végeznek, és nem alakulhat ki holtverseny?
+% Célszerű felrajzolni Krisztina és Katinka lehetséges helyezéseit, és melléírni, hogy mindegyiknél 6! lehetőség van.
+\item Hányféleképpen alakulhat az első 3 hely?
+% 6 további versenyző 6 helyre kerülhet be.
+\end{itemize}
+
+\subsubsection{Postaládák}
+
+Van 7 levelünk, amelyeket 8 postaládába szeretnénk elhelyezni. Mennyi a lehetőségek száma, ha az alábbi esetek adottak?
+\begin{itemize}
+\item Minden levelet egyenértékűnek tekintünk, és egy ládába több is kerülhet?
+\item Minden levél egyenértékű, és egybe legfeljebb egy kerülhet?
+\item Minden levél különböző és egybe több is kerülhet?
+\item Minden levél különböző és egybe csak egy kerülhet?
+\end{itemize}
+
+\subsubsection{Urna és cédulák}
+
+Egy urnában 20 cédula van 1-től 20-ig megszámozva.
+Kihúzunk 5 cédulát úgy, hogy minden húzás után a kihúzott cédulát visszatesszük.
+Mennyi esetben lesz a kihúzott legkisebb szám nagyobb 6-nál?
+% Ismétléses kombináció
+
+\subsubsection{Kártyák}
+
+Hányféleképpen oszthatunk ki 32 kártyát 4 játékosnak úgy, hogy minden játékos 8 kártyát kapjon?
+% 32! / (8!)^4
+
+\subsubsection{Monoton sorozatok}
+
+Mennyi különböző monoton sorozat készíthető az $\{1, 2, \ldots, n\}$ halmaz elemeiből?
+% növekvő és csökkenő sorozatokat is figyelembe kell venni!
+% Egy adott sorrendet tekintünk = Nem számít a sorrend
+
+\subsubsection{Büfé és italok}
+
+Egy büfében 10 féle italt árulnak. Hányféleképpen választható ki belőle 6 darab?
+
+\subsubsection{Táncpár választós}
+
+Egy összejövetelen 16 hölgy és 11 férfi vesz részt.
+Hányféleképpen lehet kiválasztani 4 párt belőlük? (Nők és férfiak alkothatnak jelen esetben párokat.)
+
+\subsubsection{8 jegyű számok}
+
+Mennyi 8 jegyű számot tudunk felírni, ha 2 darab 0, 4 darab 4-es és 2 darab 7-es számjegyünk áll rendelkezésre?
+
+%--------------------------------
+\section{Feltételes valószínűség}
+%--------------------------------
+
+\subsection{Klasszikus valószínűségi mező}
+
+\subsubsection{Valószínűség bizonyítás}
+
+Lássuk be az alábbiakat!
+\begin{itemize}
+\item $P(A \cap B) \leq P(A) + P(B)$
+\item $P(A \cap B) \geq P(A) + P(B) - 1$
+\end{itemize}
+
+$0 \leq P(A \cup B) \leq 1$
+
+$0 \leq P(A) + P(B) - P(A \cap B) \leq 1$
+
+\subsubsection{Poincare formula}
+
+Bizonyítsuk be, hogy ha teljesül, hogy $P(A) \geq 0.6$ és $P(B) \geq 0.9$, akkor $P(A \cap B) \geq 0.5$!
+
+\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]
+
+\subsubsection{3 kocka}
+
+3 kockát dobunk fel egyszerre. Mennyi annak a valószínűsége, hogy a dobott számok összege 10?
+
+\subsubsection{2 kocka}
+
+Két kockát feldobva mennyi az alábbiak valószínűsége?
+\begin{itemize}
+\item Két egyenlő számot dobunk?
+\item Két különböző számot dobunk?
+\item A két dobott szám összege 7 és az egyik dobás 6-os?
+\end{itemize}
+
+\subsubsection{Piros-fehér golyós urna}
+
+Egy urnában 13 golyó van, 5 piros és 8 fehér.
+2 golyót húzunk belőle véletlenszerűen.
+Mennyi az alábbiak valószínűsége?
+\begin{itemize}
+\item Mindkettő fehér lesz.
+\item Mindkettő piros lesz.
+\item Legalább az egyik golyó fehér.
+\end{itemize}
+
+\subsubsection{Selejtes termékek}
+
+Egy dobozban 10 jó és 4 selejtes termék van.
+Mennyi annak a valószínűsége, hogy a 4 selejtes a végére marad, hogy ha sorban vesszük ki őket?
+
+\subsubsection{10 kocka, 5 hatos}
+
+Mennyi annak a valószínűsége, hogy 10 kockával dobva 5 hatost dobunk?
+
+\subsubsection{Termek}
+
+Egy hallgató $p$ valószínűséggel tartózkodhat 5 terem valamelyikében.
+Tegyük fel, hogy már 4-ben kerestük, de nem találtuk ott meg.
+Mennyi a valószínűsége, hogy az 5-ödikben van?
+
+\subsection{Geometriai valószínűség}
+
+\subsubsection{Kör alakú céltábla}
+
+Egy egység sugarú, kör alakú céltáblára lövünk.
+A találat valószínűsége a céltáblán egyenletes eloszlású.
+A táblát koncentrikus körökkel 8 részre szeretnénk osztani, úgy hogy minden részbe egyenlő valószínűséggel legyen találat.
+Hogyan tehetjük ezt meg?
+
+\subsubsection{Villamos}
+
+Úticélunkat két villamossal ($a$ és $b$) tudjuk elérni.
+Az $a$ 5 percenként közlekedik, a $b$ pedig 12 percenként.
+Az első villamosok 5 órakor indulnak.
+7 és 7:30 között véletlenszerűen érkezünk a megállóba.
+Mennyi a valószínűsége, hogy a megállóban nem kell 2 percnél többet várakozni?
+
+\subsubsection{Pontok távolságai}
+
+Vegyünk fel két pontot a $[0, 1]$ intervallumon véletlenszerűen.
+Mennyi annak a valószínűsége, hogy ezek távolsága kisebb, mint a 0-hoz közelebbi pont 0-tól való távolsága?
+
+\subsubsection{Találkozó}
+
+Ketten, $a$ és $b$ találkozni szeretnének éjfél és 1 óra között.
+Mindketten az adott időintervallumon belül, egymástól függetlenül érkeznek.
+$a$ maximum 10 percet vár a másikra, míg $b$ maximum csak 5 percet.
+
+Mennyi a valószínűsége, hogy így fognak tudni találkozni?
+
+\subsubsection{Valós számok összege}
+
+Véletlenszerűen felírunk két, 1-nél kisebb pozitív számot.
+Mekkora az alábbiak valószínűsége?
+\begin{itemize}
+\item Az összegük 1-nél kisebb.
+\item A szorzatuk kisebb, mint $\dfrac{2}{9}$-ed.
+\item Összegük kisebb 1-nél és szorzatuk kisebb $\dfrac{2}{9}$-ednél.
+\end{itemize}
+
+\subsection{Mintavételezés valószínűségei}
+
+\subsubsection{Visszatevéses mintavétel}
+
+\[
+\displaystyle
+P(\xi = k) = \dfrac{\binom{n}{k} \cdot s^k \cdot (N - s)^{n-k}}{N^n}
+\]
+
+\subsubsection{Visszatevés nélküli mintavétel}
+
+\[
+\displaystyle
+P(\xi = k) = \dfrac{\binom{s}{k} \cdot \binom{N - s}{n - k}}{\binom{N}{n}}
+\]
+
+\subsubsection{Feladatok}
+
+\begin{itemize}
+\item Egy dobozban 18 alkatrész van. Ezek közül 4 selejtes. Mintát veszünk belőle visszatevéssel.
+Mennyi a valószínűsége, hogy közben pontosan 2 selejtet vettünk ki?
+\item Egy urnában 24 golyó van, amelyből 9 piros színű, a többi fehér.
+Visszatevés nélkül húzunk belőle 5 golyót.
+Mennyi a valószínűsége, hogy 3 fehéret és 2 pirosat húztunk ki?
+\end{itemize}
+
+\subsection{Feltételes valószínűség}
+
+Teljes valószínűség tétele
+
+Bayes tétel
+
+\[
+P(A|B) \geq P(A \cap B)
+\]
+
+Mikor lehetnek egyenlőek egymással?
+
+\subsubsection{Mennyi?}
+
+Ismertek a $P(A|B) = 0.7, P(A|\overline{B}) = 0.3, P(B|A) = 0.6$ valószínűségek.
+Mivel lesz egyenlő $P(A)$?
+
+\subsubsection{Rendezgetés}
+
+Ismertek az alábbi valószínűségek.
+\[
+P(A) = \dfrac{1}{4}, \quad
+P(A|B) = \dfrac{1}{4}, \quad
+P(B|A) = \dfrac{1}{2}.
+\]
+
+Számítsuk ki a $P(A \cup B)$ és $P(\overline{A}|\overline{B})$ valószínűségeket!
+
+\subsubsection{Kifejtős}
+
+Bizonyítsuk be, hogy
+\[
+P(A \cap B|C) = P(A|B \cap C)P(B|C),
+\]
+hogy ha $P(B \cap C) \neq 0$.
+
+\subsection{Üzem}
+
+Egy üzembe 8 és 12 óra között 0.8 valószínűséggel érkezik meg egy szállítmány.
+11-ig még nem érkezett meg.
+Mennyi a valószínűsége, hogy 11 és 12 között még beérkezik, hogy ha feltételezzük, hogy az érkezés valószínűsége egyenletes eloszlású a 8-12 óra közötti időintervallumon?
+
+\subsection{Kérdéses válasz}
+
+Felteszünk valakinek egy kérdést, amelyre 3 alternatív válaszlehetőség van.
+Az illető $0.5$ valószínűséggel tudja rá a helyes választ, de ha nem tudja, akkor $\dfrac{1}{3}$ valószínűséggel tippel.
+
+Tegyük fel, hogy az illető a kérdésünkre helyes választ adott.
+Mennyi a valószínűsége, hogy tudta a választ?
+
+$T$ esemény: tudja a helyes választ.
+
+$J$ esemény: jó/helyes választ adott.
+
+Általánosítsuk a számítást arra az esetre, hogy ha az illető $p$ valószínűséggel tudja a választ!
+Vizsgáljuk azt meg, hogy mennyi alternatív válaszlehetőségre lenne szükség akkor, hogy $0.9$ valószínűséggel kijelenthető legyen, hogy az illető azért válaszolt jól, mert tudta a helyes megoldást?
+
+\hrule
+
+\medskip
+
+\noindent \textbf{Megoldás}
+
+\noindent A probléma többféleképpen ábrázolható.
+
+\noindent \textbf{1. változat}
+
+Tegyük fel, hogy a jó választ $J$-vel, a két rossz választ $R_1$-el és $R_2$-vel jelöljük.
+Jelölje $T$ azt, hogy ha tudjuk a helyes választ.
+Tekintsük a döntést egy mintavételnek, amely esetében a három eshetőség ($J$, $R_1$ és $R_2$) közül választunk.
+A megoldás ismeretében csak a helyes választ választjuk, így a helytelen válaszok esetei is átkerülhetnek ahhoz.
+Így az alábbi táblázatot kapjuk.
+
+\medskip
+
+\begin{center}
+\begin{tabular}{l|c|c|c|}
+& $J$ & $R_1$ & $R_2$ \\
+\hline
+$T$ & 3 & 0 & 0 \\
+\hline
+$\overline{T}$ & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+
+Összesen 6 választható elemünk van.
+\begin{itemize}
+\item Annak a valószínűsége, hogy tudjuk a megoldást és helyesen válaszolunk az $P(T \cap J) = \dfrac{3}{6}$.
+\item Annak a valószínűsége, hogy jó választ adunk az
+\[
+P(J) = P(J|T) \cdot P(T) + P(J|\overline{T}) \cdot P(\overline{T})
+= 1 \cdot \dfrac{1}{2} + \dfrac{1}{3} \cdot \dfrac{1}{2}
+= \dfrac{2}{3}.
+\]
+\item Annak a valószínűsége, hogy tudjuk a megoldást, feltéve hogy jó választ adtunk:
+\[
+P(T|J) = \dfrac{P(T \cap J)}{P(J)} =
+\dfrac{\frac{1}{2}}{\frac{2}{3}} =
+\dfrac{3}{4}.
+\]
+\end{itemize}
+
+\noindent \textbf{2. változat}
+
+Tegyük fel, hogy az eseteket úgy írjuk fel táblázatos formában, hogy az egyes sorokban az adott eseményhez tartozó feltételes valószínűségek szerepelnek. (Ekkor megkötés, hogy a sorokban lévő értékek összege 1 legyen.)
+
+\medskip
+
+\begin{center}
+\begin{tabular}{l|c|c|}
+& $J$ & $\overline{J}$ \\
+\hline
+$T$ & 1 & 0 \\
+\hline
+$\overline{T}$ & $\dfrac{1}{3}$ & $\dfrac{2}{3}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+
+A számítások az előző változathoz adódnak.
+
+\noindent \textbf{3. változat}
+
+\medskip
+
+Megadhatjuk táblázatos formában közvetlenül az események valószínűségét. Ekkor az alábbit kapjuk.
+
+\medskip
+
+\begin{center}
+\begin{tabular}{l|c|c|}
+& $J$ & $\overline{J}$ \\
+\hline
+$T$ & $\dfrac{1}{2}$ & 0 \\
+\hline
+$\overline{T}$ & $\dfrac{1}{6}$ & $\dfrac{2}{6}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+
+Ekkor szükségszerű, hogy a táblázatban lévő értékek összege 1 legyen (a teljes valószínűség tétele szerint). Mivel a táblázat celláiban szereplő események diszjunktak, ezért az események valószínűségét a sor és az oszlop összegek is megadják.
+
+\begin{itemize}
+\item A $P(\overline{T})$ valószínűséget a második sorban lévő értékek összegéből kapjuk, ami így $\dfrac{1}{2}$.
+\item $P(J) = \dfrac{1}{2} + \dfrac{1}{6} = \dfrac{2}{3}, \quad P(\overline{J}) = 0 + \dfrac{2}{6}$.
+\item Annak a valószínűsége, hogy tudjuk a megoldást, feltéve hogy jó választ adtunk:
+\[
+P(T|J) = \dfrac{P(T \cap J)}{P(J)} =
+\dfrac{\frac{1}{2}}{\frac{2}{3}} =
+\dfrac{3}{4}.
+\]
+\end{itemize}
+
+\hrule
+
+\subsubsection{Ládikók}
+
+Van 3 kincsesládánk, bennük arany és ezüst érmék.
+Az elsőben 5 arany van, és 1 ezüst, a másodikban 3 arany és 4 ezüst, a harmadikban pedig 2 ezüst.
+
+A ládikák közül véletlenszerűen választva mennyi a valószínűsége, hogy arany érmét húztunk?
+
+Amennyiben egy arany érmét vettünk ki, mennyi a valószínűsége, hogy az az első, második vagy a harmadik ládikából származik?
+
+\subsubsection{Gyártók és kategóriák}
+
+4 gyártó 3 féle kategóriájú terméket gyárt az alábbi táblázatnak megfelelően.
+
+\begin{tabular}{l|ccc|}
+& $B_1$ & $B_2$ & $B_3$ \\
+\hline
+$A_1$ & 5 & 2 & 1 \\
+$A_2$ & 1 & 0 & 3 \\
+$A_3$ & 2 & 4 & 0 \\
+$A_4$ & 1 & 0 & 1 \\
+\hline
+\end{tabular}
+
+$A_i$: A termék az $i$-edik gyártótól származik.
+
+$B_j$: A termék a $j$-edik kategóriába tartozik.
+
+Számítsuk ki a valószínűségeket, feltételes valószínűségeket!
+
+\begin{itemize}
+\item Mennyi a valószínűsége, hogy a termék az $i$-edik gyártótól származik?
+\item Mennyi a valószínűsége, hogy a $j$-edik kategóriába tartozik?
+\item Mennyi az $A_i \cap B_j$ valószínűség az egyes helyeken?
+\item Mennyi a $P(A_i|B_j)$ valószínűség és a $P(B_j|A_i)$ valószínűség?
+\end{itemize}
+
+\subsection{Szúnyogírtás}
+
+Az első írtásnál a szúnyogok 80\%-a pusztult el.
+A másodiknál a megmaradtak 40\%-a, a harmadiknál pedig a 20\%-a.
+Mennyi a valószínűsége, hogy
+\begin{itemize}
+\item egy szúnyog túlélte mind a három írtást?
+\item kettőt még túl fog élni, feltéve, hogy az elsőt már túlélte? $P(A_3|A_1) = ?$
+\end{itemize}
+
+$A_i$: Az $i$-edik írtást túlélte. $A_1 \subset A_2 \subset A_3$
+
+$B_i$: Pontosan az $i$-edik írtásban pusztult el. $B_i \cap B_j = \emptyset, \forall i, j, i \neq j$
+
+\section{Valószínűségi változó, eloszlásfüggvény}
+
+Soroljuk fel az eloszlásfüggvény tulajdonságait!
+
+\[
+\xi: \Omega \rightarrow \mathbb{R}
+\]
+
+Írjuk fel a szokott rövidített jelöléseket mellőzve, hogy mi az $F_{\xi}(x)$!
+\[
+F_{\xi}(x) =
+P(\xi < x) =
+P(\{\xi < x \}) =
+P(\{\omega | \xi(\omega) < x\})
+\]
+
+\subsection{Változó értékei}
+
+Egy $\xi$ valószínűségi változó a $-2, 8, 12$ értékeket $0.2$, $0.5$ és $0.3$ valószínűségekkel veszi fel.
+Írjuk fel a $\xi$-hez tartozó valószínűségeket, eloszlásfüggvényt és ábrázoljuk!
+Számítsuk ki a $\xi$ várható értékét!
+
+\subsection{Lehet-e}
+
+Vizsgáljuk meg, hogy a következők lehetnek-e eloszlásfüggvények!
+
+\[
+F_1(x) = \begin{cases}
+0, & x < \dfrac{1}{2}, \\
+\dfrac{x - 1}{x + 1}, & x \geq \dfrac{1}{2}. \\
+\end{cases}
+\]
+
+\[
+F_2(x) = \begin{cases}
+0, & x < 1, \\
+\dfrac{x - 1}{x + 1}, & x \geq 1. \\
+\end{cases}
+\]
+
+\[
+F_3(x) = \begin{cases}
+0, & x < 1, \\
+\dfrac{2x - 1}{x + 1}, & x \geq 1.
+\end{cases}
+\]
+
+\[
+F_4(x) = \begin{cases}
+0, & x < 0, \\
+\dfrac{x^3}{1 + x^2}, & x \geq 0.
+\end{cases}
+\]
+
+\subsection{Kocka és érmék}
+
+Dobjunk fel egy kockát és 3 érmét.
+Az érméknél az eredmény legyen 0 vagy 1.
+Rajzoljuk fel az így megadott valószínűségi változó eloszlásfüggvényét!
+
+\medskip
+
+Adott intervallumokra megnézni a valószínűségeket!
+
+\subsection{Négyzet alakú céltábla}
+
+Egy egységnégyzet alakú céltáblára lövünk úgy, hogy biztosan eltaláljuk.
+Adjuk meg és rajzoljuk fel a találatok origótól vett távolságainak eloszlásfüggvényét!
+\[
+F(x) = \begin{cases}
+0, & x < 0 \\
+\dfrac{x^2 \pi}{4}, & 0 \leq x \leq 1, \\
+\dfrac{1}{2} - \dfrac{arccos\left(\dfrac{1}{x}\right)}{\pi} - \sqrt{x^2 - 1}, & 1 < x \leq \sqrt{2}, \\
+1, & x > \sqrt{2}.
+\end{cases}
+\]
+
+\subsection{Sűrűségfüggvényből eloszlásfüggvény}
+
+Tekintsük az alábbi sűrűségfüggvényt!
+\[
+f(x) =
+\begin{cases}
+0, & x \leq 2, \\
+\dfrac{A}{(1 - x)^2}, & x > 2.
+\end{cases}
+\]
+\begin{itemize}
+\item Mennyi az $A$ értéke?
+\item Mekkora valószínűséggel esik $\xi$ a $(2, 3)$ intervallumba?
+\item Írjuk és rajzoljuk fel a $\xi$-hez tartozó eloszlásfüggvényt!
+\end{itemize}
+
+\subsection{Melyik sűrűségfüggvény?}
+
+Vizsgáljuk meg, hogy az alábbiak közül melyik lehet sűrűségfüggvény!
+
+\begin{itemize}
+\item[a.]
+\[
+f(x) =
+\begin{cases}
+x + \dfrac{1}{2}, & -1 < x < 1, \\
+0, & \text{egyébként}.
+\end{cases}
+\]
+\item[b.]
+\[
+f(x) =
+\begin{cases}
+x + \dfrac{1}{2}, & -\dfrac{1}{2} < x < \dfrac{3}{2}, \\
+0, & \text{egyébként}.
+\end{cases}
+\]
+\item[c.]
+\[
+f(x) =
+\begin{cases}
+x + \dfrac{1}{2}, & 0 < x < 1, \\
+0, & \text{egyébként}.
+\end{cases}
+\]
+\item[d.]
+\[
+f(x) =
+\begin{cases}
+x, & \text{ ha } 0 < x < 1, \\
+2 - x, & \text{ ha } 1 \leq x < 2, \\
+0, & \text{különben}.
+\end{cases}
+\]
+\item[e.]
+\[
+f(x) =
+\begin{cases}
+1 - |1 - x|, & \text{ ha } 0 < x < 2, \\
+0, & \text{különben}.
+\end{cases}
+\]
+\end{itemize}
+
+\subsection{Kocka dobássorozat}
+
+Tegyük fel, hogy egy kockával addig dobunk, amíg 6-os értéket nem kapunk.
+Az utolsó dobást is beleszámolva mennyi lesz ezen dobássorozatok várható értéke?
+
+\bigskip
+
+Mennyi lesz a várható érték, hogy ha 2 kockával dobunk, és azt várjuk el, hogy a dobásoknál legyen legalább egy hatos?
+
+\bigskip
+
+Konvergens hatványsor:
+\(
+1 + x + x^2 + x^3 + \cdots =
+\displaystyle \sum_{k=0}^{\infty} x^k =
+\dfrac{1}{1 - x}
+\)
+
+\subsection{Diszkrét várható érték és szórás}
+
+Tegyük fel, hogy a $\xi$ valószínűségi változó a $-6, -3, 1, 2$ értékeket $\dfrac{1}{8}, \dfrac{3}{8}, \dfrac{1}{4}, \dfrac{1}{2}$ valószínűséggel veszi fel.
+
+Mennyi az $E(\xi)$ és a $D(\xi)$ értéke?
+
+\subsection{Folytonos várható érték és szórás}
+
+Számítsuk ki a következő sűrűségfüggvényekkel megadott eloszlások várható értékét és szórását!
+
+Rajzoljuk fel hozzá az eloszlásfüggvényt!
+
+\[
+f(x) = \begin{cases}
+2x, & 0 < x < 1, \\
+0, & \text{egyébként}. \\
+\end{cases}
+\]
+
+Milyen valószínűséggel esik az érték a $[0.2, 0.5]$ intervallumba?
+
+\[
+f(x) = \begin{cases}
+|x|, & -1 < x < 1, \\
+0, & \text{egyébként}. \\
+\end{cases}
+\]
+
+Milyen valószínűséggel esik az érték a $[-0.3, 0.7]$ intervallumba?
+
+\subsection{Nem létező várható érték}
+
+Bizonyítsuk be, hogy az alábbi sűrűségfüggvénnyel megadott eloszlásnak nem létezik várható értéke!
+
+\[
+f(x) = \begin{cases}
+\dfrac{A}{1 + x^2}, & x > 0, \\
+0, & \text{egyébként}.
+\end{cases}
+\]
+
+\[
+\displaystyle \int \! \dfrac{1}{1 + x^2} \; \mathrm{d}x = \text{arctg}(x) + c
+\]
+
+\subsection{Egyenletes eloszlás}
+
+Tegyük fel, hogy $\xi \in U[5, 20]$.
+$E(\xi) = ?, D(\xi) = ?$
+
+\[
+E(\xi) = \dfrac{a + b}{2}, \quad D^2(\xi) = \dfrac{(b - a)^2}{12}
+\]
+
+Rajzoljuk fel az eloszlás és sűrűségfüggvényt!
+
+\subsection{Binomiális eloszlás}
+
+Tízszer megpróbálunk beletalálni egy céltáblába, amit $0.23$ valószínűséggel találunk el.
+$\xi$ jelölje a találatok számát! $E(\xi) = ?, D(\xi) = ?$
+
+\[
+E(\xi) = n \cdot p, \quad D^2(\xi) = n \cdot p \cdot q
+\]
+
+Mennyi a valószínűsége, hogy a találatok száma legalább 5, de kevesebb mint 9?
+
+\[
+P(\xi = k) = \binom{n}{k} \cdot p^k \cdot (1 - p)^{n - k}
+\]
+
+\subsection{Kosárlabdázás}
+
+Alíz és Bob kosárlabdáznak.
+Alíz $\dfrac{2}{5}$, Bob pedig $\dfrac{1}{4}$ valószínűséggel dob kosárra.
+Alíz kezd dobni, és felváltva dobnak, maximum 4-szer az első kosárig.
+Jelölje $\xi$ a dobások számát!
+
+\begin{itemize}
+\item Határozzuk meg a $\xi$ eloszlását!
+\item Számítsuk ki $\xi$ várható értékét és szórását!
+\item Számítsuk ki a $P(\xi < 3), P(1 < \xi), P(1 \leq \xi < 4)$ valószínűségeket!
+\end{itemize}
+
+\subsection{Busz}
+
+Egy buszon 40 utasnak van hely.
+(A vezetőt nem tekintjük utasnak.)
+Tegyük fel, hogy $\dfrac{2}{3}$ annak a valószínűsége, hogy egy helyen ül valaki.
+
+\begin{itemize}
+\item Mennyi az utasok várható száma?
+\item Mi a valószínűsége, hogy minden hely foglalt?
+\item Mennyi a valószínűsége, hogy legalább 4-en utaznak a buszon?
+\end{itemize}
+
+\subsection{Selejtes gyártás}
+
+Egy gyártás során a termékek 15\%-a selejtes lesz.
+12 elemű mintát veszünk belőle.
+Mennyi a valószínűsége annak, hogy
+\begin{itemize}
+\item a mintában legfeljebb 2 selejtes termék van,
+\item 7 jó termék van,
+\item legalább 2, de legfeljebb 5 selejtes termék van?
+\end{itemize}
+Mennyi a mintában lévő selejtek számának várható értéke?
+
+\subsection{Szakaszon pontok}
+
+Adott egy $[0, r]$ szakasz.
+Véletlenszerűen kiválasztunk rajta 2 értéket.
+Mennyi a valószínűsége, hogy ezen értékek négyzetösszege nagyobb lesz, mint $r^2$?
+
+\subsection{Tanuló és jegyzetelés}
+
+Egy hallgató a tanulásra fordított ideje negyedét matematika, 40\%-át angol, a többi időt pedig egyéb tárgyak tanulásával tölti.
+Matematika tanulás közben 0.6, angol tanulás közben 0.4 egyéb tárgyak tanulása közben pedig 0.3 annak a valószínűsége, hogy éppen ír.
+
+\medskip
+
+Azt látjuk, hogy tanulás közben a hallgató éppen ír.
+Mennyi a valószínűsége, hogy éppen matematikát tanul?
+
+\subsection{Intervallum meghatározás}
+
+Adott egy eloszlás a következő sűrűségfüggvénnyel!
+
+\[
+f(x) = \begin{cases}
+\dfrac{1}{x}, & e^5 < x < m, \\
+0, & \text{egyébként}.
+\end{cases}
+\]
+
+\begin{itemize}
+\item Határozzuk meg a hiányzó $m$ értéket!
+\item Rajzoljuk fel a sűrűség- és az eloszlásfüggvényét!
+\item Számítsuk ki a várható értékét és a szórását!
+\end{itemize}
+
+\section{Speciális eloszlások}
+
+Poisson eloszlás
+
+\[
+P(\xi = k) = \dfrac{\lambda^k}{k!} \cdot e^{-\lambda}
+\]
+
+\[
+E(\xi) = \lambda, \quad D^2(\xi) = \lambda 
+\]
+
+Exponenciális eloszlás
+
+\[
+F(x) = \begin{cases}
+1 - e^{-\lambda x}, & x \geq 0, \\
+0, & x < 0.
+\end{cases}, \quad
+f(x) = \begin{cases}
+\lambda \cdot e^{-\lambda x}, & x \geq 0, \\
+0, & x < 0.
+\end{cases}
+\]
+
+Normális eloszlás
+
+\[
+\mathcal{N}(\mu, \sigma^2), \quad
+\varphi(x) = \dfrac{1}{\sigma \sqrt{2\pi}} \cdot e^{-\dfrac{(x - \mu)^2}{2\sigma^2}}
+\]
+
+\[
+\Phi(-x) = 1 - \Phi(x)
+\]
+
+Geometriai eloszlás
+
+\[
+P(\xi = k) = q^{k - 1} \cdot p, \quad
+E(\xi) = \dfrac{1}{p}, \quad
+D^2(\xi) = \dfrac{q}{p^2}
+\]
+
+\subsection{Csillaghullás}
+
+Egy augusztusi éjszakán átlagosan 10 percenként látunk egy hullócsillagot.
+\begin{itemize}
+\item Mennyi a valószínűsége, hogy negyedórán belül kettőt is látni fogunk?
+\item Láttunk egy hullócsillagot.
+Mennyi a valószínűsége, hogy 5 percen belül láthatunk még egyet?
+\end{itemize}
+
+\subsection{Kalács}
+
+Kalácssütéskor 1 kg tésztába 30 szem mazsolát tesznek.
+Mennyi a valószínűsége, hogy egy 5 dekagramos szeletben kettőnél több mazsolaszem lesz?
+
+% Poisson eloszlás, lambda = 30/20, p = 0.1912
+
+\subsection{Szövet}
+
+Egy szöveten 100 méterenként átlagosan 5 hiba van.
+A hibák Poisson eloszlással fordulhatnak elő.
+Egy 300 méteres szövetet 3 méteres darabokra vágnak.
+
+\medskip
+
+Előreláthatólag mennyi hibátlan darab lesz közöttük?
+
+\subsection{Rendelés}
+
+Kínából alkatrészeket rendelünk.
+A tapasztalatok alapján az alkatrészek általában 7 nap alatt érkeznek meg.
+A kiszállítás idejének eloszlása exponenciális.
+
+\medskip
+
+\begin{itemize}
+\item Mennyi a valószínűsége, hogy egy alkatrész 3 napon belül megérkezik?
+\item Mennyi a valószínűsége, hogy egy alkatrészre 5 napnál többet kell várni?
+\end{itemize}
+
+\subsection{Programhiba}
+
+Egy programot elindítva az első hiba előfordulásáig $\xi$ idő telik el, ami a megfigyelések alapján exponenciális eloszlású és 6 óra várható értékű.
+
+\medskip
+
+Mennyi a valószínűsége, hogy a programban 8 órán belül nem jelentkezik hiba?
+
+\subsection{Benzinkút}
+
+Egy benzinkútnál annak a valószínűsége, hogy a tankolásnál 6 percnél többet kell várni a tapasztalatok alapján 0.1.
+A várakozási idő exponenciális eloszlású.
+
+\medskip
+
+Mennyi a valószínűsége, hogy véletlenszerű időpontban a benzinkúthoz érve 3 percen belül sorra kerülünk?
+
+\subsection{Bolt}
+
+Egy forgalmas boltba a vevők Poisson eloszlás szerint érkeznek, átlagosan 40 vevő óránként.
+
+\medskip
+
+Mennyi a valószínűsége, hogy egy vevő érkezése után 5 percig nem érkezik másik vevő?
+
+\subsection{Állatos}
+
+Egy kisállat várható élettartama exponenciális eloszlás szerint változik 12 év várható élettartammal.
+
+\medskip
+
+Mennyi a valószínűsége, hogy a kisállat az életének 8. évében fog elpusztulni?
+
+
+\subsection{Intervallum becslés}
+
+Adott egy $\xi$ valószínűségi változó, amelynek 3 a várható értéke és 2 a szórása.
+Mekkora legyen az $A$ érték, hogy ha azt szeretnénk, hogy a $\xi$ értéke legalább $\dfrac{1}{2}$-ed valószínűséggel essen a $(2, A)$ intervallumba?
+
+% Legalább 4.74-nek kell lennie.
+
+\subsection{Munkapad}
+
+A munkapadról kikerült termékek hossza normális eloszlású valószínűségi változó, 20cm várható értékkel és 0.2cm szórással.
+\begin{itemize}
+\item Mekkora a valószínűsége, hogy egy termék hossza 19,7 és 20.3 cm közé fog esni?
+\item Milyen pontosságot biztosíthatunk 0.95 valószínűséggel a munkadarabok hosszára?
+\end{itemize}
+
+\subsection{Szolgáltató, megrendelése}
+
+Egy szolgáltatóhoz a naponta érkező megrendelések száma közelítőleg normális eloszlású, és tudjuk, hogy 
+szórása $\sigma = 10$.
+Mekkora a megrendelések várható száma, hogy ha tudjuk, hogy $P(\xi < 20) = 0.1$.
+
+\subsection{Binomiális eloszlás közelítése}
+
+Elvégzünk 1000 kísérletet, és tudjuk, hogy egy kisérlet 0.27 valószínűséggel lehet sikeres.
+Jelölje $\xi$ a sikeres kísérletek számát.
+
+\medskip
+
+Adjunk közelítést annak a valószínűségére vonatkozóan, hogy a $\xi$ a $[250, 280]$ intervallumba fog esni.
+
+\subsection{Diótörés}
+
+Diót törünk, és azt tapasztaljuk, hogy a diók 0.88 valószínűséggel lesznek jók.
+
+\medskip
+
+\begin{itemize}
+\item Fogalmazzuk meg erre vonatkozóan, hogy mit vizsgál a binomiális eloszlás és a geometriai eloszlás.
+\item Adjunk rá konkrét példát várható értékkel és szórással!
+\end{itemize}
+
+
+\section{Egyenlőtlenségek}
+
+\subsection{Markov}
+
+Tudjuk, hogy egy $\xi$ valószínűségi változó sűrűségfüggvénye csak a $(0, 6)$ intervallumba nem 0, illetve, hogy $E(\xi) = 1$.
+Lássuk be, hogy a $P(\xi < 5) \geq \dfrac{4}{5}$ teljesül!
+
+\medskip
+
+\textbf{Markov egyenlőtlenség}
+
+\[
+P(\xi \geq c) \leq \dfrac{E(\xi)}{c}
+\]
+
+\subsection{Poission, Csebisev}
+
+Egy újságárus óránként eladott újságainak száma Poisson eloszlású $\lambda = 64$ paraméterrel.
+Adjunk alsó becslést a $P(48 < \xi < 80)$ értékére a Csebisev-egyenlőtlenség segítségével!
+
+\medskip
+
+\textbf{Csebisev egyenlőtlenség}
+
+\[
+P(|\xi - E(\xi)| \geq \varepsilon) \leq \dfrac{D^2(\xi)}{\varepsilon^2}
+\]
+
+\subsection{Nagy számok törvénye}
+
+Egy célpontra 200 lövést adunk le.
+A találatok valószínűsége minden lövésnél 0.4.
+Milyen határok közé fog esni 0.9 valószínűséggel a találatok száma?
+
+\medskip
+
+\textbf{Bernoulli-féle nagy számok törvénye}
+
+\[
+P\left(\left|\dfrac{\xi_{n}}{n} - p\right| \geq \varepsilon\right)
+\leq \dfrac{p \cdot q}{n \cdot \varepsilon^2}
+\leq \delta
+\]
+
+\subsection{Ismeretlen valószínűség}
+
+Egy csavargyárban 5000 csavart megvizsgálva 80 selejteset találtunk.
+90\%-os valószínűséggel milyen intervallumon belül lesz annak a valószínűsége, hogy egy elkészült csavar selejt?
+
+\medskip
+
+\begin{itemize}
+\item Egy Bernoulli-kísérletsorozatról van szó.
+\item Írjuk fel a nagy számok törvényét!
+\item Adjunk felső becslést az egyenlőség jobb oldalára vonatkozóan!
+\item Ábrázoljuk hozzá a $p(1 - p)$ függvényt a $[0, 1]$ intervallumon!
+\end{itemize}
+
+\[
+P\left(\left|\dfrac{\xi_{n}}{n} - p\right| \geq \varepsilon\right)
+\leq \dfrac{p \cdot q}{n \cdot \varepsilon^2}
+\leq \dfrac{1}{4 n \varepsilon^2}
+\leq \delta
+\]
+
+\section{Véletlen vektorok}
+
+\subsection{Eloszlás vizsgálata}
+
+Adottak $(\xi, \eta)$ értékei az alábbi táblázatnak megfelelően.
+
+\begin{tabular}{l|c|c|}
+$(\xi, \eta)$ & 0 & 1 \\
+\hline
+0 & $p$ & $p$ \\
+1 & $p$ & $3p$ \\
+2 & $2p$ & $4p$ \\
+\hline
+\end{tabular}
+
+$p = \dfrac{1}{12}$
+
+\begin{itemize}
+\item Írjuk és rajzoljuk fel az eloszlásfüggvényt!
+\item Számítsuk ki a $P(\xi = i|\eta = 0), P(\xi < 2|\eta = 0), P(\xi \geq 1|\eta = 1), P(\eta = 1|\xi \geq 1)$ értékeket!
+\end{itemize}
+
+\begin{solution}
+\[
+P(\xi = 0|\eta = 0) = \dfrac{P(\xi = 0, \eta = 0)}{P(\eta = 0)} = \ldots
+\]
+\end{solution}
+
+\subsection{Egyenletes}
+
+Adott egy $(\xi, \eta)$ valószínűségi vektorváltozó a $(-a \leq x \leq a, -b \leq y \leq b)$ egyenlőtlenségekkel jellemzett téglalap alakú tartomány felett, amely a tartomány felett egyenletes eloszlású.
+
+\begin{itemize}
+\item Írjuk fel $(\xi, \eta)$ eloszlásfüggvényét!
+\item Írjuk fel a peremeloszlás függvényeket is!
+\item Számítsuk ki az alábbi valószínűségeket az eloszlásfüggvény alapján!
+\end{itemize}
+\[
+P(\xi < 0, \eta < 0), P\left(\xi < 0, \eta \geq \dfrac{b}{2}\right),
+P\left(0 \leq \xi < \dfrac{a}{2}, 0 \leq \eta \leq \dfrac{b}{2}\right), P\left(\xi > \dfrac{a}{2}\right)
+\]
+
+\begin{solution}
+Felrajzolni az eloszlásfüggvényt "3D-ben"!
+
+\[
+P(x_1 \leq \xi \leq x_2, y_1 \leq \eta \leq y_2) =
+F(x_2, y_2) - F(x_1, y_2) - F(x_2, y_1) + F(x_1, y_2)
+\]
+\end{solution}
+
+\subsection{Egyenletes 2}
+
+Legyen $(\xi, \eta)$ egyenletes eloszlású a $0 \leq x \leq a, 0 \leq y \leq a - x$ tartományon.
+
+\begin{itemize}
+\item Írjuk fel az eloszlásfüggvényt!
+\item Számítsuk ki a $\xi$ és az $\eta$ peremeloszlásfüggvényét!
+\end{itemize}
+
+\begin{solution}
+\begin{itemize}
+\item Fel kell rajzolni a tartományt!
+\item Meg kell határozni $a$ értékét!
+\item Fel kell írni az eloszlásfüggvényét!
+\item Fel kell írni a peremeloszlásfüggvényeket!
+\item Fel kell írni az együttes sűrűségfüggvényt!
+\item Integrálással (az együttes sűrűségfüggvényből) meg kell határozni a peremsűrűségfüggvényeket!
+\end{itemize}
+\end{solution}
+
+\subsection{Általános}
+
+\[
+f(x, y) = \begin{cases}
+e^{-x-y}, & x > 0, y > 0, \\
+0, & \text{egyébként}.
+\end{cases}
+\]
+
+\[
+P(\xi < 1, \eta < 1), P\left(\xi < 1, \eta \geq \dfrac{3}{2}\right)
+\]
+
+% Nézzünk meg háromszög feletti integrált is!
+
+\begin{solution}
+\begin{itemize}
+\item Ellenőrízzük, hogy valóban sűrűségfüggvény!
+\item Figyelni kell, hogy a függvény csak a pozitív síknegyedben van értelmezve!
+\end{itemize}
+\end{solution}
+
+\subsection{Négyzetes}
+
+\[
+f(x, y) = x^2 + A y^2, \quad (0 < x < 1, 0 < y < 2), \quad A = ?
+\]
+
+Írjuk fel a peremeloszlás függvényeket!
+
+\begin{solution}
+\begin{itemize}
+\item Figyelni kell a $(-\infty, +\infty)$ intervallum kezelésére!
+\end{itemize}
+\end{solution}
+
+\subsection{Feltételes eloszlásfüggvény}
+
+\[
+f(x, y) = \begin{cases}
+A, & x \geq 0, y \geq 0, y \leq \dfrac{3 - x}{2}, y \leq -2x + 3, \\
+0, & \text{különben}.
+\end{cases}
+\]
+
+\begin{itemize}
+\item Határozzuk meg az $A$ értékét!
+\item Írjuk fel a peremeloszlásfüggvényeket!
+\end{itemize}
+
+\[
+P\left(\xi < x, 1 < \eta < \dfrac{3}{2}\right) = ?
+\]
+
+\[
+F\left(x|1 < \eta < \dfrac{3}{2}\right) = ?
+\]
+
+\[
+F(x|1 < \eta < 3) = ?
+\]
+
+\begin{solution}
+\begin{itemize}
+\item Felrajzolni jó nagy ábrára, hogy látszódjanak a háromszögek!
+\item Felírni az eseteket!
+\end{itemize}
+\end{solution}
+
+\subsection{Függetlenség}
+
+\[
+f(x, y) = \begin{cases}
+1, & 0 < x < 1, 0 < y < 2(1 - x), \\
+0, & \text{egyébként}. \\
+\end{cases}
+\]
+
+\begin{itemize}
+\item Vizsgáljuk meg, hogy $\xi$ és $\eta$ függetlenek-e!
+\item Írjuk fel az $f(x|y)$ és $f(y|x)$ feltételes sűrűségfüggvényeket!
+\item Számítsuk ki a $P\left(0 < \xi < \dfrac{1}{2}\mid\eta = \dfrac{1}{2}\right)$ értékét!
+\end{itemize}
+
+\begin{solution}
+\[
+f_{\xi}(x) = ?, f_{\eta}(y) = ?, f(x|y) = \dfrac{f(x, y)}{f(y)}, \ldots
+\]
+\end{solution}
+
+\subsection{Összeg}
+
+\[
+f_{\xi\eta} =
+\begin{cases}
+e^{-x-y}, & x \geq 0, y \geq 0, \\
+0, & \text{egyébként}.
+\end{cases}
+\]
+
+\[
+f_{\xi + \eta}(z) = f_{\zeta}(z) = ?
+\]
+
+\subsection{Összeg és hányados}
+
+\[
+f(x, y) = \begin{cases}
+\dfrac{1}{4}, & 0 < x < 2, 0 < y < 2, \\
+0, & \text{egyébként}. \\
+\end{cases}
+\]
+
+\[
+\zeta = \xi + \eta, \tau = \dfrac{\xi}{\eta}
+\]
+
+\[
+f_{\xi + \eta}(z) = ?, \quad f_{\tau}(z) = ?
+\]
+
+\subsection{Várható érték}
+
+\[
+f(x, y) = \begin{cases}
+x + y, & 0 < x < 1, 0 < y < 1, \\
+0, & \text{egyébként}. \\
+\end{cases}
+\]
+
+\[
+E(\xi + \eta) = ?, E(\xi \cdot \eta) = ?
+\]
+
+\subsection{Korrelációs együttható}
+
+\begin{tabular}{|l|cc|}
+\hline
+$(\xi, \eta)$ & 1 & 0 \\
+\hline
+1 & 0.5 & 0.04 \\
+0 & 0.06 & 0.4 \\
+\hline
+\end{tabular}
+
+Számítsuk ki $\xi$ és $\eta$ korrelációs együtthatóját!
+
+\subsection{Regressziós függvények}
+
+\begin{tabular}{l|c|c|c|}
+$(\xi, \eta)$ & 0 & 1 & 3 \\
+\hline
+0 & $\dfrac{3}{20}$ & $\dfrac{6}{20}$ & $\dfrac{4}{20}$ \\
+2 & $\dfrac{1}{20}$ & $\dfrac{5}{20}$ & $\dfrac{1}{20}$ \\
+\hline
+\end{tabular}
+
+Határozzuk meg a $\xi$-nek az $\eta$-ra vonatkozó, és az $\eta$-nak a $\xi$-re vonatozó regressziós függvényét!
+
+\begin{solution}
+\[
+q_i = P(\xi = x_i), r_j = P(\eta = y_j)
+\]
+
+\[
+E(\xi|\eta = y_j) = \displaystyle\sum_i x_i \dfrac{p_{ij}}{r_j} = m_2(y_j)
+\]
+
+\[
+E(\eta|\xi = x_i) = \displaystyle\sum_j y_j \dfrac{p_{ij}}{q_i} = m_1(x_i)
+\]
+
+Elég csak jelölni, hogy mik a $p_{ij}, q_i, r_j$ értékek, és szépen sorban visszahelyettesíteni!
+\end{solution}
+
+\end{document}

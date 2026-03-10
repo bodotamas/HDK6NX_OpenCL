@@ -1,0 +1,49 @@
+exercises:
+  - question: |
+      Mennyi lehetséges 4 változós logikai művelet van?
+    answer:
+      $2^{16}$
+  - question: |
+      Írja fel az ekvivalencia műveletet $\wedge, \vee, \neg$ műveletek segítségével!
+    answer:
+      ...
+  - question: |
+      Írja fel az antivalencia műveletet $\wedge, \vee, \neg$ műveletek segítségével!
+    answer:
+      ...
+  - question: |
+      Lássa be, hogy az implikáció művelete nem asszociatív!
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      \overline{a} \vee b \vee c =
+      a \rightarrow ((\overline{c} \rightarrow b) \wedge (a \vee \overline{b}))
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      \overline{a} \wedge (\overline{b} \vee \overline{c}) \wedge (b \vee c) =
+      a \downarrow (c \leftrightarrow b)
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (a \vee c) \wedge (a \vee \overline{b} \vee c) =
+      ((a \rightarrow b) \wedge \overline{c}) \rightarrow a
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (a \wedge b \wedge \overline{c}) \vee (a \wedge c) \vee (\overline{b} \wedge c) =
+      \overline{c} \leftrightarrow (\overline{a} \wedge b)
+      \]
+    answer:
+      ...

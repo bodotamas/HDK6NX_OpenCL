@@ -1,0 +1,46 @@
+body {
+	background-color: #404050;
+}
+
+div.main {
+	width: 900px;
+	background-color: #FFFFF0;
+	border: solid black 2px;
+	padding: 20px;
+
+	margin-top: 30px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div.capacityMain {
+	background-color: #FFFFF0;
+	border: solid black 2px;
+	padding: 20px;
+
+	margin-top: 30px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+h2 {
+	text-align: center;
+}
+
+div.author {
+	text-align: center;
+}
+
+applet {
+	border: solid black 1px;
+}
+
+table, td {
+	border: solid black 1px;
+	border-collapse: collapse;
+}
+
+th {
+	background-color: #DDDEEE;
+}
+

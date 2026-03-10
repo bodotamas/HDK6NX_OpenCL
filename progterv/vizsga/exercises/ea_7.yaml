@@ -1,0 +1,324 @@
+exercises:
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik kiszámítja, hogy a bemenetként kapott valós számsorozatban
+      mi az 1000-nél kisebb értékek maximuma! (Feltételezzük, hogy mindig van benne ilyen.)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik kiszámítja, hogy a bemenetként kapott valós számsorozatban
+      mi az 1000-nél kisebb értékek minimumának indexe! (Feltételezzük, hogy mindig van benne ilyen tulajdonságú elem.)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik kiszámítja, hogy a bemenetként kapott egész számok sorozatában
+      mennyi a 750-el vett maradékok maximuma!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik megvizsgálja, hogy a bemenetként kapott egész számok sorozatábban
+      mi annak az elemnek az indexe, amelyik 600-al vett maradéka minimális!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      kiszámítja a bemenetként kapott valós számsorozatban előforduló utolsó negatív elem indexét!
+      (Hogy ha nincs benne ilyen érték, akkor 0-ás index értéket adjon vissza!)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      visszaadja a bemenetként kapott valós számsorozatban az utolsó olyan elemnek az értékét, melynek törtrésze 0,75.
+      (Feltételezzük, hogy van benne ilyen érték)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      visszaadja a bemenetként kapott valós számsorozatban az első olyan elemnek az értékét, amelyik kerekítve 10 lesz.
+      (Feltételezzük, hogy van benne ilyen érték)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megszámolja, hogy egy valós számsorozatban mennyi olyan érték van, amelyik kerekítve negatív lesz.
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megszámolja, hogy egy valós számsorozatban mennyi olyan érték van, amelyik törtrésze nagyobb, mint 0,2.
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megszámolja, hogy egy egész értékeket tartalmazó sorozatban mennyi olyan érték van,
+      amelyik egy byte-os előjel nélküli egészként ábrázolható!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megszámolja, hogy egy egész értékeket tartalmazó sorozatban mennyi olyan érték van,
+      amelyik kettes számrendszerben pontosan 10 számjeggyel írható fel.
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott, nemnegatív valós értékeket tartalmazó sorozatban
+      van-e olyan elem, amelyiknek a gyöke nagyobb 50-nél!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott, nemnegatív valós értékeket tartalmazó sorozatban
+      van-e olyan elem, amelyiknek az alsóegész része pontosan 123-al egyenlő!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott, nemnegatív valós értékeket tartalmazó sorozatban
+      van-e olyan elem, amelyik kerekítve pontosan 123-al egyenlő!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott valós számsorozatban mindegyik elem abszolút értéke
+      kisebb, mint a szintén bemenetként kapott $\varepsilon$ érték!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott valós számsorozatban mindegyik elem
+      a bemenetként kapott $m$ érték alatt van-e!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott valós számsorozatban mindegyik elem
+      négyzete kisebb-e, mint a szintén bemenetként kapott $r$ érték!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik kiszámítja, hogy a bemenetként kapott valós számsorozatban
+      mi a 150-nél nagyobb értékek minimuma! (Feltételezzük, hogy mindig van benne ilyen.)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik kiszámítja, hogy a bemenetként kapott valós számsorozatban
+      mi az 50-nél kisebb értékek minimumának indexe! (Feltételezzük, hogy mindig van benne ilyen tulajdonságú elem.)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik kiszámítja, hogy a bemenetként kapott egész számok sorozatában
+      mennyi a 750-el vett egész hányadosok minimuma!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik megvizsgálja, hogy a bemenetként kapott egész számok sorozatábban
+      mi annak az elemnek az indexe, amelyik 800-al vett maradéka maximális!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      kiszámítja a bemenetként kapott valós számsorozatban előforduló utolsó nemnegatív elem indexét!
+      (Hogy ha nincs benne ilyen érték, akkor 0-ás index értéket adjon vissza!)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      visszaadja a bemenetként kapott valós számsorozatban az utolsó olyan elemnek az értékét, melynek törtrésze nagyobb, mint 0,3.
+      (Feltételezzük, hogy van benne ilyen érték)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      visszaadja a bemenetként kapott valós számsorozatban az utolsó olyan elemnek az értékét, amelyik alsóegész része 10 lesz!
+      (Feltételezzük, hogy van benne ilyen érték)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megszámolja, hogy egy valós számsorozatban mennyi olyan érték van, amelyiket lefelé kellene kerekíteni, hogy egész értéket kapjunk!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megszámolja, hogy egy valós számsorozatban mennyi olyan érték van, amelyik törtrésze a [0,1; 0,5) intervallumba esik!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megszámolja, hogy egy egész értékeket tartalmazó sorozatban mennyi olyan érték van,
+      amelyik két byte-os előjel nélküli egészként nem ábrázolható!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megszámolja, hogy egy egész értékeket tartalmazó sorozatban mennyi olyan érték van,
+      amelyik 10-es számrendszerben pontosan kettő számjeggyel írható fel!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott, nemnegatív valós értékeket tartalmazó sorozatban
+      van-e olyan elem, amelyiknek a gyöke kerekítve pontosan 71 értékű!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott, nemnegatív valós értékeket tartalmazó sorozatban
+      van-e olyan elem, amelyiknek a törtrésze pontosan 0,123-al egyenlő!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott, nemnegatív egész értékeket tartalmazó sorozatban
+      van-e olyan elem, amelyik az elem indexével egyenlő!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott valós számsorozatban mindegyik elem négyzete
+      kisebb, mint a szintén bemenetként kapott $\varepsilon$ érték!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott egész értékeket tartalmazó számsorozatban mindegyik elem 100-al vett maradéka
+      a szintén bemenetként kapott $m$ érték alatt van-e!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írja fel egy olyan procedúrának a pszeudókódját, amelyik
+      megvizsgálja, hogy a bemenetként kapott valós számsorozatban mindegyik elem
+      köbe nagyobb-e, mint a szintén bemenetként kapott $r$ érték!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ...
+  - question: |
+      Írjon egy procedúrát, amelyik kigyűjti a bemenetként kapott számsorozatból az átlagnál nagyobb értékeket egy kimeneti sorozatba!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik kigyűjti a bemenetként kapott számsorozatból a sorozat minimumánál legfeljebb 10-el nagyobb értékeket egy kimeneti sorozatba!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik kigyűjti a bemenetként kapott (páros hosszúságú) sorozat első feléből azokat az értékeket, amelyek nem szerepelnek a második felében!
+      (Feltételezzük, hogy egy elem a sorozat első, illetve a második felében is maximum egyszer szerepelhet.)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik a bemenetként kapott számsorozat elemeit szétválogatja két külön kimeneti sorozatba a szerint, hogy az értékek nagyobbak-e az indexüknél!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik a bemenetként kapott természetes számok sorozatának elemeit szétválogatja két külön kimeneti sorozatba a szerint, hogy az érték páros vagy páratlan számú számjegyen ábrázolható-e 2-es számrendszerben!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik a bemenetként kapott valós számsorozatból két kimeneti sorozatot állít elő, mely közül az elsőben a számok egész része, a másodikban pedig a tört része szerepel!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik a bemenetként kapott természetes számok sorozatából egy olyan 12 elemű kimeneti sorozatot állít elő, melyben azon (bemeneti sorozatbeli) elemek darabszáma szerepel, amelyek oszthatók a kimeneti sorozat adott indexével!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik bemenetként megkap egy $[a, b]$ intervallumot (mint két számértéket), és egy kimeneti sorozatba kigyűjti azon $n$ értékeket, amelyekre teljesül az $a < n! < b$ összefüggés!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANSasdf
+  - question: |
+      Írjon egy procedúrát, amelyik egy bemeneti valós számsorozat alapján kiszámít egy kimeneti sorozatot, melyben a bemeneti sorozat nemnegatív értékű elemeinek köbei szerepelnek!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik egész számok sorozatából kigyűjti azon elemek értékét, amelyek kisebbek az indexüknél!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik egész számok sorozatát szétválogatja két kimeneti sorozatra a szerint, hogy azok osztói-e a bemenetként kapott $n$ egész értéknek!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik egész számok sorozatát szétválogatja két kimeneti sorozatra a szerint, hogy a szintén bemenetként kapott $n$ egész érték osztója-e az adott értékeknek vagy sem!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik egész számok sorozatát szétválogatja két kimeneti sorozatra a szerint, hogy azok négyzetszámok vagy sem!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik egy páros elemszámú sorozatból kigyűjti azokat az elemeket, amelyek a sorozat első és második felében is benne vannak!
+      (Feltételezzük, hogy egy elem a sorozat első, illetve a második felében is maximum egyszer szerepelhet.)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik megvizsgálja, hogy egy valós sorozatban a páros vagy a páratlan indexeken lévő elemek maximuma-e a nagyobb!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik egy egész értékeket tartalmazó sorozatból kigyűjti a páratlan indexeken lévő páros értékeket egy sorozatba, illetve a páros indexeken lévő páros értékeket egy másikba!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik meghatározza egy valós sorozat páros indexű elemeinek a szorzatát és a páratlan indexű elemeinek az összegét!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik egy valós számsorozatból kigyűjti a legfeljebb $\varepsilon$ abszolút értékű elemek indexeit! (Az $\varepsilon$ a procedúra egy bemeneti paramétere.)
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS
+  - question: |
+      Írjon egy procedúrát, amelyik egy valós számsorozat elemeit szétválogatja két kimeneti sorozatra a szerint, hogy az érték kisebb-e vagy sem, mint a sorozat maximum értékének a fele!
+      Rajzolja fel a procedúra folyamatábráját is!
+    answer:
+      ANS

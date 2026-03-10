@@ -1,0 +1,205 @@
+exercises:
+  - question: |
+      Hogyan ábrázolható az \texttt{U+0045} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a \texttt{45} byte-on.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+0245} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+03AC} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+02FE} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+0388} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+0876} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+14FE} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+2AAE} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+10A4FE} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+103C4D} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+101A10} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{F3 AA 89 B7} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{F2 BB 81 AC} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak a \texttt{CC 8F} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak a \texttt{D1 9B} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{ED A3 B4} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{EE AA BB} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Szövegeket egymás után, Pascal konvenció szerint a következő byte-okon tárolunk:
+      \begin{center}
+      \texttt{02 A3 63 04 AA 34 20 45 03 BB 01 02}
+      \end{center}
+      \begin{itemize}
+      \item Mennyi az így tárolt szövegek hosszának az összege?
+      \item Konkatenálja a szövegeket, majd adja meg a C konvenció szerinti felírását!
+      \end{itemize}
+    answer:
+      ...
+  - question: |
+      Szövegeket egymás után, Pascal konvenció szerint a következő byte-okon tárolunk:
+      \begin{center}
+      \texttt{02 A3 63 04 AA 34 20 45 03 BB 01 02}
+      \end{center}
+      \begin{itemize}
+      \item Rakja (növekvő) sorba a szövegeket a hosszuk szerint, és írja fel C konvenció szerint!
+      \item A rendezett változatot konkatenálja össze, majd írja fel Pascal konvenció szerint!
+      \end{itemize}
+    answer:
+      ...
+  - question: |
+      Szövegeket egymás után, Pascal konvenció szerint a következő byte-okon tárolunk:
+      \begin{center}
+      \texttt{02 A3 20 04 AA 34 20 45 03 BB 01 20}
+      \end{center}
+      \begin{itemize}
+      \item Vegye ki a szövegekből a szó végi szóközöket (hexadecimálisan \texttt{20}-as byte), és írja fel Pascal konvenció szerint a kapott byte-okat!
+      \item Konkatenálja a szövegeket, majd adja meg a C konvenció szerinti felírását!
+      \end{itemize}
+    answer:
+      ...
+  - question: |
+      Szövegeket egymás után, C konvenció szerint a következő byte-okon tárolunk:
+      \begin{center}
+      \texttt{AA 57 8C 00 B3 64 C2 00 AB 11 00 00}
+      \end{center}
+      \begin{itemize}
+      \item Minden szöveg elejére fűzzön hozzá két szóközt, és adja meg Pascal konvenció szerint! (A szóköz a hexadecimális alakban \texttt{20}-as értékű byte.)
+      \item Az így kapott szövegeket konkatenálja össze, és írja fel C konvenció szerint!
+      \end{itemize}
+    answer:
+      ...
+  - question: |
+      Hogyan ábrázolható az \texttt{U+04F9} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+04AC} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+10D00A} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+1023AF} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+102030} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Hogyan ábrázolható az \texttt{U+100110} kódpont UTF-8 kódolást feltételezve?
+    answer:
+      Hexadecimális alakban a .. .. .. .. byte-okon.
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{F3 B3 81 A5} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{F1 A0 A9 88} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{F5 A2 80 8D} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{EE AB BA} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{E0 81 B2} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Milyen Unicode kódpontot ábrázolnak az \texttt{ED AC 99} byte-ok UTF-8 formátumot feltételezve?
+    answer:
+      ...
+  - question: |
+      Szöveget egymás után, Pascal konvenció szerint a következő byte-okon tárolunk:
+      \begin{center}
+      \texttt{02 A3 63 04 AA 34 20 45 03 BB 01 02}
+      \end{center}
+      \begin{itemize}
+      \item Törölje minden szövegből az utolsó byte-ot, és adja meg ezeket C konvenció szerint tárolva?
+      \item Az így kapott szövegeket konkatenálja össze, és adja meg az eredményt Pascal konvenció szerint!
+      \end{itemize}
+    answer:
+      ...
+  - question: |
+      Szövegeket egymás után, Pascal konvenció szerint a következő byte-okon tárolunk:
+      \begin{center}
+      \texttt{02 A3 63 04 AA 34 20 45 03 BB 01 02}
+      \end{center}
+      \begin{itemize}
+      \item Konkatenálja az első két sztringet, és írja fel az ez után kapott szövegeket C konvenció szerint!
+      \item Ez után minden szöveg elejéhez és végéhez fűzzön hozzá egy \texttt{07} byte-ot, majd írja fel a kapott szövegeket Pascal konvenció szerint!
+      \end{itemize}
+    answer:
+      ...
+  - question: |
+      Szövegeket egymás után, C konvenció szerint a következő byte-okon tárolunk:
+      \begin{center}
+      \texttt{AA 57 8C 00 00 64 C2 00 AB 11 00 00}
+      \end{center}
+      \begin{itemize}
+      \item Minden szöveg végéhez fűzzön hozzá két szóközt, és adja meg Pascal konvenció szerint! (A szóköz a hexadecimális alakban \texttt{20}-as értékű byte.)
+      \item Az így kapott szövegeket konkatenálja össze, és írja fel C konvenció szerint!
+      \end{itemize}
+    answer:
+      ...
+  - question: |
+      Szövegeket egymás után, C konvenció szerint a következő byte-okon tárolunk:
+      \begin{center}
+      \texttt{00 AA 57 8C 00 B3 C2 00 AB 11 00 00}
+      \end{center}
+      \begin{itemize}
+      \item Mennyi a szövegek hosszának átlaga?
+      \item Hagyja ki az üres szövegeket, és írja fel az eredményt Pascal konvencióval!
+      \end{itemize}
+    answer:
+      ...

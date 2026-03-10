@@ -1,0 +1,367 @@
+exercises:
+  - question: |
+      Egy kilobyte mennyi bit információt jelent?
+    answer:
+      8192 bit
+  - question: |
+      5 megabyte (röviden 5 MB) mennyi kilobyte-ból áll?
+    answer:
+      5120 KB
+  - question: |
+      5 megabyte (röviden 5 MB) mennyi byte-ból áll?
+    answer:
+      5242880 byte
+  - question: |
+      Mit nevezünk absztrakt adattípusnak?
+    answer:
+      Az adatok ($A$) és a rajtuk elvégezhető műveletek ($M$) halmazát.
+      \[
+      T = (A, M)
+      \]
+  - question: |
+      Írja fel a valós szám absztrakt adattípust a 4 alapművelettel!
+    answer:
+      $T = (\mathbb{R}, \{+, -, \cdot, /\})$
+  - question: |
+      Definiálja a Déscartes szorzatot!
+    answer:
+      $A \times B = \{(a, b)\mid a \in A, b \in B\}$
+  - question: |
+      Számítsa ki az $A = \{1, 7, 8\}$ és a $B = \{2, 3\}$ halmazok Déscartes szorzatát!
+    answer:
+      $A \times B = \ldots$
+  - question: |
+      Számítsa ki az $A = \{8, 5, 2, 3\}$ és a $B = \{4\}$ halmazok Déscartes szorzatát!
+    answer:
+      $A \times B = \ldots$
+  - question: |
+      Legyen adott egy $Q = \{2, 9\}$ halmaz! írja fel a $Q^3$ elemeit!
+    answer:
+      $Q^3 = \ldots$
+  - question: |
+      Definiálja az $n$-változós művelet fogalmát!
+    answer:
+      Adott egy $A$ halmaz. $f: A^n \rightarrow A$
+  - question: |
+      Ismerjük a $P = \{4, 6, 8\}$ és a $Q = \{2, 3, 7, 11\}$ halmazokat.
+      Mennyi lesz a $|P^3 \times Q^2|$ értéke?
+    answer:
+      $27 \cdot 16 = 432$
+  - question: |
+      Ismerjük a $P = \{4, 6, 8\}$ és a $Q = \{2, 3, 7, 11\}$ halmazokat.
+      Mennyi lesz a $|(P \times Q)^3|$ értéke?
+    answer:
+      $(3 \cdot 4)^3 = 12^3 = 1728$
+  - question: |
+      Ismerjük a $P = \{4, 6, 8\}$ és a $Q = \{2, 3, 7, 11\}$ halmazokat.
+      Mennyi lesz a $|(P^2 \times Q)^2|$ értéke?
+    answer:
+      $36^2 = 1296$
+  - question: |
+      Ismerjük a $P = \{4, 6, 8\}$ és a $Q = \{2, 3, 7, 11\}$ halmazokat.
+      Mennyi lesz a $|(P^{|Q|} \times Q)|$ értéke?
+    answer:
+      $3^4 \cdot 4 = 324$
+  - question: |
+      Ismerjük a $P = \{4, 6, 8\}$ és a $Q = \{2, 3, 7, 11\}$ halmazokat.
+      Mennyi lesz a $|2^Q \times P|$ értéke?
+    answer:
+      $2^4 \cdot 3 = 48$
+  - question: |
+      Ismerjük a $P = \{4, 6, 8\}$ és a $Q = \{2, 3, 7, 11\}$ halmazokat.
+      Mennyi lesz a $|2^Q \cup 2^P|$ értéke?
+    answer:
+      $2^3 + 2^4 - 1 = 23$
+  - question: |
+      Ismerjük a $P = \{4, 6, 8\}$ és a $Q = \{2, 3, 7, 11\}$ halmazokat.
+      Mennyi lesz a $|2^Q \cap 2^P|$ értéke?
+    answer:
+      $|\{ \emptyset \}| = 1$
+  - question: |
+      Ismerjük a $P = \{4, 6, 8\}$ és a $Q = \{2, 3, 7, 11\}$ halmazokat.
+      Mik lesznek a $2^{\{|P|, |Q|\}}$ halmaz elemei?
+    answer:
+      $\{\emptyset, \{3\}, \{4\}, \{3, 4\}\}$
+  - question: |
+      Ismerjük a $P = \{4, 6, 8\}$ és a $Q = \{2, 3, 7, 11\}$ halmazokat.
+      Mennyi lesz a $|2^{P \cup Q}|$ értéke?
+    answer:
+      128
+  - question: |
+      Ismerjük a $P = \{4, 6, 8\}$ és a $Q = \{2, 3, 7, 11\}$ halmazokat.
+      Mennyi lesz a $|2^{P \times Q}|$ értéke?
+    answer:
+      4096
+  - question: |
+      Szorozza össze a 34 és 17 értékeket Orosz paraszt módszerrel!
+    answer:
+      578 (A táblázatos felírás is szükséges!)
+  - question: |
+      Definiálja az alsó egészrész függvényt!
+    answer:
+      $\lfloor x \rfloor = \ldots$
+  - question: |
+      Definiálja a felső egészrész függvényt!
+    answer:
+      $\lceil x \rceil = \ldots$
+  - question: |
+      Definiálja a kerekítő függvényt!
+    answer:
+      $\text{Round}(x) = \ldots$
+  - question: |
+      Definiálja az egész hányados képzés műveletét!
+    answer:
+      $a \text{ div } b = \ldots$
+  - question: |
+      Definiálja az egész maradék képzés műveletét!
+    answer:
+      $a \text{ mod } b = \ldots$
+  - question: |
+      Számítsa ki a 17971 mod 670 értékét!
+    answer:
+      551
+  - question: |
+      Írja fel 7-es számrendszerben a 8564 értéket!
+    answer:
+      $33653_{(7)}$
+  - question: |
+      Írja fel 10-es számrendszerben a $881_{(9)}$ (9-es számrendszerbeli) értéket!
+    answer:
+      721
+  - question: |
+      Milyen értéket ábrázol a $0,77_{(8)}$ (8-as számrendszerbeli) érték 10-es számrendszerben?
+    answer:
+      0,984375
+  - question: |
+      Írja fel a számjegyek számáról szóló tételt!
+    answer:
+      A jelölések magyarázata is szükséges!
+  - question: |
+      Mennyi számjegyből áll a $10^{23}$ érték 16-os számrendszerben?
+    answer:
+      20 számjegyből áll.
+  - question: |
+      10 megabyte (10 MB) mennyi bitből áll?
+    answer:
+      83886080 bitből
+  - question: |
+      3 gigabyte (3 GB) mennyi kilobyte?
+    answer:
+      3145728
+  - question: |
+      Írja fel az egész szám absztrakt adattípust az összeadás és kivonás műveletével!
+    answer:
+      $T = (\mathbb{Z}, \{+, -\})$
+  - question: |
+      Számítsa ki az $A = \{x, y\}$ és a $B = \{1, 2\}$ halmazok Déscartes szorzatát!
+    answer:
+      $A \times B = \ldots$
+  - question: |
+      Számítsa ki az $A = \{u, v, w\}$ és a $B = \{8\}$ halmazok Déscartes szorzatát!
+    answer:
+      $A \times B = \ldots$
+  - question: |
+      Legyen adott egy $Q = \{a, z\}$ halmaz! írja fel a $Q^3$ elemeit!
+    answer:
+      $Q^3 = \ldots$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Mennyi lesz a $|(D^2 \times F)^2|$ értéke?
+    answer:
+      $27^2 = 729$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Mennyi lesz a $|2^{(D \cup F)}|$ értéke?
+    answer:
+      $2^4 = 16$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Mennyi lesz a $|2^{(D \cap F)}|$ értéke?
+    answer:
+      4
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $2^{(D \cap F)}$ halmaz elemeit?
+    answer:
+      $2^{(D \cap F)} = 2^{\{1, 5\}} = \ldots$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $2^{(D \triangle F)}$ halmaz elemeit?
+    answer:
+      $2^{(D \triangle F)} = 2^{\{3, 7\}} = \ldots$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $(D \setminus F) \times (F \setminus D)$ halmaz elemeit?
+    answer:
+      $(D \setminus F) \times (F \setminus D) = \{(3, 7)\}$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $2^{(D \setminus F)} \cup 2^{(F \setminus D)}$ halmaz elemeit?
+    answer:
+      $2^{(D \setminus F)} \cup 2^{(F \setminus D)} = \{\emptyset, \{3\}, \{7\}\}$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Számítsa ki a $|D \cup F|^{|D \cap F|}$ értéket?
+    answer:
+      $4^2 = 16$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $\{2^{|D|}\} \cup \{2^{|F|}\}$ halmaz elemeit!
+    answer:
+      $\{2^{|D|}\} \cup \{2^{|F|}\} = \{8\}$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $\{2^{|D|}\} \cap \{2^{|F|}\}$ halmaz elemeit!
+    answer:
+      $\{2^{|D|}\} \cap \{2^{|F|}\} = \{8\}$
+  - question: |
+      Ismerjük a $D = \{6, 5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $\{2^{|D|}\} \times \{2^{|F|}\}$ halmaz elemeit!
+    answer:
+      $\{2^{|D|}\} \times \{2^{|F|}\} = \{(16, 8)\}$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Mennyi lesz a $|2^{F \times D}|$ értéke?
+    answer:
+      $2^9 = 512$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Mennyi lesz a $|2^{F \setminus D}|^5$ értéke?
+    answer:
+      32
+  - question: |
+      Szorozza össze a 40 és 23 értékeket Orosz paraszt módszerrel!
+    answer:
+      920 (A táblázatos felírás is szükséges!)
+  - question: |
+      Szorozza össze a 39 és 15 értékeket Orosz paraszt módszerrel!
+    answer:
+      585 (A táblázatos felírás is szükséges!)
+  - question: |
+      Szorozza össze a 30 és 63 értékeket Orosz paraszt módszerrel!
+    answer:
+      1890 (A táblázatos felírás is szükséges!)
+  - question: |
+      Számítsa ki a 23752 mod 391 értékét!
+    answer:
+      292
+  - question: |
+      Számítsa ki a 811210 mod 251 értékét!
+    answer:
+      229
+  - question: |
+      Számítsa ki a 99547012 mod 1351 értékét!
+    answer:
+      1279
+  - question: |
+      Írja fel 9-es számrendszerben a 519375 értéket!
+    answer:
+      $871403_{(9)}$
+  - question: |
+      Írja fel 12-es számrendszerben a 18443 értéket!
+    answer:
+      $A80B_{(12)}$
+  - question: |
+      Írja fel 14-es számrendszerben a 33347 értéket!
+    answer:
+      $C21D_{(14)}$
+  - question: |
+      Milyen értéket ábrázol a $0,3302_{(4)}$ (4-es számrendszerbeli) érték 10-es számrendszerben?
+    answer:
+      0.9453125
+  - question: |
+      Milyen értéket ábrázol a $0,1001_{(4)}$ (4-es számrendszerbeli) érték 10-es számrendszerben?
+    answer:
+      0.25390625
+  - question: |
+      Milyen értéket ábrázol a $0,1313_{(4)}$ (4-es számrendszerbeli) érték 10-es számrendszerben?
+    answer:
+      0.46484375
+  - question: |
+      Mennyi számjegyből áll a $20^{14}$ érték 16-os számrendszerben?
+    answer:
+      16 számjegyből áll.
+  - question: |
+      Mennyi számjegyből áll a $13^{17}$ érték 9-es számrendszerben?
+    answer:
+      20 számjegyből áll.
+  - question: |
+      Mennyi számjegyből áll a $14^{41}$ érték 11-es számrendszerben?
+    answer:
+      46 számjegyből áll.
+  - question: |
+      Mennyi számjegyből áll a $19^{55}$ érték 17-es számrendszerben?
+    answer:
+      58 számjegyből áll.
+  - question: |
+      Mennyi számjegyből áll a $35^{29}$ érték 14-es számrendszerben?
+    answer:
+      40 számjegyből áll.
+  - question: |
+      Mikor nevezünk 2 programot ekvivalensnek?
+    answer:
+      ANS
+  - question: |
+      Definiálja a programgráf fogalmát!
+    answer:
+      ANS
+  - question: |
+      Definiálja a vezérlési gráf fogalmát!
+    answer:
+      ANS
+  - question: |
+      Definiálja a valódi program fogalmát!
+    answer:
+      ANS
+  - question: |
+      Sorolja fel a 3 strukturált alapelemet, és rajzolja fel a programgráfjukat!
+    answer:
+      ANS
+  - question: |
+      Sorolja fel a 3 strukturált alapelemet, és rajzolja fel a struktogramjukat!
+    answer:
+      ANS
+  - question: |
+      Sorolja fel a 3 strukturált alapelemet, és írja fel a formulájukat!
+    answer:
+      ANS
+  - question: |
+      Írja fel az iteráció (hátul tesztelő ciklus) formuláját a 3 strukturált alapelem segítségével!
+    answer:
+      ANS
+  - question: |
+      Definiálja a programgráf lebontásának folyamatát!
+    answer:
+      ANS
+  - question: |
+      Definiálja a strukturált program fogalmát!
+    answer:
+      ANS
+  - question: |
+      Mondja ki a Böhm-Jacopini tételt!
+    answer:
+      ANS
+  - question: |
+      Írja fel a ciklikus bonyolultság definícióját!
+    answer:
+      ANS
+  - question: |
+      Írja fel a lényeges bonyolultság definícióját!
+    answer:
+      ANS
+  - question: |
+      Mondja ki a programgráf ciklikus bonyolultságára vonatkozó tételt!
+    answer:
+      ANS
+  - question: |
+      Mondja ki a nem strukturált programgráf ciklikus bonyolultságára vonatkozó tételt!
+    answer:
+      ANS
+  - question: |
+      Írja fel a programgráf lényeges bonyolultságának definícióját!
+    answer:
+      ANS
+  - question: |
+      Mondja ki a strukturált program gráfjának lényeges bonyolultságára vonatkozó tételt!
+    answer:
+      ANS

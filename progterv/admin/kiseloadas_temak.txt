@@ -1,0 +1,40 @@
+== Logikai formulák helyességének vizsgálata, egyszerűsítésük.
+
+A logikai operátorokhoz egy könnyebben gépelhető megadást kell rendelni, hogy az programmal egyszerűbben feldolgozható legyen. Meg kell vizsgálni, hogy az így megadott logikai kifejezés helyesen van-e megadva. Ha igen, akkor meg kell próbálni egyszerűsíteni rajta.
+
+== Program programgráfjának struktúrálttá alakítása.
+
+A programgráf élhalmazos megadásából kiindulva fel kell azt rajzoltatni (például GraphViz-zel), majd a gráfot meg kell próbálni struktúrálttá alakítani az ismertetett nem struktúrált mintázatok alapján.
+
+== Szöveg konverziós bináris szerkesztő
+
+Készíteni kell egy olyan programot, amely egy bináris fájlt kiment egy szöveges fájlba. (Hasonlóan, mint a hexdump.) Az így nyert, szövegesen szerkeszthető fájlt vissza kell tudnia alakítania a programnak binárisra.
+
+== Feladatok generálása IEEE 754 szabvány gyakorlásához
+
+Készíteni egy olyan feladat generátort, amely gyakorlásra alkalmas feladatokat képes generálni. (A kitevő adott tartományon belül változik, a szignifikánst se nem túl hosszú, se nem túl rövid.)
+
+== Igazságtábla grafikus megjelenítése
+
+Készíteni egy olyan alkalmazást, amely valamilyen grafikusan megjeleníthető formában (például HTML) képes egy logikai függvény igazságtábláját felrajzolni.
+
+== Halmazokra vonatkozó azonosságok bizonyítása
+
+Készíteni kell egy olyan alkalmazást, amely a gépelhető formában megadott halmaz azonosság helyességét képes ellenőrízni. (Először formailag, majd bizonyítja az egyezőséget.)
+
+== UTF-8 szöveg bináris megjelenítése
+
+Egy olyan grafikus alkalmazást kellene elkészíteni, amely képes egy UTF-8 szöveget úgy megjeleníteni binárisan, hogy abból jól láthatóak legyenek az UTF-8 keretek.
+
+== Assembly jellegű kód végrehajtásának vizualizálása
+
+Egy nagyon leegyszerűsített assembly nyelv végrehajtási lépéseit vizaulizálni, és bemutatni rajta egy egyszerűbb algoritmust (például bináris keresést).
+
+== Formulával megadott programból struktorgram kirajzolása
+
+Egy olyan alkalmazást kell elkészíteni, amelyik a program formuláját meg tudja jeleníteni struktogram formájában.
+
+== Rekurzív függvények hívási fájának vizualizálása
+
+Az alkalmazásnak rekurzív algoritmusok hívási fáit kellene valahogy megjelenítenie. Az algoritmusok le lehetnek írva C nyelven (az ekvivalens pszeudókód megadásával).
+

@@ -1,0 +1,161 @@
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="capacity.css" />
+
+<title>Csatornakapacitás számítása</title>
+
+<script>
+//-------------------
+function capacity() {
+//-------------------
+	// Table columns
+	var u = new Array();
+	var g = new Array();
+	var ln_g = new Array();
+	var neg_g_der = new Array();
+	var delta_u = new Array();
+	
+	// Get distribution
+	var distribution = document.getElementById("distribution").value;
+
+	var t = distribution.split(" ");
+
+	// Remove empty elements
+	var t_temp = new Array();
+	for (i = 0; i < t.length; i++) {
+		if (t[i] != "" && isNaN(t[i]) == false) {
+			t_temp.push(t[i]);
+		}
+	}
+	t = t_temp;
+
+	var s = t.length;
+
+	// Calculate iterations
+	u[0] = 0;
+
+ 	var k = 0;
+ 	while (k < 20) {
+
+		g[k] = 0;
+		for (i = 0; i < s; i++) {
+			g[k] += Math.exp(-u[k] * t[i]);
+		}
+
+		ln_g[k] = Math.log(g[k]);
+
+		neg_g_der[k] = 0;
+		for (i = 0; i < s; i++) {
+			neg_g_der[k] += t[i] * Math.exp(-u[k] * t[i]);
+		}
+		
+		delta_u[k] = g[k] * ln_g[k] / neg_g_der[k];
+
+		if (g[k] == 1) break;
+
+		if (k < 19) {
+			u[k + 1] = u[k] + delta_u[k];
+		}
+
+		k++;
+	}
+
+	if (k == 20) k--;
+
+	var tau = neg_g_der[k];
+
+	var v = u[k] / Math.log(2);
+
+	var q = new Array();
+	for (i = 0; i < s; i++) {
+		q[i] = Math.exp(-u[k] * t[i]);
+	}
+
+	var resultHtml = "<h4>Számítás Newton módszerrel</h4>";
+
+	// Create table
+	resultHtml +=
+	"<table> \
+		<tr> \
+			<th>k</th> \
+			<th>u<sub>k</sub></th> \
+			<th>g<sub>k</sub></th> \
+			<th>ln g<sub>k</sub></th> \
+			<th>-g'<sub>k</sub></th> \
+			<th>&Delta;u</th> \
+		</tr>";
+
+	for (i = 0; i <= k; i++) {
+		resultHtml += "<tr><td>"
+		+ i + "</td><td>"
+		+ u[i] + "</td><td>"
+		+ g[i] + "</td><td>"
+		+ ln_g[i] + "</td><td>"
+		+ neg_g_der[i] + "</td><td>"
+		+ delta_u[i] + "</td></tr>";
+	}
+
+	resultHtml += "</table>";
+
+	// Show tau
+	resultHtml += "<h4>Átlagos átviteli idő:</h4>";
+	resultHtml += "<div class=\"tau\">&tau; = " + tau + "</div>";
+
+	resultHtml += "<h4>A költségekhez tartozó optimális bemeneti eloszlás:</h4>";
+
+	resultHtml +=
+	"<table> \
+		<tr> \
+			<th>i</th> \
+			<th>t<sub>i</sub></th> \
+			<th>q<sub>i</sub></th> \
+		</tr>";
+
+
+	for (i = 0; i < s; i++) {
+		resultHtml += "<tr><td>" + (i + 1) + "</td><td>" + t[i] + "</td><td>" + q[i] + "</td></tr>";
+	}
+
+	resultHtml += "</table>";
+
+	// Show table on page
+	var capacityDiv = document.getElementById("capacityDiv");
+	capacityDiv.innerHTML = resultHtml;
+
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="capacityMain">
+
+<h2>Csatornakapacitás kiszámítása</h2>
+
+<br />
+<br />
+
+<div>
+<h4>Additív költségek:</h4>
+<input id="distribution" type="text" size="50" />
+<input type="button" value="Ok" onClick="capacity()"/>
+</div>
+
+<div id="capacityDiv">
+</div>
+
+<br />
+<br />
+
+<a href="index.html">&lt;&lt; Információelmélet appletek</a>
+
+</div>
+
+</body>
+
+</html>

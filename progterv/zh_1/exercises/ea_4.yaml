@@ -1,0 +1,193 @@
+exercises:
+  - question: |
+      Adjon meg 3 kétváltozós halmazműveletet, amely kommutatív (névvel és jelöléssel)!
+    answer:
+      $\cup, \cap, \triangle$
+  - question: |
+      Lássa be, hogy a halmazkülönbség művelete nem asszociatív!
+    answer:
+      $A \setminus (B \setminus C) = \ldots$
+  - question: |
+      Lássa be (az ismert azonosságok felhasználásával), hogy a halmazkülönbség művelete nem asszociatív!
+    answer:
+      $A \setminus (B \setminus C) = \ldots$
+  - question: |
+      Lássa be (az ismert azonosságok felhasználásával), hogy a halmazkülönbség művelete nem kommutatív!
+    answer:
+      $A \ B = \ldots$
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [0, 1, 1, 0, 1, 1, 1], B = [1, 1, 0, 0, 1, 0, 1].
+      \]
+      Írja fel az $A \cup B$ és $A \triangle B$ halmazokat ugyanilyen reprezentációval!
+    answer:
+      $A \cup B = [1, 1, 1, 0, 1, 1, 1], \ldots$
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [0, 1, 1, 0, 1, 1, 1], B = [1, 1, 0, 0, 1, 0, 1].
+      \]
+      Írja fel az $B \setminus A$ és $\overline{A} \cup \overline{B}$ halmazokat ugyanilyen reprezentációval!
+    answer:
+      ...
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [0, 1, 1, 0, 1, 1, 1], B = [1, 1, 0, 0, 1, 0, 1], C = [0, 0, 1, 0, 1, 1, 0].
+      \]
+      Írja fel az $C \setminus (B \cup A)$ halmazt ugyanilyen reprezentációval!
+    answer:
+      ...
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [0, 1, 1, 0, 1, 1, 1], B = [1, 1, 0, 0, 1, 0, 1], C = [0, 0, 1, 0, 1, 1, 0].
+      \]
+      Írja fel az $C \triangle (B \cap A)$ halmazt ugyanilyen reprezentációval!
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      \overline{X} \setminus (Y \cap \overline{Z}) =
+      \overline{X \cup Y} \cup (\overline{X} \cap Z)
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (P \triangle (\overline{R} \setminus Q)) =
+      (P \cap Q) \cup (P \cap R) \cup (\overline{P} \cap \overline{Q} \cap \overline{R})
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (F \cap \overline{G}) \triangle \overline{H} =
+      (F \cap \overline{G} \cap H) \cup (\overline{F} \cap \overline{H}) \cup (G \cap \overline{H})
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      \overline{(A \cup \overline{B}) \setminus \overline{C}} =
+      (\overline{A} \cup \overline{C}) \cap (B \cup \overline{C})
+      \]
+    answer:
+      ...
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [1, 0, 1, 0, 1, 0, 1], B = [1, 1, 1, 0, 0, 0, 0].
+      \]
+      Írja fel az $A \cup B$ és $A \triangle B$ halmazokat ugyanilyen reprezentációval!
+    answer:
+      $A \cup B = [1, 1, 1, 1, 1, 0, 1], \ldots$
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [1, 0, 1, 0, 1, 0, 1], B = [1, 1, 1, 0, 0, 0, 0].
+      \]
+      Írja fel az $A \cap B$ és $A \setminus B$ halmazokat ugyanilyen reprezentációval!
+    answer:
+      $A \cap B = [1, 0, 1, 0, 0, 0, 0], \ldots$
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [1, 0, 1, 0, 1, 0, 1], B = [1, 1, 1, 0, 0, 0, 0].
+      \]
+      Írja fel az $\overline{A} \cap B$ és $A \cup \overline{B}$ halmazokat ugyanilyen reprezentációval!
+    answer:
+      $\overline{A} \cap B = [0, 1, 0, 0, 0, 0, 0], \ldots$
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [0, 1, 1, 0, 1, 1, 1], B = [1, 1, 0, 0, 1, 0, 1], C = [0, 0, 1, 0, 1, 1, 0].
+      \]
+      Írja fel a $\overline{C} \setminus (B \cup A)$ halmazt ugyanilyen reprezentációval!
+    answer:
+      ...
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [0, 1, 1, 0, 1, 1, 1], B = [1, 1, 0, 0, 1, 0, 1], C = [0, 0, 1, 0, 1, 1, 0].
+      \]
+      Írja fel a $C \setminus (\overline{B} \cup A)$ halmazt ugyanilyen reprezentációval!
+    answer:
+      ...
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [0, 1, 1, 0, 1, 1, 1], B = [1, 1, 0, 0, 1, 0, 1], C = [0, 0, 1, 0, 1, 1, 0].
+      \]
+      Írja fel a $C \setminus (B \cup \overline{A})$ halmazt ugyanilyen reprezentációval!
+    answer:
+      ...
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [0, 1, 1, 0, 1, 1, 1], B = [1, 1, 0, 0, 1, 0, 1], C = [0, 0, 1, 0, 1, 1, 0].
+      \]
+      Írja fel a $C \triangle (B \cup A)$ halmazt ugyanilyen reprezentációval!
+    answer:
+      ...
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [0, 1, 1, 0, 1, 1, 1], B = [1, 1, 0, 0, 1, 0, 1], C = [0, 0, 1, 0, 1, 1, 0].
+      \]
+      Írja fel a $C \setminus (B \triangle A)$ halmazt ugyanilyen reprezentációval!
+    answer:
+      ...
+  - question: |
+      Tegyük fel, hogy elemek halmazokhoz való tartozását bittömbös formában reprezentáljuk:
+      \[
+        A = [0, 1, 1, 0, 1, 1, 1], B = [1, 1, 0, 0, 1, 0, 1], C = [0, 0, 1, 0, 1, 1, 0].
+      \]
+      Írja fel a $C \setminus (\overline{B} \triangle A)$ halmazt ugyanilyen reprezentációval!
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+      (A \cap B) \cup (B \cap \overline{C}) =
+      B \setminus (C \cap \overline{A})
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+        (P \cap Q \cap R) \cup (P \cap \overline{Q} \cap \overline{R}) =
+        P \cap (Q \triangle \overline{R})
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+        (X \cap \overline{Y}) \cup (X \cap Z) =
+        (X \setminus (Y \cap \overline{Z})) \cap \overline{Y \setminus X}
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+        \overline{A \cap B} \cap (\overline{A} \cup C) =
+        \overline{A \cap (B \cup \overline{C})}
+      \]
+    answer:
+      ...
+  - question: |
+      Lássa be a következő azonosságot!
+      \[
+        Q \triangle \overline{P \cup R} =
+        (P \cap Q) \cup (R \cap Q) \cup (\overline{P} \cap \overline{Q} \cap \overline{R})
+      \]
+    answer:
+      ...

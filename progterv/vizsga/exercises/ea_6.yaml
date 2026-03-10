@@ -1,0 +1,49 @@
+exercises:
+  - question: |
+      Adott a következő függvény:
+      \[
+        f(n) =
+        \begin{cases}
+        2 \cdot f(n - 3), & \text{ha } n > 20, \\
+        7, & \text{egyébként. }
+        \end{cases}
+      \]
+      Határozza meg az $f(25)$ értékét! Rajzolja fel a hívási fát!
+    answer:
+      ANS
+  - question: |
+      Adott a következő függvény!
+      \[
+      g(n) =
+      \begin{cases}
+      g(n - 2) + 3 \cdot g(n - 1), & n > 0, \\
+      6, & \text{egyébként. }
+      \end{cases}
+      \]
+      Határozza meg a $g(2)$ értéket! Rajzolja fel a hívási fát!
+    answer:
+      ANS
+  - question: |
+      Adott a következő függvény:
+      \[
+        h(n) =
+        \begin{cases}
+        3 \cdot h(n - 4), & \text{ha } n > 20, \\
+        1, & \text{egyébként. }
+        \end{cases}
+      \]
+      Határozza meg az $h(30)$ értékét! Rajzolja fel a hívási fát!
+    answer:
+      ANS
+  - question: |
+      Adott a következő függvény!
+      \[
+      h(n) =
+      \begin{cases}
+      2 \cdot h(n - 2) + 3 \cdot h(n - 1), & n > 0, \\
+      4, & \text{egyébként. }
+      \end{cases}
+      \]
+      Határozza meg a $h(2)$ értéket! Rajzolja fel a hívási fát!
+    answer:
+      ANS

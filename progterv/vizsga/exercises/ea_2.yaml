@@ -1,0 +1,13 @@
+exercises:
+  - question: |
+      Mondja ki, és bizonyítsa a számjegyek számáról szóló tételt!
+    answer:
+      ANS
+  - question: |
+      Mondja ki, és bizonyítsa a programgráf ciklikus bonyolultságára vonatkozó tételt!
+    answer:
+      ANS
+  - question: |
+      Mondja ki és bizonyítsa a strukturált program gráfjának lényeges bonyolultságára vonatkozó tételt!
+    answer:
+      ANS

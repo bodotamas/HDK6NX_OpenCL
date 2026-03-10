@@ -1,0 +1,239 @@
+\documentclass[a4paper]{article}
+
+% Set margins
+\usepackage[hmargin=2.5cm, vmargin=3cm]{geometry}
+
+\frenchspacing
+
+% Language packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+
+% AMS
+\usepackage{amssymb,amsmath}
+
+% Graphic packages
+\usepackage{graphicx}
+
+% Colors
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Listings
+\usepackage{listings}
+
+% Question
+\newenvironment{question}[1]
+{\noindent\textcolor{OliveGreen}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Task
+\newenvironment{task}[1]
+{\noindent\textcolor{RoyalBlue}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Notification
+\newenvironment{notification}[1]
+{\noindent\textcolor{Peach}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Problem
+\newenvironment{problem}[1]
+{\noindent\textcolor{OrangeRed}{$\circ$ \textit{#1}}
+
+\smallskip
+
+\color{Gray}
+
+}{\bigskip}
+
+% Solution
+\newenvironment{solution}
+{\color{RoyalBlue}}{\bigskip}
+
+% Comment
+\newenvironment{comment}
+{\color{Green}}{\bigskip}
+
+\lstset{% setup listings
+        framexleftmargin=16pt,
+        framextopmargin=6pt,
+        framexbottommargin=6pt, 
+        frame=single, rulecolor=\color{black}
+}
+
+\begin{document}
+
+\begin{center}
+   \large \textbf{Valószínűségszámítás - típusfeladatok - 2. ZH}
+\end{center}
+
+\vskip 1cm
+
+\section{Nevezetes eloszlások}
+
+\subsection{Poisson eloszlás}
+
+\noindent \textbf{Típusok}
+
+\begin{itemize}
+\item Adott a $\lambda$ paraméter, és ki kell számítani valamilyen valószínűséget.
+\item Adott egy valószínűség, és ki kell számítani a $\lambda$ paramétert.
+\item Adott a $\lambda$ és egy valószínűség, és ki kell számolni egy hiányzó paramétert.
+\item Darabszámok intervallumát vagy több véletlen kísérletet (mintavételt) kell vizsgálni (például a mazsolás feladatnál, hogy legalább 2 szeletben nincs mazsola).
+\end{itemize}
+
+\subsection{Exponenciális eloszlás}
+
+\noindent \textbf{Típusok}
+
+\begin{itemize}
+\item Adott a $\lambda$ paraméter és egy valószínűséget kell meghatározni.
+\item Adott valószínűség, és a $\lambda$ a meghatározandó.
+\item A tartományt magát kell meghatározni (például, hogy csak az egyik vége adott, és mennyi lesz a másik).
+\end{itemize}
+
+\subsection{Nevezetes eloszlások kapcsolata}
+
+\textbf{Típusok}
+
+\begin{itemize}
+\item Intervallumba esés valószínűsége.
+\item Intervallum meghatározása valószínűség alapján.
+\item Hiányzó várható érték vagy szórás paraméter.
+\item Binomiális eloszlás közelítése normáis eloszlással (Moivre-Laplace tétel)
+\end{itemize}
+
+\section{Normális eloszlás}
+
+\noindent \textbf{Típusok}
+
+\begin{itemize}
+\item Adott a várhatóérték és a szórásnégyzet, és ki kell számolni valamilyen valószínűséget.
+\item Adott egy valószínűség, és ki kell számolni a várható értéket.
+\item Adott valószínűség esetén a hozzá tartozó intervallumot kell meghatározni.
+\end{itemize}
+
+\noindent \textbf{Észrevételek}
+
+\begin{itemize}
+\item A várható érték az első momentum, a szórásnégyzet pedig a második. Előfordulhat, hogy ilyen formában lesz megfogalmazva a feladat.
+\item A feladat megoldásához normális eloszlás táblázatot célszerű használni.
+\end{itemize}
+
+\section{Egyenlőtlenségek}
+
+\subsection{Markov-egyenlőtlenség}
+
+\noindent \textbf{Típusok}
+
+\begin{itemize}
+\item Adott a várható érték, és be kell látni, hogy bizonyos egyenlőtlenség teljesül.
+\item A $c$ értéket kell meghatározni.
+\item Az $E(\xi)$ értéket kell meghatározni.
+\end{itemize}
+
+\noindent \textbf{Észrevételek}
+
+\begin{itemize}
+\item A feladat szövegezéséből kell felismerni, hogy a Markov-egyenlőtlenségre lesz szükség. (Az egyenlőtlenség valamilyen formában szerepel benne, és a várható értéken kívül mást nem lehet tudni, vagy épp azt kell kiszámolni.)
+\item Az egyenlőtlenséget a komplementer esemény alapján át kell tudni rendezni.
+\end{itemize}
+
+\subsection{Csebisev-egyenlőtlenség}
+
+\noindent \textbf{Típusok}
+
+\begin{itemize}
+\item Ismert a szórásnégyzet. A várhatóértéktől való eltérés valószínűségére kell becslést adni.
+\item Ismert a várhatóértéktől való eltérés valószínűsége. A szórásnégyzetre kell becslést adni.
+\item Ismert az egyenlőtlenség jobb oldala és a szórásnégyzet. A várhatóértéktől való eltérésre kell becslést adni.
+\end{itemize}
+
+\noindent \textbf{Észrevételek}
+
+\begin{itemize}
+\item Ennél is szükség lehet az egyenlőtlenség átrendezésére.
+\item A várható érték is meg lehet adva.
+\item A szórásnégyzet előfordulhat, hogy ismert eloszlásból számítandó ki.
+\end{itemize}
+
+\subsection{Bernoulli-féle nagy számok törvénye}
+
+\noindent \textbf{Típusok}
+
+\begin{itemize}
+\item Valamit gyártunk/készítünk, és szeretnénk minél kisebb intervallumot meghatározni a gyártás pontosságára vonatkozóan. (Például, hogy ha azt mondjuk, hogy a legyártott termék hossza $\pm 1$ cm legalább 0.95 valószínűséggel az jobb, mint ha azt mondjuk, hogy $\pm 200$ cm.)
+\item Ismert a pontosság, és meg szeretnénk határozni, hogy az milyen valószínűséggel jelenthető ki.
+\item A szükséges kísérletek számát szeretnénk becsülni.
+\item A vizsgált esemény bekövetkezésének valószínűségét szeretnénk vizsgálni.
+\end{itemize}
+
+\noindent \textbf{Észrevételek}
+
+\begin{itemize}
+\item Az alapján lehet felismerni, hogy erre az egyenlőtlenségre van szükség, hogy Bernoulli-kísérletsorozatról van szó, a relatív gyakoriság valószínűségtől való eltérését kell becsülni, és hogy jellemzően a kísérletek száma is adott.
+\end{itemize}
+
+\section{Véletlen vektorok - Diszkrét eset}
+
+\noindent \textbf{Típusok}
+
+\begin{itemize}
+\item Adott egy eloszlás táblázatos formában. Fel kell írni és rajzolni az eloszlásfüggvényét.
+\item Ki kell számítani a peremeloszlásokat (esetleg azokat is ábrázolni kell).
+\item Ki kell számítani adott intervallumba esés valószínűségét. (Meg lehet adva szövegesen, vagy közvetlenül $P$ függvénnyel felírva.)
+\item Ki kell számítani a feltételes valószínűségeket.
+\item Kiszámítandó az $E(\xi), D^2(\xi), D(\xi), E(\eta), D^2(\eta), D(\eta)$ értéke.
+\item Ki kell számítani a $\xi$-nek az $\eta$-ra vonatkozó, illetve az $\eta$-nak a $\xi$-re vonatkozó regressziós függvényét.
+\end{itemize}
+
+\section{Véletlen vektorok - Folytonos eset}
+
+\noindent \textbf{Típusok}
+
+\begin{itemize}
+\item Adott az együttes sűrűségfüggvény és fel kell írni az eloszlásfüggvényt.
+\item Adott az együttes eloszlásfüggvény, és meg kell határozni az együttes sűrűségfüggvényt.
+\item Fel kell rajzolni tartomány formájában ("felülről nézve") a sűrűségfüggvényt.
+\item Ki kell számítani az $E(\xi), D^2(\xi), D(\xi), E(\eta), D^2(\eta), D(\eta)$ értékeket.
+\item Meg kell határozni a $\xi$ vagy az $\eta$ mediánját ($\text{med}\{\xi\}, \text{med}\{\eta\}$).
+\item Fel kell írni a feltételes sűrűségfüggvényeket.
+\item Ki kell számítani az intervallumba esés valószínűségét.
+\item Meg kell határozni a sűrűségfüggvény egy hiányzó paraméterét.
+\item Meg kell vizsgálni, hogy $\xi$ és $\eta$ függetlenek-e.
+\end{itemize}
+
+\noindent \textbf{Észrevételek}
+
+\begin{itemize}
+\item A hiányzó paraméter lehet a tartomány megadásában is.
+\item Akkor is érdemes ábrázolni, hogy ha az feladatként nem szerepel, mert gyakran abból is leolvashatóak az eredmények, és ellenőrízhetők.
+\end{itemize}
+
+\section{Leíró statisztikák}
+
+\noindent \textbf{Típusok}
+
+\begin{itemize}
+\item Adott minta alapján a következőket kell kiszámítani: átlag, medián, MAD, korrigált tapasztalati szórás, kvartilisek, $p$-kvantilisek számítása
+\item Fel kell rajzolni a tapasztalati eloszlásfüggvényt, a gyakoriság vagy a sűrűséghisztogramot.
+\end{itemize}
+
+\end{document}

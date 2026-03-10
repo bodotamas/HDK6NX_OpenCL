@@ -1,0 +1,158 @@
+exercises:
+  - question: |
+      10 megabyte (10 MB) mennyi bitből áll?
+    answer:
+      83886080 bitből
+  - question: |
+      3 gigabyte (3 GB) mennyi kilobyte?
+    answer:
+      3145728
+  - question: |
+      Írja fel az egész szám absztrakt adattípust az összeadás és kivonás műveletével!
+    answer:
+      $T = (\mathbb{Z}, \{+, -\})$
+  - question: |
+      Számítsa ki az $A = \{x, y\}$ és a $B = \{1, 2\}$ halmazok Déscartes szorzatát!
+    answer:
+      $A \times B = \ldots$
+  - question: |
+      Számítsa ki az $A = \{u, v, w\}$ és a $B = \{8\}$ halmazok Déscartes szorzatát!
+    answer:
+      $A \times B = \ldots$
+  - question: |
+      Legyen adott egy $Q = \{a, z\}$ halmaz! írja fel a $Q^3$ elemeit!
+    answer:
+      $Q^3 = \ldots$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Mennyi lesz a $|(D^2 \times F)^2|$ értéke?
+    answer:
+      $27^2 = 729$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Mennyi lesz a $|2^{(D \cup F)}|$ értéke?
+    answer:
+      $2^4 = 16$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Mennyi lesz a $|2^{(D \cap F)}|$ értéke?
+    answer:
+      4
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $2^{(D \cap F)}$ halmaz elemeit?
+    answer:
+      $2^{(D \cap F)} = 2^{\{1, 5\}} = \ldots$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $2^{(D \triangle F)}$ halmaz elemeit?
+    answer:
+      $2^{(D \triangle F)} = 2^{\{3, 7\}} = \ldots$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $(D \setminus F) \times (F \setminus D)$ halmaz elemeit?
+    answer:
+      $(D \setminus F) \times (F \setminus D) = \{(3, 7)\}$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $2^{(D \setminus F)} \cup 2^{(F \setminus D)}$ halmaz elemeit?
+    answer:
+      $2^{(D \setminus F)} \cup 2^{(F \setminus D)} = \{\emptyset, \{3\}, \{7\}\}$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Számítsa ki a $|D \cup F|^{|D \cap F|}$ értéket?
+    answer:
+      $4^2 = 16$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $\{2^{|D|}\} \cup \{2^{|F|}\}$ halmaz elemeit!
+    answer:
+      $\{2^{|D|}\} \cup \{2^{|F|}\} = \{8\}$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $\{2^{|D|}\} \cap \{2^{|F|}\}$ halmaz elemeit!
+    answer:
+      $\{2^{|D|}\} \cap \{2^{|F|}\} = \{8\}$
+  - question: |
+      Ismerjük a $D = \{6, 5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Írja fel a $\{2^{|D|}\} \times \{2^{|F|}\}$ halmaz elemeit!
+    answer:
+      $\{2^{|D|}\} \times \{2^{|F|}\} = \{(16, 8)\}$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Mennyi lesz a $|2^{F \times D}|$ értéke?
+    answer:
+      $2^9 = 512$
+  - question: |
+      Ismerjük a $D = \{5, 3, 1\}$ és az $F = \{7, 5, 1\}$ halmazokat.
+      Mennyi lesz a $|2^{F \setminus D}|^5$ értéke?
+    answer:
+      32
+  - question: |
+      Szorozza össze a 40 és 23 értékeket Orosz paraszt módszerrel!
+    answer:
+      920 (A táblázatos felírás is szükséges!)
+  - question: |
+      Szorozza össze a 39 és 15 értékeket Orosz paraszt módszerrel!
+    answer:
+      585 (A táblázatos felírás is szükséges!)
+  - question: |
+      Szorozza össze a 30 és 63 értékeket Orosz paraszt módszerrel!
+    answer:
+      1890 (A táblázatos felírás is szükséges!)
+  - question: |
+      Számítsa ki a 23752 mod 391 értékét!
+    answer:
+      292
+  - question: |
+      Számítsa ki a 811210 mod 251 értékét!
+    answer:
+      229
+  - question: |
+      Számítsa ki a 99547012 mod 1351 értékét!
+    answer:
+      1279
+  - question: |
+      Írja fel 9-es számrendszerben a 519375 értéket!
+    answer:
+      $871403_{(9)}$
+  - question: |
+      Írja fel 12-es számrendszerben a 18443 értéket!
+    answer:
+      $A80B_{(12)}$
+  - question: |
+      Írja fel 14-es számrendszerben a 33347 értéket!
+    answer:
+      $C21D_{(14)}$
+  - question: |
+      Milyen értéket ábrázol a $0,3302_{(4)}$ (4-es számrendszerbeli) érték 10-es számrendszerben?
+    answer:
+      0.9453125
+  - question: |
+      Milyen értéket ábrázol a $0,1001_{(4)}$ (4-es számrendszerbeli) érték 10-es számrendszerben?
+    answer:
+      0.25390625
+  - question: |
+      Milyen értéket ábrázol a $0,1313_{(4)}$ (4-es számrendszerbeli) érték 10-es számrendszerben?
+    answer:
+      0.46484375
+  - question: |
+      Mennyi számjegyből áll a $20^{14}$ érték 16-os számrendszerben?
+    answer:
+      16 számjegyből áll.
+  - question: |
+      Mennyi számjegyből áll a $13^{17}$ érték 9-es számrendszerben?
+    answer:
+      20 számjegyből áll.
+  - question: |
+      Mennyi számjegyből áll a $14^{41}$ érték 11-es számrendszerben?
+    answer:
+      46 számjegyből áll.
+  - question: |
+      Mennyi számjegyből áll a $19^{55}$ érték 17-es számrendszerben?
+    answer:
+      58 számjegyből áll.
+  - question: |
+      Mennyi számjegyből áll a $35^{29}$ érték 14-es számrendszerben?
+    answer:
+      40 számjegyből áll.

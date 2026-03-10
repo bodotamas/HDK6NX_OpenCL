@@ -1,0 +1,190 @@
+\documentclass[a4paper,12pt]{article}
+
+% Set margins
+\usepackage[hmargin=1cm, vmargin=0.5cm]{geometry}
+
+\frenchspacing
+
+% Language packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+
+% AMS
+\usepackage{amssymb,amsmath}
+
+% Graphic packages
+\usepackage{graphicx}
+
+% Colors
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Enumeration
+\usepackage{enumitem}
+
+% Links
+\usepackage{hyperref}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+	
+	\
+	
+	\vskip 1cm
+	
+	{\huge \textbf{Záróvizsga tételek}}
+	
+	\medskip
+
+	{\large \textit{Programtervező informatikus BSc}}
+\end{center}
+
+\vskip 5mm
+
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabular}{|lp{16.5cm}|}
+
+\hline
+
+\textbf{1.} &
+Adatok, adattípusok, adatműveletek és adatstruktúrák. Szám adattípus. Számrendszerek, konverziók. A logikai, halmaz, karakter, sztring absztrakt adattípusok és realizációjuk. A tömb (vektor, mátrix), rekord absztrakt adattípusok.
+\\
+
+\textbf{2.} &
+Az algoritmus. Iteratív és rekurzív algoritmus. A számítógépes memória. Adat és program. Verem és procedúra. Az algoritmus lejegyzése. A folyamatábra és a pszeudokód. Elemi algoritmusok.
+\\
+
+\textbf{3.} &
+Strukturált programozás. Programgráf, valódi program, vezérlőgráf lebontása, strukturált program és annak formulája. Strukturált programgráf kialakítása, struktogram. Ciklikus bonyolultság és egyéb bonyolultsági tételek.
+\\
+
+\hline
+
+\textbf{4.} &
+Számelméleti algoritmusok. Legnagyobb közös osztó, euklideszi és kibővített euklideszi algoritmus, lineáris kongruencia egyenletek. Multiplikatív inverz, moduláris hatványozás, Fermat prímteszt. RSA.
+\\
+
+\textbf{5.} &
+Rendezések: Beszúró rendezés. Az "Oszd meg és uralkodj!" elv. Összefésülő rendezés. Gyors rendezés. Buborék rendezés. Shell rendezés. Minimum kiválasztásos rendezés. Négyzetes rendezés. Lineáris idejű rendezések: leszámláló rendezés, számjegyes rendezés. Időelemzéseik. Az összehasonlító rendezések időtétele.
+\\
+
+\textbf{6.} &
+Gráf algoritmusok. Szélességi keresés. Mélységi keresés. Topológikus rendezés. Optimum feladatok fákon (minimális feszítőfák, a Kruskal és Prim algoritmus). Legrövidebb utak meghatározása (Dijkstra algoritmus, Bellman-Ford algoritmus. Floyd-Warshall algoritmus).
+\\
+
+\hline
+
+\textbf{7.} &
+A párhuzamos algoritmusok alapfogalmai, PRAM modell, hatékonysági mértékek (munka, költség, gyorsítás, hatékonyság). Párhuzamos végrehajtás ábrázolási módjai. Komplexitás becslése, párhuzamos komplexitás. Amdahl törvénye. Pipeline párhuzamosítás, Lost update probléma bemutatása és megoldása.
+\\
+
+\textbf{8.} &
+Aggregáció, redukció, prefixszámítás párhuzamosítási lehetőségei. CREW\_PREFIX, EREW\_PREFIX és OPTIMAL\_PREFIX algoritmusok bemutatása. Összefésülő rendezés párhuzamosítási módja.
+\\
+
+\textbf{9.} &
+A busz, gyűrű, rács, tórusz, hiperkocka és fa topológiák bemutatása, csomópontok közötti távolságok jellemzése. A CSP, Publish-Subscribe és az Aktor modell. Az aszinkron programozás elemei: \code{async}, \code{await} kulcsszavak használata, coroutine-ok.
+\\
+
+\hline
+
+\textbf{10.} &
+A Turing gép fogalma, működése. A RAM-gép. Boole-függvények és logikai hálózatok.
+\\
+
+\textbf{11.} &
+Algoritmikus eldönthetőség. Church-tézis. Rekurzív és rekurzívan felsorolható nyelvek, rekurzív illetve parciálisan rekurzív függvények. Nevezetes nyelvek (Az R, Re, coR, coRE nyelvosztályok és ezek kapcsolata) és bonyolultságuk. Algoritmikusan eldönthetetlen problémák. Polinomiális idejű algoritmusok.
+\\
+
+\textbf{12.} &
+Nemdeterminisztikus Turing gépek, Az NP és a coNP nyelvosztály. Példák NP-beli nyelvekre.  A tanú-tétel. Nemdeterminisztikus algoritmusok bonyolultsága. NP-teljesség, Cook-tétel.  Néhány NP-teljes probléma, Cook-Levin tétel.
+\\
+
+\hline
+
+\end{tabular}
+
+\begin{tabular}{|lp{16.5cm}|}
+
+\hline
+
+\textbf{13.} &
+A Java programozási nyelv története, alapvető jellemzői. Egy Java program szerkezete (csomagok és fordítási egységek). Az objektum orientált programtervezés alapelveinek felsorolása. Objektumok tárolása és élettartama. Szemétgyűjtő mechanizmus. Kivételkezelés.
+\\
+
+\textbf{14.} &
+Az egységbezárás és az információrejtés objektum orientált alapelvek megvalósítása. Osztálydefiníció és példányosítás. Osztályszintű és példányszintű tagok, konstansok. Hozzáférési kategóriák és használatuk. Hivatkozás az osztály tagjaira.
+\\
+
+\textbf{15.} &
+Az öröklődés és a polimorfizmus objektum orientált alapelvek megvalósítása. Öröklődés szabályai, metódusok túlterhelése és felüldefiniálása. A referencia statikus és dinamikus típusa. Absztrakt osztály és interfész szerepe, összehasonlítása.
+\\
+
+\hline
+
+\textbf{16.} &
+Az operációs rendszerbeli folyamat (processz) fogalom. Folyamat kontextus. A fonál (szál) fogalom. A processz állapotok, állapotváltások, processz futási módok. Taszk és fonál állapotok, állapotátmenetek.
+\\
+
+\textbf{17.} &
+A memória menedzselés feladatai. Memória, mint erőforrás. Címleképzés fajták. Lapozós virtuális memória menedzselés működése. Allokálás, nyilvántartás, címleképzés. Laphiba fogalma, kezelése, kilapozási stratégiák. Előnyök, hátrányok.
+\\
+
+\textbf{18.} &
+Fájlrendszer megvalósítási feladatok. Jegyzékszerkezetek. Szabad blokk menedzselési lehetőségek. Fájl attribútum rögzítési lehetőségek (ezen belül fájl testet képező blokkok rögzítési lehetőségei).
+\\
+
+\hline
+
+\textbf{19.} &
+Relációs adatmodell, relációs struktúra és integritási feltételek. ER modell elemei jelentése és jelölése. Az ER modell konverziója relációs modellre. Relációs adatmodell műveleti része, relációs algebra.
+\\
+
+\textbf{20.} &
+Az SQL szabvány relációs adatbázis kezelő nyelv bemutatása, a DDL (objektum létrehozás, megszüntetés és szerkezet módosítás) , DML (rekord felvitel, törlés és módosítás), DCL és a \code{SELECT} utasítások áttekintése és használata. Beágyazott \code{SELECT} használata. A relációs algebra műveleteinek megvalósítása SQL-ben.
+\\
+
+\textbf{21.} &
+Adatkezelés és adatbáziskezelés alapfogalmai, fileszervezési módszerek, B-fa index; adatbázis architektúra; A normalizálás szerepe a relációs adatbázis kezelésben. Redundancia oka és a megszüntetés lépései. Normálformák. Dekompozíció célja és szabályai, tételei.
+\\
+
+\hline
+
+\textbf{22.} &
+Számítógép-hálózatokhoz kötődő alapfogalmak és az ISO-OSI hivatkozási modell: topológia és méret szerinti osztályozásuk. Kapcsolástechnika szerinti osztályozásuk (vonalkapcsolás, üzenetkapcsolás, csomagkapcsolás és virtuális vonalkapcsolás). Az ISO-OSI hivatkozási modell szerkezete, rétegei és azok főbb funkciói.
+\\
+
+\textbf{23.} &
+A számítógép-hálózatok ISO-OSI hivatkozási modell adatkapcsolati rétegének közeghozzáférési alrétege: A főbb csatorna-megosztási osztályok (statikus-dinamikus, dinamikus versengő-determinisztikus) bemutatása és azok összevetése. Az IEEE 802.3 és az Ethernet (CSMA/CD) keretformátum, MAC címek, támogatott közegek és sebességek bemutatása, működés duplex csatorna esetén. Az IEEE 802.11 WLAN általános felépítése, az Access Point (AP) főbb funkciói. Az alkalmazott közeghozzáférési módszer (CSMA/CA), Distributed Coordination Function (DCF) és Point Coordination Function (PCF) üzemmódok.
+\\
+
+\textbf{24.} &
+A TCP/IP protokoll szövet és az Internet. Az Internet hivatkozási modell (DoD) és az ISO-OSI hivatkozási modell összevetése. A TCP/IP protokoll szövet főbb részei (ARP, RARP, IP, ICMP, TCP, UDP) és azok funkcióik. Az Internet címzés és címosztályok: IPv4 címosztályok, maszk, subnet, supernet, osztály nélküli címzés (CIDR -- Classless Inter-Domain Routing), és a változó alhálózat méretek (VLSM -- Variable Length Subnet Mask), címek kiosztása, lokális címek és a címfordítás (NAT). Az IPv6 címek, IPv6 cím típusok (unicast, multicast, anycast; link local, unique local, aggregatable global unicast address).
+\\
+
+\hline
+
+\textbf{25.} &
+Szoftvertechnológia és a szoftverfolyamat fogalma. A szoftverfolyamat fázisok részlet és bemutatása: szoftverspecifikáció, tervezés, implementáció, validáció és evolúció. Az evolúciós modell ismertetése.
+\\
+
+\textbf{26.} &
+Szoftverkövetelmény fogalma és osztályozásai. Követelmények általános problémái. Követelmény feltárás és elemzés folyamata. Vezérlési stílusok.
+\\
+
+\textbf{27.} &
+UML diagramok bemutatása: Use case és osztálydiagram. A szekvencia diagram. Komponens diagram.
+\\
+
+\hline
+
+\end{tabular}
+
+\end{document}
