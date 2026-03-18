@@ -1,6 +1,6 @@
-# OpenCL rendezési algoritmusok (MergeSort & QuickSort)
+# OpenCL órai munkák és rendezési algoritmusok (MergeSort & QuickSort)
 
-Ez a repository két klasszikus rendezési algoritmus OpenCL-es megvalósítását tartalmazza:
+Ez a repository órai munkákat és két klasszikus rendezési algoritmus OpenCL-es megvalósítását tartalmazza (beadando):
 
 * **Merge Sort (összefésüléses rendezés)**
 * **Quick Sort (gyorsrendezés)**
