@@ -37,32 +37,6 @@ algorithm/
 
 ---
 
-## ⚙️ Követelmények
-
-* macOS (MacBookon tesztelve)
-* OpenCL támogatás (Apple OpenCL framework)
-* `clang` fordító
-
----
-
-## 🔨 Fordítás
-
-Lépj be a kívánt mappába:
-
-```bash
-cd mergesort
-# vagy
-cd quicksort
-```
-
-Majd futtasd:
-
-```bash
-make
-```
-
----
-
 ## ▶️ Futtatás
 
 ### CPU verzió
@@ -115,24 +89,5 @@ make
 * Kernel betöltése és fordítása
 * Memóriakezelés (host ↔ device)
 * Kernel futtatás és időmérés
-
----
-
-## 📌 Fontos megjegyzések
-
-* macOS alatt az OpenCL include:
-
-  ```c
-  #include <OpenCL/opencl.h>
-  ```
-
-* A `mergesort` függvénynév ütközik a rendszerkönyvtárral, ezért át lett nevezve (`merge_sort`)
-
----
-
-## 👨‍💻 Készítette
-
-OpenCL beadandó feladat
-MacOS-re optimalizált megvalósítás
 
 ---
