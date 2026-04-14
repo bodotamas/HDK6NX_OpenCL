@@ -72,22 +72,3 @@ algorithm/
 * Az algoritmus közvetlenül a device memórián dolgozik
 
 ---
-
-## ⚡ Megjegyzések a teljesítményről
-
-* A CPU verziók klasszikus rekurzív algoritmusok
-* Az OpenCL verziók célja a párhuzamos működés bemutatása
-* Kis adatmennyiségnél a CPU gyorsabb lehet az OpenCL overhead miatt
-* A projekt célja **az OpenCL működésének megértése**, nem a maximális optimalizáció
-
----
-
-## 🛠 Bemutatott OpenCL fogalmak
-
-* Platform és eszköz kiválasztása
-* Kontextus és parancssor létrehozása
-* Kernel betöltése és fordítása
-* Memóriakezelés (host ↔ device)
-* Kernel futtatás és időmérés
-
----
