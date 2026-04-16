@@ -1,61 +1,160 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+
+#ifdef __APPLE__
+#include <mach/mach_time.h>
+#else
 #include <time.h>
+#endif
 
-void swap(int* a, int* b)
+#define SAMPLE_COUNT 30
+#define SIZE_COUNT 3
+
+static const int test_sizes[SIZE_COUNT] = {1000, 2000, 3000};
+
+static double now_ms(void)
 {
-    int t = *a;
-    *a = *b;
-    *b = t;
-}
+#ifdef __APPLE__
+    static mach_timebase_info_data_t timebase = {0, 0};
+    uint64_t t;
 
-int partition_array(int arr[], int low, int high)
-{
-    int pivot = arr[high];
-    int i = low - 1;
-
-    for (int j = low; j < high; j++) {
-        if (arr[j] <= pivot) {
-            i++;
-            swap(&arr[i], &arr[j]);
-        }
+    if (timebase.denom == 0) {
+        mach_timebase_info(&timebase);
     }
 
-    swap(&arr[i + 1], &arr[high]);
-    return i + 1;
+    t = mach_absolute_time();
+    return (double)t * (double)timebase.numer / (double)timebase.denom / 1000000.0;
+#else
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    return (double)ts.tv_sec * 1000.0 + (double)ts.tv_nsec / 1000000.0;
+#endif
 }
 
-void quick_sort(int arr[], int low, int high)
+static void fill_test_data(int* arr, int n, int sample_index)
 {
-    if (low >= high) return;
+    uint32_t state = 123456789u + (uint32_t)n * 1009u + (uint32_t)(sample_index + 1) * 9176u;
 
-    int p = partition_array(arr, low, high);
-    quick_sort(arr, low, p - 1);
-    quick_sort(arr, p + 1, high);
+    for (int i = 0; i < n; i++) {
+        state = state * 1664525u + 1013904223u;
+        arr[i] = (int)(state % 100000u);
+    }
+}
+
+static void swap_int(int* a, int* b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+static int partition_hoare(int arr[], int low, int high)
+{
+    int pivot = arr[low + (high - low) / 2];
+    int i = low - 1;
+    int j = high + 1;
+
+    while (1) {
+        do {
+            i++;
+        } while (arr[i] < pivot);
+
+        do {
+            j--;
+        } while (arr[j] > pivot);
+
+        if (i >= j) {
+            return j;
+        }
+
+        swap_int(&arr[i], &arr[j]);
+    }
+}
+
+static void quicksort_recursive(int arr[], int low, int high)
+{
+    while (low < high) {
+        int p = partition_hoare(arr, low, high);
+
+        if (p - low < high - p) {
+            quicksort_recursive(arr, low, p);
+            low = p + 1;
+        } else {
+            quicksort_recursive(arr, p + 1, high);
+            high = p;
+        }
+    }
+}
+
+static void quicksort_cpu(int arr[], int n)
+{
+    if (n <= 1) {
+        return;
+    }
+
+    quicksort_recursive(arr, 0, n - 1);
+}
+
+static int is_sorted(const int* a, int n)
+{
+    for (int i = 1; i < n; i++) {
+        if (a[i - 1] > a[i]) {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 int main(void)
 {
-    int n;
-    printf("Elemek szama: ");
-    scanf("%d", &n);
+    printf("CPU quicksort meresek\n");
+    printf("Fix elemszamok: 1000, 2000, 3000\n");
+    printf("Mintaszam meretenkent: %d\n\n", SAMPLE_COUNT);
 
-    int arr[n];
-    srand((unsigned)time(NULL));
+    printf("n;minta;cpu_ido_ms\n");
 
-    for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 100;
+    for (int s = 0; s < SIZE_COUNT; s++) {
+        int n = test_sizes[s];
+        int* arr = (int*)malloc(sizeof(int) * n);
+
+        if (!arr) {
+            printf("Memóriafoglalási hiba.\n");
+            return 1;
+        }
+
+        double sum = 0.0;
+        double min = 1e30;
+        double max = 0.0;
+
+        for (int sample = 0; sample < SAMPLE_COUNT; sample++) {
+            fill_test_data(arr, n, sample);
+
+            double start = now_ms();
+            quicksort_cpu(arr, n);
+            double end = now_ms();
+
+            double elapsed = end - start;
+
+            if (!is_sorted(arr, n)) {
+                printf("HIBA: a CPU rendezés hibás. n=%d, minta=%d\n", n, sample + 1);
+                free(arr);
+                return 1;
+            }
+
+            printf("%d;%d;%.6f\n", n, sample + 1, elapsed);
+
+            sum += elapsed;
+            if (elapsed < min) min = elapsed;
+            if (elapsed > max) max = elapsed;
+        }
+
+        printf("\n%d elem osszegzes:\n", n);
+        printf("Atlag: %.6f ms | min: %.6f ms | max: %.6f ms\n\n",
+               sum / SAMPLE_COUNT, min, max);
+
+        free(arr);
     }
 
-    clock_t start = clock();
-    quick_sort(arr, 0, n - 1);
-    clock_t end = clock();
-
-    printf("Rendezett tomb:\n");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-
-    printf("\nIdo: %.6f s\n", (double)(end - start) / CLOCKS_PER_SEC);
     return 0;
 }

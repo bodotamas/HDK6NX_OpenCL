@@ -1,48 +1,61 @@
-__kernel void quicksort_kernel(__global int* arr, const int n)
+#define STACK_SIZE 256
+
+__kernel void quicksort_kernel(__global int* data, const int n)
 {
     if (get_global_id(0) != 0) return;
+    if (n <= 1) return;
 
-    int stack_low[256];
-    int stack_high[256];
-    int top = -1;
+    int left_stack[STACK_SIZE];
+    int right_stack[STACK_SIZE];
+    int top = 0;
 
-    stack_low[++top] = 0;
-    stack_high[top] = n - 1;
+    left_stack[0] = 0;
+    right_stack[0] = n - 1;
 
     while (top >= 0) {
-        int low = stack_low[top];
-        int high = stack_high[top--];
+        int left = left_stack[top];
+        int right = right_stack[top];
+        top--;
 
-        while (low < high) {
-            int pivot = arr[high];
-            int i = low - 1;
+        while (left < right) {
+            int i = left - 1;
+            int j = right + 1;
+            int pivot = data[left + (right - left) / 2];
 
-            for (int j = low; j < high; j++) {
-                if (arr[j] <= pivot) {
+            while (1) {
+                do {
                     i++;
-                    int tmp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = tmp;
+                } while (data[i] < pivot);
+
+                do {
+                    j--;
+                } while (data[j] > pivot);
+
+                if (i >= j) {
+                    break;
+                }
+
+                {
+                    int temp = data[i];
+                    data[i] = data[j];
+                    data[j] = temp;
                 }
             }
 
-            int p = i + 1;
-            int tmp = arr[p];
-            arr[p] = arr[high];
-            arr[high] = tmp;
-
-            if (p - 1 - low > high - (p + 1)) {
-                if (low < p - 1) {
-                    stack_low[++top] = low;
-                    stack_high[top] = p - 1;
+            if ((j - left) < (right - (j + 1))) {
+                if (j + 1 < right) {
+                    top++;
+                    left_stack[top] = j + 1;
+                    right_stack[top] = right;
                 }
-                low = p + 1;
+                right = j;
             } else {
-                if (p + 1 < high) {
-                    stack_low[++top] = p + 1;
-                    stack_high[top] = high;
+                if (left < j) {
+                    top++;
+                    left_stack[top] = left;
+                    right_stack[top] = j;
                 }
-                high = p - 1;
+                left = j + 1;
             }
         }
     }

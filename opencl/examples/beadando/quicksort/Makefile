@@ -1,14 +1,21 @@
-CC = clang
+CC = cc
 CFLAGS = -std=c11 -O2 -Wall -Wextra -Iinclude
-LDFLAGS = -framework OpenCL
 
-all: quicksortopencl quicksort_cpu
+UNAME_S := $(shell uname -s)
 
-quicksortopencl: quicksort_opencl.c src/kernel_loader.c
-	$(CC) $(CFLAGS) quicksort_opencl.c src/kernel_loader.c -o quicksortopencl $(LDFLAGS)
+ifeq ($(UNAME_S),Darwin)
+    OPENCL_LIBS = -framework OpenCL
+else
+    OPENCL_LIBS = -lOpenCL
+endif
+
+all: quicksort_cpu quicksortopencl
 
 quicksort_cpu: quicksort.c
-	$(CC) $(CFLAGS) quicksort.c -o quicksort_cpu
+	$(CC) $(CFLAGS) -o quicksort_cpu quicksort.c
+
+quicksortopencl: quicksort_opencl.c src/kernel_loader.c include/kernel_loader.h kernels/quicksort_kernel.cl
+	$(CC) $(CFLAGS) -o quicksortopencl quicksort_opencl.c src/kernel_loader.c $(OPENCL_LIBS)
 
 clean:
-	rm -f quicksortopencl quicksort_cpu
+	rm -f quicksort_cpu quicksortopencl
