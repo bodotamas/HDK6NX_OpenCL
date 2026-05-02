@@ -1,4 +1,5 @@
 #include "kernel_loader.h"
+#include "random_utils.h"
 
 #define CL_TARGET_OPENCL_VERSION 120
 
@@ -17,6 +18,7 @@
 
 #define SAMPLE_COUNT 30
 #define SIZE_COUNT 3
+#define RANDOM_MAX_VALUE 100000
 
 static const int test_sizes[SIZE_COUNT] = {1000, 2000, 3000};
 
@@ -37,16 +39,6 @@ static double now_ms(void)
     clock_gettime(CLOCK_MONOTONIC, &ts);
     return (double)ts.tv_sec * 1000.0 + (double)ts.tv_nsec / 1000000.0;
 #endif
-}
-
-static void fill_test_data(int* arr, int n, int sample_index)
-{
-    uint32_t state = 123456789u + (uint32_t)n * 1009u + (uint32_t)(sample_index + 1) * 9176u;
-
-    for (int i = 0; i < n; i++) {
-        state = state * 1664525u + 1013904223u;
-        arr[i] = (int)(state % 100000u);
-    }
 }
 
 static void swap_int(int* a, int* b)
@@ -110,6 +102,7 @@ static int is_sorted(const int* a, int n)
             return 0;
         }
     }
+
     return 1;
 }
 
@@ -120,6 +113,7 @@ static int arrays_equal(const int* a, const int* b, int n)
             return 0;
         }
     }
+
     return 1;
 }
 
@@ -135,6 +129,7 @@ static void print_build_log(cl_program program, cl_device_id device)
 
     clGetProgramBuildInfo(program, device, CL_PROGRAM_BUILD_LOG, log_size, log, NULL);
     log[log_size] = '\0';
+
     printf("%s\n", log);
     free(log);
 }
@@ -166,7 +161,7 @@ int main(void)
     gpu_data  = (int*)malloc(max_bytes);
 
     if (!base_data || !cpu_data || !gpu_data) {
-        printf("Memóriafoglalási hiba.\n");
+        printf("Memory allocation failed.\n");
         exit_code = 1;
         goto cleanup;
     }
@@ -174,8 +169,9 @@ int main(void)
     {
         cl_uint platform_count = 0;
         err = clGetPlatformIDs(1, &platform, &platform_count);
+
         if (err != CL_SUCCESS || platform_count == 0) {
-            printf("clGetPlatformIDs hiba: %d\n", err);
+            printf("clGetPlatformIDs failed. Error code: %d\n", err);
             exit_code = 1;
             goto cleanup;
         }
@@ -184,10 +180,12 @@ int main(void)
     {
         cl_uint device_count = 0;
         err = clGetDeviceIDs(platform, CL_DEVICE_TYPE_GPU, 1, &device, &device_count);
+
         if (err != CL_SUCCESS || device_count == 0) {
             err = clGetDeviceIDs(platform, CL_DEVICE_TYPE_CPU, 1, &device, &device_count);
+
             if (err != CL_SUCCESS || device_count == 0) {
-                printf("Nem található használható OpenCL eszköz. Hibakód: %d\n", err);
+                printf("No usable OpenCL device was found. Error code: %d\n", err);
                 exit_code = 1;
                 goto cleanup;
             }
@@ -196,35 +194,35 @@ int main(void)
 
     context = clCreateContext(NULL, 1, &device, NULL, NULL, &err);
     if (err != CL_SUCCESS) {
-        printf("clCreateContext hiba: %d\n", err);
+        printf("clCreateContext failed. Error code: %d\n", err);
         exit_code = 1;
         goto cleanup;
     }
 
     queue = clCreateCommandQueue(context, device, CL_QUEUE_PROFILING_ENABLE, &err);
     if (err != CL_SUCCESS) {
-        printf("clCreateCommandQueue hiba: %d\n", err);
+        printf("clCreateCommandQueue failed. Error code: %d\n", err);
         exit_code = 1;
         goto cleanup;
     }
 
     kernel_source = load_kernel_source("kernels/quicksort_kernel.cl", &file_err);
     if (file_err != 0 || !kernel_source) {
-        printf("Nem sikerült betölteni a kernel forrást.\n");
+        printf("Failed to load the OpenCL kernel source file.\n");
         exit_code = 1;
         goto cleanup;
     }
 
     program = clCreateProgramWithSource(context, 1, (const char**)&kernel_source, NULL, &err);
     if (err != CL_SUCCESS) {
-        printf("clCreateProgramWithSource hiba: %d\n", err);
+        printf("clCreateProgramWithSource failed. Error code: %d\n", err);
         exit_code = 1;
         goto cleanup;
     }
 
     err = clBuildProgram(program, 1, &device, NULL, NULL, NULL);
     if (err != CL_SUCCESS) {
-        printf("clBuildProgram hiba: %d\n", err);
+        printf("clBuildProgram failed. Error code: %d\n", err);
         print_build_log(program, device);
         exit_code = 1;
         goto cleanup;
@@ -232,14 +230,14 @@ int main(void)
 
     kernel = clCreateKernel(program, "quicksort_kernel", &err);
     if (err != CL_SUCCESS) {
-        printf("clCreateKernel hiba: %d\n", err);
+        printf("clCreateKernel failed. Error code: %d\n", err);
         exit_code = 1;
         goto cleanup;
     }
 
     buf_data = clCreateBuffer(context, CL_MEM_READ_WRITE, max_bytes, NULL, &err);
     if (err != CL_SUCCESS) {
-        printf("clCreateBuffer hiba: %d\n", err);
+        printf("clCreateBuffer failed. Error code: %d\n", err);
         exit_code = 1;
         goto cleanup;
     }
@@ -247,14 +245,14 @@ int main(void)
     {
         char device_name[256] = {0};
         clGetDeviceInfo(device, CL_DEVICE_NAME, sizeof(device_name), device_name, NULL);
-        printf("Hasznalt OpenCL eszkoz: %s\n", device_name);
+        printf("Used OpenCL device: %s\n", device_name);
     }
 
-    printf("OpenCL quicksort meresek\n");
-    printf("Fix elemszamok: 1000, 2000, 3000\n");
-    printf("Mintaszam meretenkent: %d\n\n", SAMPLE_COUNT);
+    printf("OpenCL quicksort measurements\n");
+    printf("Fixed input sizes: 1000, 2000, 3000\n");
+    printf("Samples per input size: %d\n\n", SAMPLE_COUNT);
 
-    printf("n;minta;opencl_teljes_ido_ms;opencl_kernel_ido_ms;ellenorzes\n");
+    printf("n;sample;opencl_total_time_ms;opencl_kernel_time_ms;validation\n");
 
     for (int s = 0; s < SIZE_COUNT; s++) {
         int n = test_sizes[s];
@@ -269,7 +267,8 @@ int main(void)
         double kernel_max = 0.0;
 
         for (int sample = 0; sample < SAMPLE_COUNT; sample++) {
-            fill_test_data(base_data, n, sample);
+            uint32_t seed = make_sample_seed(n, sample);
+            fill_random_int_array(base_data, n, seed, RANDOM_MAX_VALUE);
 
             memcpy(cpu_data, base_data, bytes);
             quicksort_cpu(cpu_data, n);
@@ -278,15 +277,16 @@ int main(void)
 
             err = clEnqueueWriteBuffer(queue, buf_data, CL_TRUE, 0, bytes, base_data, 0, NULL, NULL);
             if (err != CL_SUCCESS) {
-                printf("clEnqueueWriteBuffer hiba: %d\n", err);
+                printf("clEnqueueWriteBuffer failed. Error code: %d\n", err);
                 exit_code = 1;
                 goto cleanup;
             }
 
             err  = clSetKernelArg(kernel, 0, sizeof(cl_mem), &buf_data);
             err |= clSetKernelArg(kernel, 1, sizeof(int), &n);
+
             if (err != CL_SUCCESS) {
-                printf("clSetKernelArg hiba: %d\n", err);
+                printf("clSetKernelArg failed. Error code: %d\n", err);
                 exit_code = 1;
                 goto cleanup;
             }
@@ -300,7 +300,7 @@ int main(void)
 
                 err = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &global_work_size, NULL, 0, NULL, &event);
                 if (err != CL_SUCCESS) {
-                    printf("clEnqueueNDRangeKernel hiba: %d\n", err);
+                    printf("clEnqueueNDRangeKernel failed. Error code: %d\n", err);
                     exit_code = 1;
                     goto cleanup;
                 }
@@ -318,7 +318,7 @@ int main(void)
 
                 err = clEnqueueReadBuffer(queue, buf_data, CL_TRUE, 0, bytes, gpu_data, 0, NULL, NULL);
                 if (err != CL_SUCCESS) {
-                    printf("clEnqueueReadBuffer hiba: %d\n", err);
+                    printf("clEnqueueReadBuffer failed. Error code: %d\n", err);
                     exit_code = 1;
                     goto cleanup;
                 }
@@ -333,10 +333,10 @@ int main(void)
                            sample + 1,
                            total_elapsed,
                            kernel_time_ms,
-                           ok ? "OK" : "HIBAS");
+                           ok ? "OK" : "FAILED");
 
                     if (!ok) {
-                        printf("HIBA: az OpenCL eredmény nem egyezik a CPU eredményével. n=%d, minta=%d\n",
+                        printf("ERROR: OpenCL result does not match the CPU result. n=%d, sample=%d\n",
                                n, sample + 1);
                         exit_code = 1;
                         goto cleanup;
@@ -353,10 +353,10 @@ int main(void)
             }
         }
 
-        printf("\n%d elem osszegzes:\n", n);
-        printf("OpenCL teljes atlag: %.6f ms | min: %.6f ms | max: %.6f ms\n",
+        printf("\nSummary for %d elements:\n", n);
+        printf("OpenCL total average: %.6f ms | min: %.6f ms | max: %.6f ms\n",
                total_sum / SAMPLE_COUNT, total_min, total_max);
-        printf("OpenCL kernel atlag: %.6f ms | min: %.6f ms | max: %.6f ms\n\n",
+        printf("OpenCL kernel average: %.6f ms | min: %.6f ms | max: %.6f ms\n\n",
                kernel_sum / SAMPLE_COUNT, kernel_min, kernel_max);
     }
 

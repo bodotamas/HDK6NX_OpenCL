@@ -48,6 +48,7 @@ __kernel void quicksort_kernel(__global int* data, const int n)
                     left_stack[top] = j + 1;
                     right_stack[top] = right;
                 }
+
                 right = j;
             } else {
                 if (left < j) {
@@ -55,6 +56,7 @@ __kernel void quicksort_kernel(__global int* data, const int n)
                     left_stack[top] = left;
                     right_stack[top] = j;
                 }
+
                 left = j + 1;
             }
         }

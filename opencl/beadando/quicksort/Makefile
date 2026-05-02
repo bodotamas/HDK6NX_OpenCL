@@ -1,21 +1,29 @@
-CC = cc
-CFLAGS = -std=c11 -O2 -Wall -Wextra -Iinclude
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c11 -Iinclude
 
 UNAME_S := $(shell uname -s)
 
 ifeq ($(UNAME_S),Darwin)
-    OPENCL_LIBS = -framework OpenCL
+	OPENCL_FLAGS = -framework OpenCL
 else
-    OPENCL_LIBS = -lOpenCL
+	OPENCL_FLAGS = -lOpenCL
 endif
 
-all: quicksort_cpu quicksortopencl
+CPU_TARGET = quicksort_cpu
+OPENCL_TARGET = quicksort_opencl
 
-quicksort_cpu: quicksort.c
-	$(CC) $(CFLAGS) -o quicksort_cpu quicksort.c
+COMMON_SRC = src/random_utils.c
+OPENCL_SRC = src/kernel_loader.c src/random_utils.c
 
-quicksortopencl: quicksort_opencl.c src/kernel_loader.c include/kernel_loader.h kernels/quicksort_kernel.cl
-	$(CC) $(CFLAGS) -o quicksortopencl quicksort_opencl.c src/kernel_loader.c $(OPENCL_LIBS)
+all: $(CPU_TARGET) $(OPENCL_TARGET)
+
+$(CPU_TARGET): quicksort.c $(COMMON_SRC) include/random_utils.h
+	$(CC) $(CFLAGS) quicksort.c $(COMMON_SRC) -o $(CPU_TARGET)
+
+$(OPENCL_TARGET): quicksort_opencl.c $(OPENCL_SRC) include/kernel_loader.h include/random_utils.h
+	$(CC) $(CFLAGS) quicksort_opencl.c $(OPENCL_SRC) -o $(OPENCL_TARGET) $(OPENCL_FLAGS)
 
 clean:
-	rm -f quicksort_cpu quicksortopencl
+	rm -f $(CPU_TARGET) $(OPENCL_TARGET)
+
+.PHONY: all clean

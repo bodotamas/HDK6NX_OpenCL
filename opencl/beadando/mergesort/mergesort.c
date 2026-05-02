@@ -1,3 +1,5 @@
+#include "random_utils.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -10,6 +12,7 @@
 
 #define SAMPLE_COUNT 30
 #define SIZE_COUNT 3
+#define RANDOM_MAX_VALUE 100000
 
 static const int test_sizes[SIZE_COUNT] = {1000, 2000, 3000};
 
@@ -30,16 +33,6 @@ static double now_ms(void)
     clock_gettime(CLOCK_MONOTONIC, &ts);
     return (double)ts.tv_sec * 1000.0 + (double)ts.tv_nsec / 1000000.0;
 #endif
-}
-
-static void fill_test_data(int* arr, int n, int sample_index)
-{
-    uint32_t state = 123456789u + (uint32_t)n * 1009u + (uint32_t)(sample_index + 1) * 9176u;
-
-    for (int i = 0; i < n; i++) {
-        state = state * 1664525u + 1013904223u;
-        arr[i] = (int)(state % 100000u);
-    }
 }
 
 static void merge(int arr[], int temp[], int l, int m, int r)
@@ -98,24 +91,25 @@ static int is_sorted(const int* a, int n)
             return 0;
         }
     }
+
     return 1;
 }
 
 int main(void)
 {
-    printf("CPU mergesort meresek\n");
-    printf("Fix elemszamok: 1000, 2000, 3000\n");
-    printf("Mintaszam meretenkent: %d\n\n", SAMPLE_COUNT);
+    printf("CPU mergesort measurements\n");
+    printf("Fixed input sizes: 1000, 2000, 3000\n");
+    printf("Samples per input size: %d\n\n", SAMPLE_COUNT);
 
-    printf("n;minta;cpu_ido_ms\n");
+    printf("n;sample;cpu_time_ms\n");
 
     for (int s = 0; s < SIZE_COUNT; s++) {
         int n = test_sizes[s];
-        int* arr = (int*)malloc(sizeof(int) * n);
-        int* temp = (int*)malloc(sizeof(int) * n);
+        int* arr = (int*)malloc(sizeof(int) * (size_t)n);
+        int* temp = (int*)malloc(sizeof(int) * (size_t)n);
 
         if (!arr || !temp) {
-            printf("Memóriafoglalási hiba.\n");
+            printf("Memory allocation failed.\n");
             free(arr);
             free(temp);
             return 1;
@@ -126,7 +120,8 @@ int main(void)
         double max = 0.0;
 
         for (int sample = 0; sample < SAMPLE_COUNT; sample++) {
-            fill_test_data(arr, n, sample);
+            uint32_t seed = make_sample_seed(n, sample);
+            fill_random_int_array(arr, n, seed, RANDOM_MAX_VALUE);
 
             double start = now_ms();
             merge_sort_cpu(arr, temp, n);
@@ -135,7 +130,7 @@ int main(void)
             double elapsed = end - start;
 
             if (!is_sorted(arr, n)) {
-                printf("HIBA: a CPU rendezés hibás. n=%d, minta=%d\n", n, sample + 1);
+                printf("ERROR: CPU sorting failed. n=%d, sample=%d\n", n, sample + 1);
                 free(arr);
                 free(temp);
                 return 1;
@@ -148,8 +143,8 @@ int main(void)
             if (elapsed > max) max = elapsed;
         }
 
-        printf("\n%d elem osszegzes:\n", n);
-        printf("Atlag: %.6f ms | min: %.6f ms | max: %.6f ms\n\n",
+        printf("\nSummary for %d elements:\n", n);
+        printf("Average: %.6f ms | min: %.6f ms | max: %.6f ms\n\n",
                sum / SAMPLE_COUNT, min, max);
 
         free(arr);
